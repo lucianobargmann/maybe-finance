@@ -12,13 +12,13 @@ pt-BR:
   loan:
     subtypes:
       mortgage:
-        short: Hipoteca
+        short: Fin. Imóvel
         long: Financiamento Imobiliário
       student:
         short: Estudantil
         long: Empréstimo Estudantil
       auto:
-        short: Veículo
+        short: Fin. Veículo
         long: Financiamento de Veículo
       other:
         short: Outro
