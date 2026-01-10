@@ -354,9 +354,11 @@ module LanguagesHelper
     COUNTRY_MAPPING.keys.map { |key| [ COUNTRY_MAPPING[key], key ] }
   end
 
+  SUPPORTED_LOCALES = %w[en pt-BR].freeze
+
   def language_options
     I18n.available_locales
-      .reject { |locale| EXCLUDED_LOCALES.include?(locale.to_s) }
+      .select { |locale| SUPPORTED_LOCALES.include?(locale.to_s) }
       .map do |locale|
         label = LANGUAGE_MAPPING[locale.to_sym] || locale.to_s.humanize
         [ "#{label} (#{locale})", locale ]
