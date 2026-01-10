@@ -31,6 +31,8 @@ pt-BR:
       categories_incomes: Categorias de receitas
       empty: Nenhuma categoria encontrada
       new: Nova categoria
+      delete_all: Excluir tudo
+      all_categories: todas as categorias
     menu:
       loading: Carregando...
     new:
