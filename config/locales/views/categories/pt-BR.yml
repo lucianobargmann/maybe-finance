@@ -14,6 +14,16 @@ pt-BR:
       edit: Editar categoria
     form:
       placeholder: Nome da categoria
+      color: Cor
+      icon: Ícone
+      classification: Classificação
+      income: Receita
+      expense: Despesa
+      name: Nome
+      parent_category: Categoria pai (opcional)
+      unassigned: "(não atribuído)"
+      poor_contrast: "Contraste ruim, escolha uma cor mais escura ou"
+      auto_adjust: ajustar automaticamente.
     index:
       bootstrap: Usar padrões (recomendado)
       categories: Categorias
@@ -27,6 +37,22 @@ pt-BR:
       new_category: Nova categoria
     update:
       success: Categoria atualizada com sucesso
+    default_categories:
+      income: Receita
+      loan_payments: Pagamentos de Empréstimo
+      fees: Taxas
+      entertainment: Entretenimento
+      food_and_drink: Alimentação
+      shopping: Compras
+      home_improvement: Melhorias da Casa
+      healthcare: Saúde
+      personal_care: Cuidados Pessoais
+      services: Serviços
+      gifts_and_donations: Presentes e Doações
+      transportation: Transporte
+      travel: Viagens
+      rent_and_utilities: Aluguel e Utilidades
+      uncategorized: Não Categorizado
   category:
     dropdowns:
       show:

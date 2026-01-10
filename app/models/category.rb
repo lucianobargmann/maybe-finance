@@ -62,7 +62,7 @@ class Category < ApplicationRecord
 
     def uncategorized
       new(
-        name: "Uncategorized",
+        name: I18n.t("categories.default_categories.uncategorized"),
         color: UNCATEGORIZED_COLOR,
         lucide_icon: "circle-dashed"
       )
@@ -71,20 +71,20 @@ class Category < ApplicationRecord
     private
       def default_categories
         [
-          [ "Income", "#e99537", "circle-dollar-sign", "income" ],
-          [ "Loan Payments", "#6471eb", "credit-card", "expense" ],
-          [ "Fees", "#6471eb", "credit-card", "expense" ],
-          [ "Entertainment", "#df4e92", "drama", "expense" ],
-          [ "Food & Drink", "#eb5429", "utensils", "expense" ],
-          [ "Shopping", "#e99537", "shopping-cart", "expense" ],
-          [ "Home Improvement", "#6471eb", "house", "expense" ],
-          [ "Healthcare", "#4da568", "pill", "expense" ],
-          [ "Personal Care", "#4da568", "pill", "expense" ],
-          [ "Services", "#4da568", "briefcase", "expense" ],
-          [ "Gifts & Donations", "#61c9ea", "hand-helping", "expense" ],
-          [ "Transportation", "#df4e92", "bus", "expense" ],
-          [ "Travel", "#df4e92", "plane", "expense" ],
-          [ "Rent & Utilities", "#db5a54", "lightbulb", "expense" ]
+          [ I18n.t("categories.default_categories.income"), "#e99537", "circle-dollar-sign", "income" ],
+          [ I18n.t("categories.default_categories.loan_payments"), "#6471eb", "credit-card", "expense" ],
+          [ I18n.t("categories.default_categories.fees"), "#6471eb", "credit-card", "expense" ],
+          [ I18n.t("categories.default_categories.entertainment"), "#df4e92", "drama", "expense" ],
+          [ I18n.t("categories.default_categories.food_and_drink"), "#eb5429", "utensils", "expense" ],
+          [ I18n.t("categories.default_categories.shopping"), "#e99537", "shopping-cart", "expense" ],
+          [ I18n.t("categories.default_categories.home_improvement"), "#6471eb", "house", "expense" ],
+          [ I18n.t("categories.default_categories.healthcare"), "#4da568", "pill", "expense" ],
+          [ I18n.t("categories.default_categories.personal_care"), "#4da568", "pill", "expense" ],
+          [ I18n.t("categories.default_categories.services"), "#4da568", "briefcase", "expense" ],
+          [ I18n.t("categories.default_categories.gifts_and_donations"), "#61c9ea", "hand-helping", "expense" ],
+          [ I18n.t("categories.default_categories.transportation"), "#df4e92", "bus", "expense" ],
+          [ I18n.t("categories.default_categories.travel"), "#df4e92", "plane", "expense" ],
+          [ I18n.t("categories.default_categories.rent_and_utilities"), "#db5a54", "lightbulb", "expense" ]
         ]
       end
   end
