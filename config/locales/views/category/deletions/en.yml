@@ -13,3 +13,4 @@ en:
           category will be uncategorized. Instead of leaving them uncategorized, you
           can also assign a new category below.
         replacement_category_prompt: Select category
+        delete_and_reassign: Delete and reassign

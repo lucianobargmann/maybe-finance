@@ -1,0 +1,9 @@
+---
+en:
+  rule:
+    conditions:
+      condition:
+        number_placeholder: "10"
+        enter_value: Enter a value
+      condition_group:
+        add_condition: Add condition

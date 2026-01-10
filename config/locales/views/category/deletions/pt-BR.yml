@@ -11,3 +11,4 @@ pt-BR:
         delete_category: Excluir categoria?
         explanation: Ao excluir esta categoria, toda transação que tem a categoria "%{category_name}" ficará sem categoria. Em vez de deixá-las sem categoria, você também pode atribuir uma nova categoria abaixo.
         replacement_category_prompt: Selecionar categoria
+        delete_and_reassign: Excluir e reatribuir

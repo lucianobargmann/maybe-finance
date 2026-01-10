@@ -1,7 +1,19 @@
 ---
 pt-BR:
   onboardings:
+    goals:
+      goal_accounts: Ver todas as minhas contas em um só lugar
+      goal_cashflow: Entender fluxo de caixa e despesas
+      goal_budgeting: Gerenciar planos financeiros e orçamento
+      goal_partner: Gerenciar finanças com um parceiro
+      goal_investments: Acompanhar investimentos
+      goal_ai: Deixar a IA me ajudar a entender minhas finanças
+      goal_analyze: Analisar e otimizar contas
+      goal_stress: Reduzir estresse ou ansiedade financeira
+      next: Próximo
     header:
+      sign_out: Sair
+    logout:
       sign_out: Sair
     preferences:
       currency: Moeda
@@ -31,3 +43,7 @@ pt-BR:
       continue: Continuar
       message: Estamos muito felizes que você está aqui. No próximo passo, faremos algumas perguntas para completar seu perfil e então deixá-lo tudo configurado.
       setup: Configurar conta
+    trial:
+      try_trial: Experimente o Maybe por 14 dias
+      continue_trial: Continuar teste
+      upgrade: Fazer upgrade

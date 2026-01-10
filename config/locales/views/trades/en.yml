@@ -10,6 +10,7 @@ en:
       qty: Quantity
       submit: Add transaction
       ticker_placeholder: AAPL
+      ticker_symbol: Ticker symbol
       type: Type
     header:
       buy: Buy

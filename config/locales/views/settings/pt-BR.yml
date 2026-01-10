@@ -1,6 +1,29 @@
 ---
 pt-BR:
   settings:
+    api_keys:
+      created:
+        page_title: Chave API Criada
+        title: Chave API Criada com Sucesso
+        subtitle: Sua nova chave API foi gerada com sucesso.
+        success_title: Chave API Criada com Sucesso!
+        key_created: Sua nova chave API "%{name}" foi criada e está pronta para uso.
+        your_api_key: Sua Chave API
+        copy_warning: Copie e armazene esta chave com segurança. Você precisará dela para autenticar suas requisições API.
+        key_details: Detalhes da Chave
+        name: "Nome:"
+        permissions: "Permissões:"
+        created: "Criado:"
+        scope_read_accounts: Visualizar Contas
+        scope_read_transactions: Visualizar Transações
+        scope_read_balances: Visualizar Saldos
+        scope_write_transactions: Criar Transações
+        security_note: Nota Importante de Segurança
+        security_warning: Esta é a única vez que sua chave API será exibida. Certifique-se de copiá-la agora e armazená-la com segurança. Se você perder esta chave, precisará gerar uma nova.
+        how_to_use: Como usar sua chave API
+        usage_instructions: "Inclua sua chave API no cabeçalho X-Api-Key ao fazer requisições:"
+        copy_key: Copiar Chave API
+        continue: Continuar para Configurações de Chave API
     billings:
       show:
         page_title: Faturamento
@@ -73,12 +96,17 @@ pt-BR:
         remove_invitation: Remover Convite
         remove_member: Remover Membro
         save: Salvar
+        email_change_pending: Você solicitou alterar seu email para %{email}. Por favor, acesse seu email e confirme para que a alteração tenha efeito.
+        data_import_export_title: Importação/Exportação de Dados
+        export_data: Exportar dados
     securities:
       show:
         page_title: Segurança
     settings_nav:
       accounts_label: Contas
+      api_key: Chave API
       api_key_label: Chave de API
+      back: Voltar
       billing_label: Faturamento
       categories_label: Categorias
       feedback_label: Feedback

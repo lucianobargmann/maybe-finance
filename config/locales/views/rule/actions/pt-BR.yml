@@ -1,0 +1,6 @@
+---
+pt-BR:
+  rule:
+    actions:
+      action:
+        enter_value: Digite um valor

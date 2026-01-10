@@ -1,6 +1,20 @@
 ---
 pt-BR:
   properties:
+    address:
+      address_line1: Endereço Linha 1
+      address_placeholder: Rua Principal, 123
+      city: Cidade
+      city_placeholder: São Paulo
+      state: Estado/Região
+      state_placeholder: SP
+      postal_code: CEP
+      postal_placeholder: '01234-567'
+      country: País
+      country_placeholder: Brasil
+      save: Salvar
+    balances:
+      estimated_value: Valor de mercado estimado
     edit:
       edit: Editar %{account}
     form:
@@ -23,6 +37,7 @@ pt-BR:
       year_built_placeholder: '2000'
     new:
       title: Inserir detalhes do imóvel
+      next: Próximo
     overview:
       living_area: Área Construída
       market_value: Valor de Mercado
@@ -30,3 +45,14 @@ pt-BR:
       trend: Tendência
       unknown: Desconhecido
       year_built: Ano de Construção
+      edit_details: Editar detalhes da conta
+    overview_fields:
+      name: Nome
+      name_placeholder: Casa de férias
+      select_type: Selecionar tipo
+      property_type: Tipo de propriedade
+      year_built: Ano de Construção (opcional)
+      year_placeholder: '1990'
+      area: Área (opcional)
+      area_placeholder: '1200'
+      area_unit: Unidade de Área

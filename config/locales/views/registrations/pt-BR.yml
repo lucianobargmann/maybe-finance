@@ -13,6 +13,7 @@ pt-BR:
       invalid_invite_code: Código de convite inválido, por favor tente novamente.
       success: Você se cadastrou com sucesso.
     new:
+      email_placeholder: voce@exemplo.com
       invitation_message: "%{inviter} convidou você para se juntar como %{role}"
       join_family_title: Entrar em %{family}
       role_admin: administrador

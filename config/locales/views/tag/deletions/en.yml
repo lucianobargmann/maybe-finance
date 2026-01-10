@@ -13,3 +13,4 @@ en:
           below."
         replacement_tag_prompt: Select tag
         tag: Tag
+        delete_and_reassign: Delete and reassign

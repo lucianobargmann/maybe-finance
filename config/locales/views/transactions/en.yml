@@ -36,10 +36,27 @@ en:
       none: "(none)"
       note_label: Notes
       note_placeholder: Enter a note
+      open_matcher: Open matcher
       overview: Overview
       settings: Settings
       tags_label: Tags
       uncategorized: "(uncategorized)"
+    bulk_updates:
+      new:
+        edit_transactions: Edit transactions
+        overview: Overview
+        date: Date
+        transactions: Transactions
+        select_category: Select a category
+        category: Category
+        select_merchant: Select a merchant
+        merchant: Merchant
+        none: None
+        tags: Tags
+        notes: Notes
+        notes_placeholder: Enter a note that will be applied to selected transactions
+        cancel: Cancel
+        save: Save
     header:
       edit_categories: Edit categories
       edit_imports: Edit imports

@@ -31,20 +31,20 @@
     <div class="w-full">
       <% if Current.family.can_start_trial? %>
         <%= render DS::Button.new(
-        text: "Try Maybe for 14 days",
+        text: t(".try_trial"),
         href: subscription_path,
         full_width: true,
         data: { turbo: false }
       ) %>
       <% elsif Current.family.trialing? %>
         <%= render DS::Link.new(
-          text: "Continue trial",
+          text: t(".continue_trial"),
           href: root_path,
           full_width: true,
         ) %>
       <% else %>
         <%= render DS::Link.new(
-          text: "Upgrade",
+          text: t(".upgrade"),
           href: upgrade_subscription_path,
           full_width: true,
         ) %>

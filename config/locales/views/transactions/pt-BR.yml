@@ -35,10 +35,27 @@ pt-BR:
       none: "(nenhum)"
       note_label: Notas
       note_placeholder: Digite uma nota
+      open_matcher: Abrir correspondência
       overview: Visão Geral
       settings: Configurações
       tags_label: Tags
       uncategorized: "(sem categoria)"
+    bulk_updates:
+      new:
+        edit_transactions: Editar transações
+        overview: Visão Geral
+        date: Data
+        transactions: Transações
+        select_category: Selecionar categoria
+        category: Categoria
+        select_merchant: Selecionar comerciante
+        merchant: Comerciante
+        none: Nenhum
+        tags: Tags
+        notes: Notas
+        notes_placeholder: Digite uma nota que será aplicada às transações selecionadas
+        cancel: Cancelar
+        save: Salvar
     header:
       edit_categories: Editar categorias
       edit_imports: Editar importações

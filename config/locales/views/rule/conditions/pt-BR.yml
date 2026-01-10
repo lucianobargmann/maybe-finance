@@ -1,0 +1,9 @@
+---
+pt-BR:
+  rule:
+    conditions:
+      condition:
+        number_placeholder: "10"
+        enter_value: Digite um valor
+      condition_group:
+        add_condition: Adicionar condição

@@ -1,6 +1,29 @@
 ---
 en:
   settings:
+    api_keys:
+      created:
+        page_title: API Key Created
+        title: API Key Created Successfully
+        subtitle: Your new API key has been generated successfully.
+        success_title: API Key Created Successfully!
+        key_created: Your new API key "%{name}" has been created and is ready to use.
+        your_api_key: Your API Key
+        copy_warning: Copy and store this key securely. You'll need it to authenticate your API requests.
+        key_details: Key Details
+        name: "Name:"
+        permissions: "Permissions:"
+        created: "Created:"
+        scope_read_accounts: View Accounts
+        scope_read_transactions: View Transactions
+        scope_read_balances: View Balances
+        scope_write_transactions: Create Transactions
+        security_note: Important Security Note
+        security_warning: This is the only time your API key will be displayed. Make sure to copy it now and store it securely. If you lose this key, you'll need to generate a new one.
+        how_to_use: How to use your API key
+        usage_instructions: "Include your API key in the X-Api-Key header when making requests:"
+        copy_key: Copy API Key
+        continue: Continue to API Key Settings
     billings:
       show:
         page_title: Billing
@@ -76,12 +99,17 @@ en:
         remove_invitation: Remove Invitation
         remove_member: Remove Member
         save: Save
+        email_change_pending: You have requested to change your email to %{email}. Please go to your email and confirm for the change to take effect.
+        data_import_export_title: Data Import/Export
+        export_data: Export data
     securities:
       show:
         page_title: Security
     settings_nav:
       accounts_label: Accounts
+      api_key: API Key
       api_key_label: API Key
+      back: Back
       billing_label: Billing
       categories_label: Categories
       feedback_label: Feedback

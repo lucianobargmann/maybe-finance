@@ -14,6 +14,7 @@ en:
       empty: No merchants yet
       new: New merchant
       title: Merchants
+      new_merchant: New merchant
     merchant:
       confirm_accept: Delete merchant
       confirm_body: Are you sure you want to delete this merchant? Removing this merchant
@@ -25,3 +26,6 @@ en:
       title: New merchant
     update:
       success: Merchant updated successfully
+    family_merchant:
+      edit: Edit
+      delete: Delete

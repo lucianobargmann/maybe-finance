@@ -9,3 +9,7 @@ en:
       message: You have not created or assigned any expense categories to your transactions yet.
       use_defaults: Use defaults (recommended)
       new_category: New category
+    show:
+      view_all_transactions: View all category transactions
+    confirm_button:
+      confirm: Confirm

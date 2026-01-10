@@ -1,6 +1,20 @@
 ---
 en:
   properties:
+    address:
+      address_line1: Address Line 1
+      address_placeholder: 123 Main Street
+      city: City
+      city_placeholder: San Francisco
+      state: State/Region
+      state_placeholder: CA
+      postal_code: Postal Code
+      postal_placeholder: '12345'
+      country: Country
+      country_placeholder: USA
+      save: Save
+    balances:
+      estimated_value: Estimated market value
     edit:
       edit: Edit %{account}
     form:
@@ -23,6 +37,7 @@ en:
       year_built_placeholder: '2000'
     new:
       title: Enter property details
+      next: Next
     overview:
       living_area: Living Area
       market_value: Market Value
@@ -30,3 +45,14 @@ en:
       trend: Trend
       unknown: Unknown
       year_built: Year Built
+      edit_details: Edit account details
+    overview_fields:
+      name: Name
+      name_placeholder: Vacation home
+      select_type: Select type
+      property_type: Property type
+      year_built: Year Built (optional)
+      year_placeholder: '1990'
+      area: Area (optional)
+      area_placeholder: '1200'
+      area_unit: Area Unit

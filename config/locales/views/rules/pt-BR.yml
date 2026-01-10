@@ -63,6 +63,7 @@ pt-BR:
       description: Revise e confirme a configuração da regra
       confirm: Confirmar
       cancel: Cancelar
+      confirm_changes: Confirmar alterações
     category_rule_cta:
       create_rule: Criar regra
       dismiss: Dispensar

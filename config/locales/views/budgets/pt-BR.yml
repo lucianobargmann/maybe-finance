@@ -24,3 +24,6 @@ pt-BR:
     over_allocation_warning:
       message: Você alocou mais do que o disponível no orçamento. Por favor, corrija suas alocações.
       fix_allocations: Corrigir alocações
+    budget_donut:
+      of_amount: "de %{amount}"
+      new_budget: Novo orçamento

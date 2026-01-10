@@ -10,6 +10,7 @@ pt-BR:
       qty: Quantidade
       submit: Adicionar transação
       ticker_placeholder: PETR4
+      ticker_symbol: Símbolo do ticker
       type: Tipo
     header:
       buy: Comprar

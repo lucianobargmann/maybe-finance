@@ -14,6 +14,7 @@ pt-BR:
       empty: Nenhum comerciante ainda
       new: Novo comerciante
       title: Comerciantes
+      new_merchant: Novo comerciante
     merchant:
       confirm_accept: Excluir comerciante
       confirm_body: Tem certeza de que deseja excluir este comerciante? Remover este comerciante desvinculará todas as transações associadas e pode afetar seus relatórios.
@@ -24,3 +25,6 @@ pt-BR:
       title: Novo comerciante
     update:
       success: Comerciante atualizado com sucesso
+    family_merchant:
+      edit: Editar
+      delete: Excluir

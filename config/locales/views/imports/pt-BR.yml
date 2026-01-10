@@ -7,29 +7,70 @@ pt-BR:
         errors_notice: Você tem erros nos seus dados. Passe o mouse sobre o erro para ver detalhes.
         errors_notice_mobile: Você tem erros nos seus dados. Toque na dica de erro para ver detalhes.
         title: Limpe seus dados
+        next_step: Próximo passo
     configurations:
+      account_import:
+        entity_type_label: Tipo de entidade
+        name_label: Nome
+        balance_label: Saldo
+        currency_label: Moeda
+        leave_empty: Deixar vazio
+        default: Padrão
+        apply_configuration: Aplicar configuração
       mint_import:
         date_format_label: Formato de data
-      show:
-        description: Selecione as colunas que correspondem a cada campo no seu CSV.
-        title: Configure sua importação
-      trade_import:
-        date_format_label: Formato de data
-      transaction_import:
-        date_format_label: Formato de data
         date_label: Data
-        select_column: Selecione a coluna
-        select_format: Selecione o formato
         amount_label: Valor
         currency_label: Moeda
         format_label: Formato
-        default: Padrao
-        amount_type_strategy_label: Estrategia de tipo de valor
-        select_strategy: Selecione a estrategia
-        incomes_positive: Receitas sao positivas
-        incomes_negative: Receitas sao negativas
+        leave_empty: Deixar vazio
+        select_format: Selecionar formato
+        incomes_positive: Receitas são positivas
+        incomes_negative: Receitas são negativas
+        account_optional_label: Conta (opcional)
+        name_optional_label: Nome (opcional)
+        category_optional_label: Categoria (opcional)
+        tags_optional_label: Tags (opcional)
+        apply_configuration: Aplicar configuração
+        preconfigured_notice: Pré-configuramos sua importação do Mint para você. Por favor, prossiga para o próximo passo.
+      show:
+        description: Selecione as colunas que correspondem a cada campo no seu CSV.
+        title: Configure sua importação
+        manually_configure: Configurar manualmente
+        apply_template: Aplicar modelo
+      trade_import:
+        date_format_label: Formato de data
+        date_label: Data
+        select_column: Selecionar coluna
+        quantity_label: Quantidade
+        buys_positive: Compras são quantidade positiva
+        buys_negative: Compras são quantidade negativa
+        currency_label: Moeda
+        default: Padrão
+        format_label: Formato
+        select_format: Selecionar formato
+        ticker_label: Ticker
+        stock_exchange_code_label: Código da bolsa
+        leave_empty: Deixar vazio
+        price_label: Preço
+        account_label: Conta
+        name_label: Nome
+        apply_configuration: Aplicar configuração
+      transaction_import:
+        date_format_label: Formato de data
+        date_label: Data
+        select_column: Selecionar coluna
+        select_format: Selecionar formato
+        amount_label: Valor
+        currency_label: Moeda
+        format_label: Formato
+        default: Padrão
+        amount_type_strategy_label: Estratégia de tipo de valor
+        select_strategy: Selecionar estratégia
+        incomes_positive: Receitas são positivas
+        incomes_negative: Receitas são negativas
         amount_type_label: Tipo de valor
-        select_convention: Selecione a convencao
+        select_convention: Selecionar convenção
         set: Definir
         as_amount_type_column: como coluna de tipo de valor
         as_income_value: como valor de "receita" (entrada)
@@ -39,7 +80,7 @@ pt-BR:
         tags_label: Tags
         notes_label: Notas
         leave_empty: Deixar vazio
-        apply_configuration: Aplicar configuracao
+        apply_configuration: Aplicar configuração
     confirms:
       mappings:
         create_account: Criar conta
@@ -48,6 +89,7 @@ pt-BR:
         no_accounts: Você ainda não tem nenhuma conta. Por favor, crie uma conta que possamos usar para linhas (não atribuídas) no seu CSV ou volte para a etapa Limpar e forneça um nome de conta que possamos usar.
         rows_label: Linhas
         unassigned_account: Precisa criar uma nova conta para linhas não atribuídas?
+        next: Próximo
       show:
         account_mapping_description: Atribua todas as contas do seu arquivo importado às contas existentes do Maybe. Você também pode adicionar novas contas ou deixá-las sem categoria.
         account_mapping_title: Atribua suas contas
@@ -66,12 +108,27 @@ pt-BR:
         instructions_4: Colunas marcadas com asterisco (*) são dados obrigatórios.
         instructions_5: Sem vírgulas, símbolos de moeda ou parênteses nos números.
         title: Importe seus dados
+        upload_csv: Enviar CSV
+        copy_paste: Copiar e Colar
+        account_optional: Conta (opcional)
+        multi_account: Importação multi-conta
+        browse: Procurar
+        add_csv_here: para adicionar seu arquivo CSV aqui
+        paste_csv_placeholder: Cole o conteúdo do seu arquivo CSV aqui
   imports:
+    failure:
+      title: Importação falhou
+      description: Por favor, verifique o formato do seu arquivo, se há erros e se todos os campos obrigatórios estão preenchidos, então volte e tente novamente.
+      try_again: Tentar novamente
     importing:
       title: Importação em andamento
       description: Sua importação está em andamento. Verifique o menu de importações para atualizações de status ou clique em 'Verificar status' para atualizar a página. Sinta-se à vontade para continuar usando o aplicativo.
       check_status: Verificar status
       back_to_dashboard: Voltar ao painel
+    revert_failure:
+      title: Reversão da importação falhou
+      description: Por favor, tente novamente ou entre em contato com o suporte.
+      try_again: Tentar novamente
     success:
       title: Importação bem-sucedida
       description: Seus dados importados foram adicionados com sucesso ao aplicativo e estão prontos para uso.
@@ -89,9 +146,12 @@ pt-BR:
       reverting: Revertendo
       uploading: Processando linhas
       view: Visualizar
+      revert: Reverter
+      revert_confirm_title: Reverter importação?
+      revert_confirm_body: Isso excluirá as transações que foram importadas, mas você ainda poderá revisar e reimportar seus dados a qualquer momento.
     index:
       imports: Importações
-      new: Nova importação
+      new_import: Nova importação
       title: Importações
     new:
       description: Você pode importar manualmente vários tipos de dados via CSV ou usar um dos nossos modelos de importação como Mint.
@@ -105,3 +165,4 @@ pt-BR:
     ready:
       description: Aqui está um resumo dos novos itens que serão adicionados à sua conta assim que você publicar esta importação.
       title: Confirme seus dados de importação
+      publish_import: Publicar importação

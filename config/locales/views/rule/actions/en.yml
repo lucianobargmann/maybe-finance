@@ -1,0 +1,6 @@
+---
+en:
+  rule:
+    actions:
+      action:
+        enter_value: Enter a value

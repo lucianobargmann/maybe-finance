@@ -3,6 +3,7 @@ pt-BR:
   accounts:
     account:
       troubleshoot: Solucionar problemas
+      complete_setup: Completar configuração
     sidebar:
       assets: Ativos
       debts: Dívidas
@@ -10,6 +11,8 @@ pt-BR:
       new_asset: Novo ativo
       new_debt: Nova dívida
       new_account: Nova conta
+    accountable_group:
+      new_item: Novo %{name}
     account_sidebar_tabs:
       missing_data_warning: Dados históricos ausentes
       missing_data_description: O Maybe usa a API Synth para buscar taxas de câmbio históricas, preços de títulos e muito mais. Esses dados são necessários para calcular saldos históricos precisos das contas.
@@ -73,7 +76,10 @@ pt-BR:
         new_balance: Novo saldo
         new_transaction: Nova transação
         no_entries: Nenhuma entrada encontrada
+        search_entries: Buscar lançamentos por nome
         title: Atividade
+      header:
+        complete_setup: Completar configuração
       chart:
         balance: Saldo
         owed: Valor devido
@@ -81,8 +87,10 @@ pt-BR:
         confirm_accept: Excluir "%{name}"
         confirm_body_html: "<p>Ao excluir esta conta, você apagará seu histórico de valores, afetando vários aspectos da sua conta geral. Esta ação terá um impacto direto nos cálculos do seu patrimônio líquido e nos gráficos da conta.</p><br /> <p>Após a exclusão, não há como restaurar as informações da conta porque você precisará adicioná-la como uma nova conta.</p>"
         confirm_title: Excluir conta?
+        delete_account: Excluir conta
         edit: Editar
         import: Importar transações
+        import_transactions: Importar transações
         manage: Gerenciar contas
     update:
       success: "Conta %{type} atualizada"

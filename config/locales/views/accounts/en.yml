@@ -3,6 +3,7 @@ en:
   accounts:
     account:
       troubleshoot: Troubleshoot
+      complete_setup: Complete setup
     sidebar:
       assets: Assets
       debts: Debts
@@ -10,6 +11,8 @@ en:
       new_asset: New asset
       new_debt: New debt
       new_account: New account
+    accountable_group:
+      new_item: New %{name}
     account_sidebar_tabs:
       missing_data_warning: Missing historical data
       missing_data_description: Maybe uses Synth API to fetch historical exchange rates, security prices, and more. This data is required to calculate accurate historical account balances.
@@ -73,7 +76,10 @@ en:
         new_balance: New balance
         new_transaction: New transaction
         no_entries: No entries found
+        search_entries: Search entries by name
         title: Activity
+      header:
+        complete_setup: Complete setup
       chart:
         balance: Balance
         owed: Amount owed
@@ -85,8 +91,10 @@ en:
           graphs.</p><br /> <p>After deletion, there is no way you'll be able to restore
           the account information because you'll need to add it as a new account.</p>"
         confirm_title: Delete account?
+        delete_account: Delete account
         edit: Edit
         import: Import transactions
+        import_transactions: Import transactions
         manage: Manage accounts
     update:
       success: "%{type} account updated"

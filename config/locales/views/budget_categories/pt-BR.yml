@@ -9,3 +9,7 @@ pt-BR:
       message: Você ainda não criou ou atribuiu nenhuma categoria de despesas às suas transações.
       use_defaults: Usar padrões (recomendado)
       new_category: Nova categoria
+    show:
+      view_all_transactions: Ver todas as transações da categoria
+    confirm_button:
+      confirm: Confirmar

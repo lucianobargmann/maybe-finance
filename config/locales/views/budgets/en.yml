@@ -24,3 +24,6 @@ en:
     over_allocation_warning:
       message: You have over-allocated your budget. Please fix your allocations.
       fix_allocations: Fix allocations
+    budget_donut:
+      of_amount: "of %{amount}"
+      new_budget: New budget

@@ -1,5 +1,8 @@
 ---
 pt-BR:
+  messages:
+    chat_form:
+      placeholder: "Pergunte qualquer coisa..."
   chats:
     ai_greeting:
       greeting: "Olá %{name}! Sou uma IA criada pelo Maybe para ajudar com suas finanças. Tenho acesso à web e aos dados da sua conta."
@@ -16,15 +19,19 @@ pt-BR:
       description_disabled_html: "Para usar o assistente de IA, você precisa definir a variável de ambiente <code class=\"bg-surface-inset px-1 py-0.5 rounded font-mono text-xs\">OPENAI_ACCESS_TOKEN</code> na sua instância auto-hospedada."
       enable_button: Ativar Maybe AI
       privacy_notice: Desative a qualquer momento. Todos os dados enviados aos nossos provedores de LLM são anonimizados.
+    chat:
+      edit_title: Editar titulo do chat
+      delete: Excluir chat
     chat_nav:
-      all_chats: Todas as conversas
-      start_new_chat: Iniciar nova conversa
-      edit_chat_title: Editar título da conversa
-      delete_chat: Excluir conversa
+      all_chats: Todos os chats
+      start_new: Iniciar novo chat
+      edit_title: Editar titulo do chat
+      delete: Excluir chat
     index:
       title: Conversas com IA
-      new_chat: Nova conversa
+      new_chat: Novo chat
     thinking_indicator:
       thinking: Pensando...
     error:
       error_occurred: Ocorreu um erro
+      retry: Tentar novamente

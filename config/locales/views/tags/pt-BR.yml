@@ -14,6 +14,7 @@ pt-BR:
       empty: Nenhuma tag ainda
       new: Nova tag
       tags: Tags
+      delete_all: Excluir tudo
     new:
       new: Nova tag
     tag:

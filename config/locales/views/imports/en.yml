@@ -9,14 +9,55 @@ en:
         errors_notice_mobile: You have errors in your data.  Tap over the error tooltip to see
           details.
         title: Clean your data
+        next_step: Next step
     configurations:
+      account_import:
+        entity_type_label: Entity Type
+        name_label: Name
+        balance_label: Balance
+        currency_label: Currency
+        leave_empty: Leave empty
+        default: Default
+        apply_configuration: Apply configuration
       mint_import:
         date_format_label: Date format
+        date_label: Date
+        amount_label: Amount
+        currency_label: Currency
+        format_label: Format
+        leave_empty: Leave empty
+        select_format: Select format
+        incomes_positive: Incomes are positive
+        incomes_negative: Incomes are negative
+        account_optional_label: Account (optional)
+        name_optional_label: Name (optional)
+        category_optional_label: Category (optional)
+        tags_optional_label: Tags (optional)
+        apply_configuration: Apply configuration
+        preconfigured_notice: We have pre-configured your Mint import for you. Please proceed to the next step.
       show:
         description: Select the columns that correspond to each field in your CSV.
         title: Configure your import
+        manually_configure: Manually configure
+        apply_template: Apply template
       trade_import:
         date_format_label: Date format
+        date_label: Date
+        select_column: Select column
+        quantity_label: Quantity
+        buys_positive: Buys are positive qty
+        buys_negative: Buys are negative qty
+        currency_label: Currency
+        default: Default
+        format_label: Format
+        select_format: Select format
+        ticker_label: Ticker
+        stock_exchange_code_label: Stock exchange code
+        leave_empty: Leave empty
+        price_label: Price
+        account_label: Account
+        name_label: Name
+        apply_configuration: Apply configuration
       transaction_import:
         date_format_label: Date format
         date_label: Date
@@ -52,6 +93,7 @@ en:
           and provide an account name we can use.
         rows_label: Rows
         unassigned_account: Need to create a new account for unassigned rows?
+        next: Next
       show:
         account_mapping_description: Assign all of your imported file's accounts to
           Maybe's existing accounts.  You can also add new accounts or leave them
@@ -78,12 +120,27 @@ en:
         instructions_4: Columns marked with an asterisk (*) are required data.
         instructions_5: No commas, no currency symbols, and no parentheses in numbers.
         title: Import your data
+        upload_csv: Upload CSV
+        copy_paste: Copy & Paste
+        account_optional: Account (optional)
+        multi_account: Multi-account import
+        browse: Browse
+        add_csv_here: to add your CSV file here
+        paste_csv_placeholder: Paste your CSV file contents here
   imports:
+    failure:
+      title: Import failed
+      description: Please check that your file format, for any errors and that all required fields are filled, then come back and try again.
+      try_again: Try again
     importing:
       title: Import in progress
       description: Your import is in progress. Check the imports menu for status updates or click 'Check Status' to refresh the page for updates. Feel free to continue using the app.
       check_status: Check status
       back_to_dashboard: Back to dashboard
+    revert_failure:
+      title: Reverting import failed
+      description: Please try again or contact support.
+      try_again: Try again
     success:
       title: Import successful
       description: Your imported data has been successfully added to the app and is now ready for use.
@@ -101,9 +158,12 @@ en:
       reverting: Reverting
       uploading: Processing rows
       view: View
+      revert: Revert
+      revert_confirm_title: Revert import?
+      revert_confirm_body: This will delete transactions that were imported, but you will still be able to review and re-import your data at any time.
     index:
       imports: Imports
-      new: New import
+      new_import: New import
       title: Imports
     new:
       description: You can manually import various types of data via CSV or use one
@@ -119,3 +179,4 @@ en:
       description: Here's a summary of the new items that will be added to your account
         once you publish this import.
       title: Confirm your import data
+      publish_import: Publish import

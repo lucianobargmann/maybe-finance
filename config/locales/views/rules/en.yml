@@ -63,6 +63,7 @@ en:
       description: Review and confirm the rule configuration
       confirm: Confirm
       cancel: Cancel
+      confirm_changes: Confirm changes
     category_rule_cta:
       create_rule: Create rule
       dismiss: Dismiss

@@ -1,5 +1,8 @@
 ---
 en:
+  messages:
+    chat_form:
+      placeholder: "Ask anything ..."
   chats:
     ai_greeting:
       greeting: "Hey %{name}! I'm an AI built by Maybe to help with your finances. I have access to the web and your account data."
@@ -16,11 +19,14 @@ en:
       description_disabled_html: "To use the AI assistant, you need to set the <code class=\"bg-surface-inset px-1 py-0.5 rounded font-mono text-xs\">OPENAI_ACCESS_TOKEN</code> environment variable in your self-hosted instance."
       enable_button: Enable Maybe AI
       privacy_notice: Disable anytime. All data sent to our LLM providers is anonymized.
+    chat:
+      edit_title: Edit chat title
+      delete: Delete chat
     chat_nav:
       all_chats: All chats
-      start_new_chat: Start new chat
-      edit_chat_title: Edit chat title
-      delete_chat: Delete chat
+      start_new: Start new chat
+      edit_title: Edit chat title
+      delete: Delete chat
     index:
       title: AI Chats
       new_chat: New chat
@@ -28,3 +34,4 @@ en:
       thinking: Thinking...
     error:
       error_occurred: An error occurred
+      retry: Retry
