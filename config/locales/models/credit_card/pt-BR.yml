@@ -2,17 +2,17 @@
 pt-BR:
   activerecord:
     models:
-      credit_card: Cartao de Credito
+      credit_card: Cartão de Crédito
     attributes:
       credit_card:
         subtype: Tipo
-        available_credit: Credito disponivel
-        minimum_payment: Pagamento minimo
+        available_credit: Crédito disponível
+        minimum_payment: Pagamento mínimo
         annual_fee: Anuidade
         apr: Taxa de juros anual
         expiration_date: Data de validade
   credit_card:
     subtypes:
       credit_card:
-        short: Cartao de Credito
-        long: Cartao de Credito
+        short: Cartão de Crédito
+        long: Cartão de Crédito

@@ -7,7 +7,7 @@
                   required: true %>
 
   <%= form.select :subtype,
-                Property::SUBTYPES.map { |k, v| [v[:long], k] },
+                Property.subtypes.map { |k, v| [v[:long], k] },
                 { prompt: t(".select_type"), label: t(".property_type") }, required: true %>
 
   <%= form.hidden_field :accountable_type, value: "Property" %>

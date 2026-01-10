@@ -1,19 +1,24 @@
 class Investment < ApplicationRecord
   include Accountable
 
-  SUBTYPES = {
-    "brokerage" => { short: "Brokerage", long: "Brokerage" },
-    "pension" => { short: "Pension", long: "Pension" },
-    "retirement" => { short: "Retirement", long: "Retirement" },
-    "401k" => { short: "401(k)", long: "401(k)" },
-    "roth_401k" => { short: "Roth 401(k)", long: "Roth 401(k)" },
-    "529_plan" => { short: "529 Plan", long: "529 Plan" },
-    "hsa" => { short: "HSA", long: "Health Savings Account" },
-    "mutual_fund" => { short: "Mutual Fund", long: "Mutual Fund" },
-    "ira" => { short: "IRA", long: "Traditional IRA" },
-    "roth_ira" => { short: "Roth IRA", long: "Roth IRA" },
-    "angel" => { short: "Angel", long: "Angel" }
-  }.freeze
+  SUBTYPE_KEYS = %w[brokerage pension retirement 401k roth_401k 529_plan hsa mutual_fund ira roth_ira angel].freeze
+
+  def self.subtypes
+    SUBTYPE_KEYS.index_with do |key|
+      {
+        short: I18n.t("investment.subtypes.#{key}.short"),
+        long: I18n.t("investment.subtypes.#{key}.long")
+      }
+    end
+  end
+
+  # For backwards compatibility
+  SUBTYPES = SUBTYPE_KEYS.index_with do |key|
+    {
+      short: I18n.t("investment.subtypes.#{key}.short", locale: :en),
+      long: I18n.t("investment.subtypes.#{key}.long", locale: :en)
+    }
+  end.freeze
 
   class << self
     def color

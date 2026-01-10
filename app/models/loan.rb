@@ -1,12 +1,24 @@
 class Loan < ApplicationRecord
   include Accountable
 
-  SUBTYPES = {
-    "mortgage" => { short: "Mortgage", long: "Mortgage" },
-    "student" => { short: "Student", long: "Student Loan" },
-    "auto" => { short: "Auto", long: "Auto Loan" },
-    "other" => { short: "Other", long: "Other Loan" }
-  }.freeze
+  SUBTYPE_KEYS = %w[mortgage student auto other].freeze
+
+  def self.subtypes
+    SUBTYPE_KEYS.index_with do |key|
+      {
+        short: I18n.t("loan.subtypes.#{key}.short"),
+        long: I18n.t("loan.subtypes.#{key}.long")
+      }
+    end
+  end
+
+  # For backwards compatibility
+  SUBTYPES = SUBTYPE_KEYS.index_with do |key|
+    {
+      short: I18n.t("loan.subtypes.#{key}.short", locale: :en),
+      long: I18n.t("loan.subtypes.#{key}.long", locale: :en)
+    }
+  end.freeze
 
   def monthly_payment
     return nil if term_months.nil? || interest_rate.nil? || rate_type.nil? || rate_type != "fixed"

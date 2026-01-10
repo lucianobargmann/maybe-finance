@@ -1,13 +1,24 @@
 class Depository < ApplicationRecord
   include Accountable
 
-  SUBTYPES = {
-    "checking" => { short: "Checking", long: "Checking" },
-    "savings" => { short: "Savings", long: "Savings" },
-    "hsa" => { short: "HSA", long: "Health Savings Account" },
-    "cd" => { short: "CD", long: "Certificate of Deposit" },
-    "money_market" => { short: "MM", long: "Money Market" }
-  }.freeze
+  SUBTYPE_KEYS = %w[checking savings hsa cd money_market].freeze
+
+  def self.subtypes
+    SUBTYPE_KEYS.index_with do |key|
+      {
+        short: I18n.t("depository.subtypes.#{key}.short"),
+        long: I18n.t("depository.subtypes.#{key}.long")
+      }
+    end
+  end
+
+  # For backwards compatibility
+  SUBTYPES = SUBTYPE_KEYS.index_with do |key|
+    {
+      short: I18n.t("depository.subtypes.#{key}.short", locale: :en),
+      long: I18n.t("depository.subtypes.#{key}.long", locale: :en)
+    }
+  end.freeze
 
   class << self
     def display_name

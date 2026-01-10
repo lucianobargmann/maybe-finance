@@ -1,14 +1,24 @@
 class Property < ApplicationRecord
   include Accountable
 
-  SUBTYPES = {
-    "single_family_home" => { short: "Single Family Home", long: "Single Family Home" },
-    "multi_family_home" => { short: "Multi-Family Home", long: "Multi-Family Home" },
-    "condominium" => { short: "Condo", long: "Condominium" },
-    "townhouse" => { short: "Townhouse", long: "Townhouse" },
-    "investment_property" => { short: "Investment Property", long: "Investment Property" },
-    "second_home" => { short: "Second Home", long: "Second Home" }
-  }.freeze
+  SUBTYPE_KEYS = %w[single_family_home multi_family_home condominium townhouse investment_property second_home].freeze
+
+  def self.subtypes
+    SUBTYPE_KEYS.index_with do |key|
+      {
+        short: I18n.t("property.subtypes.#{key}.short"),
+        long: I18n.t("property.subtypes.#{key}.long")
+      }
+    end
+  end
+
+  # For backwards compatibility
+  SUBTYPES = SUBTYPE_KEYS.index_with do |key|
+    {
+      short: I18n.t("property.subtypes.#{key}.short", locale: :en),
+      long: I18n.t("property.subtypes.#{key}.long", locale: :en)
+    }
+  end.freeze
 
   has_one :address, as: :addressable, dependent: :destroy
 

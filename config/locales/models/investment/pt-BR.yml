@@ -18,26 +18,26 @@ pt-BR:
         short: Aposentadoria
         long: Aposentadoria
       "401k":
-        short: 401(k)
-        long: 401(k)
+        short: Renda Fixa
+        long: Renda Fixa (CDB, LCI, LCA, Tesouro)
       roth_401k:
-        short: Roth 401(k)
-        long: Roth 401(k)
+        short: Renda Variável
+        long: Renda Variável (Ações, FIIs)
       "529_plan":
-        short: Plano 529
-        long: Plano 529
+        short: Fundos
+        long: Fundos de Investimento
       hsa:
-        short: HSA
-        long: Conta Poupança Saúde
+        short: Reserva
+        long: Reserva de Emergência
       mutual_fund:
-        short: Fundo Mútuo
-        long: Fundo Mútuo
+        short: Fundos
+        long: Fundos de Investimento
       ira:
-        short: IRA
-        long: IRA Tradicional
+        short: Tesouro
+        long: Tesouro Direto
       roth_ira:
-        short: Roth IRA
-        long: Roth IRA
+        short: Ações
+        long: Ações e ETFs
       angel:
         short: Anjo
         long: Investimento Anjo
