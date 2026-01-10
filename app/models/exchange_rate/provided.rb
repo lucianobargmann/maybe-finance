@@ -4,7 +4,26 @@ module ExchangeRate::Provided
   class_methods do
     def provider
       registry = Provider::Registry.for_concept(:exchange_rates)
-      registry.get_provider(:synth)
+      
+      # Try to get the preferred provider from settings, fallback to synth
+      preferred_provider = Setting.exchange_rate_provider&.to_sym
+      
+      if preferred_provider.present?
+        begin
+          registry.get_provider(preferred_provider)
+        rescue Provider::Registry::Error
+          Rails.logger.warn("Configured exchange rate provider '#{preferred_provider}' not available, falling back to synth")
+          registry.get_provider(:synth)
+        end
+      else
+        # Default to synth if no preference is set
+        registry.get_provider(:synth)
+      end
+    end
+
+    def available_providers
+      registry = Provider::Registry.for_concept(:exchange_rates)
+      registry.providers.compact
     end
 
     def find_or_fetch_rate(from:, to:, date: Date.current, cache: true)

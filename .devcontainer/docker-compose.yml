@@ -1,6 +1,8 @@
+name: maybe-finance_devcontainer
+
 x-db-env: &db_env
   POSTGRES_USER: postgres
-  POSTGRES_DB: postgres
+  POSTGRES_DB: maybe_development
   POSTGRES_PASSWORD: postgres
 
 x-rails-env: &rails_env
@@ -8,6 +10,7 @@ x-rails-env: &rails_env
   HOST: "0.0.0.0"
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: postgres
+  POSTGRES_DB: maybe_development
   BUNDLE_PATH: /bundle
   REDIS_URL: redis://redis:6379/1
 
@@ -22,12 +25,14 @@ services:
       - bundle_cache:/bundle
 
     ports:
-      - "3000:3000"
+      - "3008:3000"
 
-    command: sleep infinity
+    command: bash -c "cd /workspace && bundle install && npm install && bundle exec rails server -b 0.0.0.0 -p 3000"
 
     environment:
       <<: *rails_env
+      RAILS_ENV: development
+      PORT: 3000
 
     depends_on:
       - db
@@ -37,10 +42,14 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    command: bundle exec sidekiq
+    command: bash -c "cd /workspace && bundle install && bundle exec sidekiq"
     restart: unless-stopped
+    volumes:
+      - ..:/workspace:cached
+      - bundle_cache:/bundle
     environment:
       <<: *rails_env
+      RAILS_ENV: development
     depends_on:
       - redis
 
@@ -55,13 +64,14 @@ services:
     image: postgres:latest
     restart: unless-stopped
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - devcontainer_postgres-data:/var/lib/postgresql/data
     environment:
       <<: *db_env
     ports:
       - "5432:5432"
 
 volumes:
-  postgres-data:
+  devcontainer_postgres-data:
+    external: true
   redis-data:
   bundle_cache:

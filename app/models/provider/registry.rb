@@ -67,6 +67,14 @@ class Provider::Registry
 
         Provider::Openai.new(access_token)
       end
+
+      def exchangerate_api
+        api_key = ENV.fetch("EXCHANGERATE_API_KEY", Setting.exchangerate_api_key)
+
+        return nil unless api_key.present?
+
+        Provider::ExchangeRateApi.new(api_key)
+      end
   end
 
   def initialize(concept)
@@ -92,13 +100,13 @@ class Provider::Registry
     def available_providers
       case concept
       when :exchange_rates
-        %i[synth]
+        %i[synth exchangerate_api]
       when :securities
         %i[synth]
       when :llm
         %i[openai]
       else
-        %i[synth plaid_us plaid_eu github openai]
+        %i[synth plaid_us plaid_eu github openai exchangerate_api]
       end
     end
 end
