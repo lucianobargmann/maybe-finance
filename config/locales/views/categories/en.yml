@@ -40,20 +40,41 @@ en:
     update:
       success: Category updated successfully
     default_categories:
+      # Income
       income: Income
-      loan_payments: Loan Payments
-      fees: Fees
-      entertainment: Entertainment
+      # 6 Jars - Top level categories
+      necessities: Necessities (55%)
+      financial_freedom: Financial Freedom (10%)
+      education: Education (10%)
+      long_term_savings: Long-term Savings (10%)
+      play: Play (10%)
+      give: Give (5%)
+      # Subcategories under Necessities
+      rent_and_utilities: Rent & Utilities
       food_and_drink: Food & Drink
-      shopping: Shopping
-      home_improvement: Home Improvement
+      transportation: Transportation
       healthcare: Healthcare
       personal_care: Personal Care
+      loan_payments: Loan Payments
+      fees: Fees
       services: Services
-      gifts_and_donations: Gifts & Donations
-      transportation: Transportation
+      # Subcategories under Financial Freedom
+      investments: Investments
+      # Subcategories under Education
+      courses: Courses
+      books: Books
+      # Subcategories under Long-term Savings
+      emergency_fund: Emergency Fund
       travel: Travel
-      rent_and_utilities: Rent & Utilities
+      home_improvement: Home Improvement
+      # Subcategories under Play
+      entertainment: Entertainment
+      shopping: Shopping
+      dining_out: Dining Out
+      # Subcategories under Give
+      gifts_and_donations: Gifts & Donations
+      charity: Charity
+      # Other
       uncategorized: Uncategorized
   category:
     dropdowns:

@@ -1,0 +1,31 @@
+---
+pt-BR:
+  breadcrumbs:
+    home: Início
+    dashboard: Painel
+    accounts: Contas
+    transactions: Transações
+    budgets: Orçamentos
+    categories: Categorias
+    tags: Tags
+    rules: Regras
+    merchants: Comerciantes
+    imports: Importações
+    settings: Configurações
+    chats: Assistente
+    transfers: Transferências
+    holdings: Ativos
+    trades: Operações
+    valuations: Avaliações
+    depositories: Contas Correntes
+    investments: Investimentos
+    properties: Imóveis
+    vehicles: Veículos
+    credit_cards: Cartões de Crédito
+    loans: Empréstimos
+    cryptos: Criptomoedas
+    other_assets: Outros Ativos
+    other_liabilities: Outros Passivos
+    invitations: Convites
+    family_exports: Exportações
+    plaid_items: Contas Conectadas

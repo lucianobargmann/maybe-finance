@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
     @cashflow_sankey_data = build_cashflow_sankey_data(income_totals, expense_totals, family_currency)
 
-    @breadcrumbs = [ [ "Home", root_path ], [ "Dashboard", nil ] ]
+    @breadcrumbs = [ [ I18n.t("breadcrumbs.home"), root_path ], [ I18n.t("breadcrumbs.dashboard"), nil ] ]
   end
 
   def changelog
@@ -41,6 +41,10 @@ class PagesController < ApplicationController
       }
     end
 
+    render layout: "settings"
+  end
+
+  def user_guide
     render layout: "settings"
   end
 

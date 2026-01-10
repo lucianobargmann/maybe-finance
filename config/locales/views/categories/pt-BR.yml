@@ -40,20 +40,41 @@ pt-BR:
     update:
       success: Categoria atualizada com sucesso
     default_categories:
+      # Receita
       income: Receita
-      loan_payments: Pagamentos de Empréstimo
-      fees: Taxas
-      entertainment: Entretenimento
+      # 6 Potes - Categorias principais
+      necessities: Necessidades (55%)
+      financial_freedom: Liberdade Financeira (10%)
+      education: Educação (10%)
+      long_term_savings: Poupança de Longo Prazo (10%)
+      play: Diversão (10%)
+      give: Doação (5%)
+      # Subcategorias de Necessidades
+      rent_and_utilities: Aluguel e Contas
       food_and_drink: Alimentação
-      shopping: Compras
-      home_improvement: Melhorias da Casa
+      transportation: Transporte
       healthcare: Saúde
       personal_care: Cuidados Pessoais
+      loan_payments: Pagamentos de Empréstimo
+      fees: Taxas
       services: Serviços
-      gifts_and_donations: Presentes e Doações
-      transportation: Transporte
+      # Subcategorias de Liberdade Financeira
+      investments: Investimentos
+      # Subcategorias de Educação
+      courses: Cursos
+      books: Livros
+      # Subcategorias de Poupança de Longo Prazo
+      emergency_fund: Reserva de Emergência
       travel: Viagens
-      rent_and_utilities: Aluguel e Utilidades
+      home_improvement: Melhorias da Casa
+      # Subcategorias de Diversão
+      entertainment: Entretenimento
+      shopping: Compras
+      dining_out: Restaurantes
+      # Subcategorias de Doação
+      gifts_and_donations: Presentes e Doações
+      charity: Caridade
+      # Outros
       uncategorized: Não Categorizado
   category:
     dropdowns:

@@ -1,0 +1,31 @@
+---
+en:
+  breadcrumbs:
+    home: Home
+    dashboard: Dashboard
+    accounts: Accounts
+    transactions: Transactions
+    budgets: Budgets
+    categories: Categories
+    tags: Tags
+    rules: Rules
+    merchants: Merchants
+    imports: Imports
+    settings: Settings
+    chats: Assistant
+    transfers: Transfers
+    holdings: Holdings
+    trades: Trades
+    valuations: Valuations
+    depositories: Checking Accounts
+    investments: Investments
+    properties: Properties
+    vehicles: Vehicles
+    credit_cards: Credit Cards
+    loans: Loans
+    cryptos: Crypto
+    other_assets: Other Assets
+    other_liabilities: Other Liabilities
+    invitations: Invitations
+    family_exports: Exports
+    plaid_items: Connected Accounts

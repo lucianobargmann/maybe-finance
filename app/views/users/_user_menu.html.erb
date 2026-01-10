@@ -32,6 +32,7 @@
 
     <% menu.with_item(variant: "link", text: t("users.user_menu.settings"), icon: "settings", href: settings_profile_path(return_to: request.fullpath)) %>
     <% menu.with_item(variant: "link", text: t("users.user_menu.changelog"), icon: "box", href: changelog_path) %>
+    <% menu.with_item(variant: "link", text: t("users.user_menu.user_guide"), icon: "book-open", href: user_guide_path) %>
 
     <% if self_hosted? %>
       <% menu.with_item(variant: "link", text: t("users.user_menu.feedback"), icon: "megaphone", href: feedback_path) %>

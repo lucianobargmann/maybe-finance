@@ -1,0 +1,318 @@
+<%= content_for :page_title, t(".title") %>
+
+<div class="bg-container shadow-border-xs rounded-xl p-6 grow overflow-y-auto">
+  <div class="max-w-4xl mx-auto prose prose-sm">
+    <h1 class="text-2xl font-bold text-primary mb-6"><%= t(".heading") %></h1>
+
+    <p class="text-secondary mb-8 text-base">
+      <%= t(".intro") %>
+    </p>
+
+    <!-- Table of Contents -->
+    <div class="bg-surface-inset rounded-lg p-4 mb-8">
+      <h2 class="text-lg font-semibold text-primary mb-3"><%= t(".toc.title") %></h2>
+      <ol class="list-decimal list-inside space-y-1 text-secondary">
+        <li><a href="#what-is" class="text-link hover:underline"><%= t(".toc.what_is") %></a></li>
+        <li><a href="#first-steps" class="text-link hover:underline"><%= t(".toc.first_steps") %></a></li>
+        <li><a href="#accounts" class="text-link hover:underline"><%= t(".toc.accounts") %></a></li>
+        <li><a href="#transactions" class="text-link hover:underline"><%= t(".toc.transactions") %></a></li>
+        <li><a href="#categories" class="text-link hover:underline"><%= t(".toc.categories") %></a></li>
+        <li><a href="#dashboard" class="text-link hover:underline"><%= t(".toc.dashboard") %></a></li>
+        <li><a href="#budgets" class="text-link hover:underline"><%= t(".toc.budgets") %></a></li>
+        <li><a href="#jars" class="text-link hover:underline"><%= t(".toc.jars") %></a></li>
+        <li><a href="#daily" class="text-link hover:underline"><%= t(".toc.daily") %></a></li>
+        <li><a href="#tips" class="text-link hover:underline"><%= t(".toc.tips") %></a></li>
+      </ol>
+    </div>
+
+    <!-- Section 1: What is Maybe -->
+    <section id="what-is" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "info", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.what_is.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.what_is.description") %></p>
+      <ul class="list-disc list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.what_is.feature_1") %></li>
+        <li><%= t(".sections.what_is.feature_2") %></li>
+        <li><%= t(".sections.what_is.feature_3") %></li>
+        <li><%= t(".sections.what_is.feature_4") %></li>
+      </ul>
+    </section>
+
+    <!-- Section 2: First Steps -->
+    <section id="first-steps" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "rocket", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.first_steps.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.first_steps.description") %></p>
+      <ol class="list-decimal list-inside text-secondary space-y-3 ml-4">
+        <li>
+          <strong><%= t(".sections.first_steps.step_1_title") %></strong>
+          <p class="ml-6 mt-1"><%= t(".sections.first_steps.step_1_desc") %></p>
+        </li>
+        <li>
+          <strong><%= t(".sections.first_steps.step_2_title") %></strong>
+          <p class="ml-6 mt-1"><%= t(".sections.first_steps.step_2_desc") %></p>
+        </li>
+        <li>
+          <strong><%= t(".sections.first_steps.step_3_title") %></strong>
+          <p class="ml-6 mt-1"><%= t(".sections.first_steps.step_3_desc") %></p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Section 3: Accounts -->
+    <section id="accounts" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "wallet", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.accounts.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.accounts.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.accounts.types_title") %></h3>
+      <ul class="list-disc list-inside text-secondary space-y-2 ml-4">
+        <li><strong><%= t(".sections.accounts.type_checking") %>:</strong> <%= t(".sections.accounts.type_checking_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_savings") %>:</strong> <%= t(".sections.accounts.type_savings_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_credit") %>:</strong> <%= t(".sections.accounts.type_credit_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_investment") %>:</strong> <%= t(".sections.accounts.type_investment_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_property") %>:</strong> <%= t(".sections.accounts.type_property_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_vehicle") %>:</strong> <%= t(".sections.accounts.type_vehicle_desc") %></li>
+        <li><strong><%= t(".sections.accounts.type_loan") %>:</strong> <%= t(".sections.accounts.type_loan_desc") %></li>
+      </ul>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.accounts.how_to_add") %></h3>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.accounts.add_step_1") %></li>
+        <li><%= t(".sections.accounts.add_step_2") %></li>
+        <li><%= t(".sections.accounts.add_step_3") %></li>
+        <li><%= t(".sections.accounts.add_step_4") %></li>
+      </ol>
+    </section>
+
+    <!-- Section 4: Transactions -->
+    <section id="transactions" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "receipt", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.transactions.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.transactions.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.transactions.add_title") %></h3>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.transactions.add_step_1") %></li>
+        <li><%= t(".sections.transactions.add_step_2") %></li>
+        <li><%= t(".sections.transactions.add_step_3") %></li>
+        <li><%= t(".sections.transactions.add_step_4") %></li>
+        <li><%= t(".sections.transactions.add_step_5") %></li>
+      </ol>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.transactions.import_title") %></h3>
+      <p class="text-secondary mb-4"><%= t(".sections.transactions.import_desc") %></p>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.transactions.import_step_1") %></li>
+        <li><%= t(".sections.transactions.import_step_2") %></li>
+        <li><%= t(".sections.transactions.import_step_3") %></li>
+        <li><%= t(".sections.transactions.import_step_4") %></li>
+      </ol>
+    </section>
+
+    <!-- Section 5: Categories -->
+    <section id="categories" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "tag", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.categories.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.categories.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.categories.examples_title") %></h3>
+      <ul class="list-disc list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.categories.example_1") %></li>
+        <li><%= t(".sections.categories.example_2") %></li>
+        <li><%= t(".sections.categories.example_3") %></li>
+        <li><%= t(".sections.categories.example_4") %></li>
+        <li><%= t(".sections.categories.example_5") %></li>
+      </ul>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.categories.create_title") %></h3>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.categories.create_step_1") %></li>
+        <li><%= t(".sections.categories.create_step_2") %></li>
+        <li><%= t(".sections.categories.create_step_3") %></li>
+      </ol>
+
+      <div class="bg-surface-inset rounded-lg p-4 mt-4">
+        <p class="text-secondary">
+          <strong><%= t(".sections.categories.tip_title") %>:</strong> <%= t(".sections.categories.tip_desc") %>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 6: Dashboard -->
+    <section id="dashboard" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "layout-dashboard", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.dashboard.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.dashboard.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.dashboard.elements_title") %></h3>
+      <ul class="list-disc list-inside text-secondary space-y-3 ml-4">
+        <li>
+          <strong><%= t(".sections.dashboard.element_networth") %>:</strong>
+          <%= t(".sections.dashboard.element_networth_desc") %>
+        </li>
+        <li>
+          <strong><%= t(".sections.dashboard.element_cashflow") %>:</strong>
+          <%= t(".sections.dashboard.element_cashflow_desc") %>
+        </li>
+        <li>
+          <strong><%= t(".sections.dashboard.element_accounts") %>:</strong>
+          <%= t(".sections.dashboard.element_accounts_desc") %>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section 7: Budgets -->
+    <section id="budgets" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "piggy-bank", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.budgets.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.budgets.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.budgets.how_to_title") %></h3>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.budgets.step_1") %></li>
+        <li><%= t(".sections.budgets.step_2") %></li>
+        <li><%= t(".sections.budgets.step_3") %></li>
+        <li><%= t(".sections.budgets.step_4") %></li>
+      </ol>
+
+      <div class="bg-surface-inset rounded-lg p-4 mt-4">
+        <p class="text-secondary">
+          <strong><%= t(".sections.budgets.tip_title") %>:</strong> <%= t(".sections.budgets.tip_desc") %>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 8: 6 Jars Method -->
+    <section id="jars" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "package", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.jars.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.jars.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.jars.jars_title") %></h3>
+      <div class="space-y-3">
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-blue-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_1_name") %> - 55%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_1_desc") %></p>
+        </div>
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-green-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_2_name") %> - 10%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_2_desc") %></p>
+        </div>
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-yellow-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_3_name") %> - 10%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_3_desc") %></p>
+        </div>
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-purple-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_4_name") %> - 10%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_4_desc") %></p>
+        </div>
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-pink-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_5_name") %> - 10%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_5_desc") %></p>
+        </div>
+        <div class="bg-surface-inset rounded-lg p-4 border-l-4 border-orange-500">
+          <p class="font-medium text-primary"><%= t(".sections.jars.jar_6_name") %> - 5%</p>
+          <p class="text-secondary text-sm"><%= t(".sections.jars.jar_6_desc") %></p>
+        </div>
+      </div>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.jars.how_to_title") %></h3>
+      <ol class="list-decimal list-inside text-secondary space-y-2 ml-4">
+        <li><%= t(".sections.jars.step_1") %></li>
+        <li><%= t(".sections.jars.step_2") %></li>
+        <li><%= t(".sections.jars.step_3") %></li>
+        <li><%= t(".sections.jars.step_4") %></li>
+        <li><%= t(".sections.jars.step_5") %></li>
+      </ol>
+
+      <div class="bg-surface-inset rounded-lg p-4 mt-4">
+        <p class="text-secondary">
+          <strong><%= t(".sections.jars.example_title") %>:</strong> <%= t(".sections.jars.example_desc") %>
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 9: Daily Activities -->
+    <section id="daily" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "calendar-check", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.daily.title") %>
+      </h2>
+      <p class="text-secondary mb-4"><%= t(".sections.daily.description") %></p>
+
+      <h3 class="text-lg font-medium text-primary mb-2 mt-6"><%= t(".sections.daily.routine_title") %></h3>
+      <ul class="list-disc list-inside text-secondary space-y-3 ml-4">
+        <li>
+          <strong><%= t(".sections.daily.daily_title") %>:</strong>
+          <%= t(".sections.daily.daily_desc") %>
+        </li>
+        <li>
+          <strong><%= t(".sections.daily.weekly_title") %>:</strong>
+          <%= t(".sections.daily.weekly_desc") %>
+        </li>
+        <li>
+          <strong><%= t(".sections.daily.monthly_title") %>:</strong>
+          <%= t(".sections.daily.monthly_desc") %>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Section 9: Tips -->
+    <section id="tips" class="mb-10">
+      <h2 class="text-xl font-semibold text-primary mb-4 flex items-center gap-2">
+        <%= icon "lightbulb", class: "w-5 h-5 text-secondary" %>
+        <%= t(".sections.tips.title") %>
+      </h2>
+
+      <div class="space-y-4">
+        <div class="bg-surface-inset rounded-lg p-4">
+          <h3 class="font-medium text-primary mb-2"><%= t(".sections.tips.tip_1_title") %></h3>
+          <p class="text-secondary"><%= t(".sections.tips.tip_1_desc") %></p>
+        </div>
+
+        <div class="bg-surface-inset rounded-lg p-4">
+          <h3 class="font-medium text-primary mb-2"><%= t(".sections.tips.tip_2_title") %></h3>
+          <p class="text-secondary"><%= t(".sections.tips.tip_2_desc") %></p>
+        </div>
+
+        <div class="bg-surface-inset rounded-lg p-4">
+          <h3 class="font-medium text-primary mb-2"><%= t(".sections.tips.tip_3_title") %></h3>
+          <p class="text-secondary"><%= t(".sections.tips.tip_3_desc") %></p>
+        </div>
+
+        <div class="bg-surface-inset rounded-lg p-4">
+          <h3 class="font-medium text-primary mb-2"><%= t(".sections.tips.tip_4_title") %></h3>
+          <p class="text-secondary"><%= t(".sections.tips.tip_4_desc") %></p>
+        </div>
+
+        <div class="bg-surface-inset rounded-lg p-4">
+          <h3 class="font-medium text-primary mb-2"><%= t(".sections.tips.tip_5_title") %></h3>
+          <p class="text-secondary"><%= t(".sections.tips.tip_5_desc") %></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help Section -->
+    <section class="bg-surface-inset rounded-lg p-6 text-center">
+      <h2 class="text-lg font-semibold text-primary mb-2"><%= t(".help.title") %></h2>
+      <p class="text-secondary"><%= t(".help.description") %></p>
+    </section>
+  </div>
+</div>

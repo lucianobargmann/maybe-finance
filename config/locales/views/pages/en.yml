@@ -1,6 +1,161 @@
 ---
 en:
   pages:
+    user_guide:
+      title: User Guide
+      heading: User Guide
+      intro: Welcome to Maybe! This guide will help you get started and make the most of your personal finance management. Follow these simple steps to organize your finances.
+      toc:
+        title: Table of Contents
+        what_is: What is Maybe?
+        first_steps: First Steps
+        accounts: Managing Accounts
+        transactions: Transactions
+        categories: Categories and Tags
+        dashboard: Dashboard
+        budgets: Budgets
+        jars: The 6 Jars Method
+        daily: Daily Activities
+        tips: Tips and Best Practices
+      sections:
+        what_is:
+          title: What is Maybe?
+          description: "Maybe is your personal financial assistant. It helps you track all your money in one place: bank accounts, credit cards, investments, properties, and more."
+          feature_1: See all your accounts in one place
+          feature_2: Track your spending by category
+          feature_3: Monitor your net worth over time
+          feature_4: Set and track budgets
+        first_steps:
+          title: First Steps
+          description: After your first login, follow these steps to set up your account.
+          step_1_title: Configure your preferences
+          step_1_desc: Go to Settings (gear icon in the menu) and set your preferred currency and language.
+          step_2_title: Add your accounts
+          step_2_desc: Add all your financial accounts - checking, savings, credit cards, investments, etc.
+          step_3_title: Organize with categories
+          step_3_desc: Create categories that match your spending habits (food, transportation, entertainment, etc.).
+        accounts:
+          title: Managing Accounts
+          description: Accounts are the foundation of Maybe. Add all your financial accounts to get a complete view of your finances.
+          types_title: Account Types
+          type_checking: Checking Account
+          type_checking_desc: Your everyday bank account for daily transactions.
+          type_savings: Savings Account
+          type_savings_desc: Accounts where you save money.
+          type_credit: Credit Card
+          type_credit_desc: Your credit cards and their balances.
+          type_investment: Investments
+          type_investment_desc: Brokerage accounts, retirement funds, stocks.
+          type_property: Property
+          type_property_desc: Real estate and their estimated values.
+          type_vehicle: Vehicle
+          type_vehicle_desc: Cars, motorcycles, and their values.
+          type_loan: Loans
+          type_loan_desc: Mortgages, car loans, personal loans.
+          how_to_add: How to Add an Account
+          add_step_1: Click the "+" button in the sidebar
+          add_step_2: Choose the account type
+          add_step_3: Fill in the name and current balance
+          add_step_4: Click "Save"
+        transactions:
+          title: Transactions
+          description: Transactions are all your financial movements - money coming in or going out. Keep them organized to understand where your money is going.
+          add_title: Adding a Transaction
+          add_step_1: Go to Transactions in the sidebar
+          add_step_2: Click "New Transaction"
+          add_step_3: Select the account
+          add_step_4: Enter amount, date, and description
+          add_step_5: Choose a category and save
+          import_title: Importing Transactions
+          import_desc: You can import transactions from your bank statements (CSV files).
+          import_step_1: Go to Transactions and click "Import"
+          import_step_2: Select the CSV file from your bank
+          import_step_3: Map the columns (date, amount, description)
+          import_step_4: Review and confirm the import
+        categories:
+          title: Categories and Tags
+          description: Categories help you organize your transactions and understand your spending patterns. Create categories that make sense for your lifestyle.
+          examples_title: Common Category Examples
+          example_1: Food (groceries, restaurants, delivery)
+          example_2: Transportation (gas, public transit, rideshare)
+          example_3: Housing (rent, utilities, maintenance)
+          example_4: Entertainment (streaming, movies, hobbies)
+          example_5: Health (pharmacy, doctor visits, gym)
+          create_title: Creating a Category
+          create_step_1: Go to Categories in the sidebar
+          create_step_2: Click "New Category"
+          create_step_3: Choose a name, color, and icon
+          tip_title: Tip
+          tip_desc: You can create subcategories for more detailed tracking. For example, "Food" can have subcategories "Groceries" and "Restaurants".
+        dashboard:
+          title: Dashboard
+          description: The Dashboard is your financial overview. Here you can see a summary of all your finances at a glance.
+          elements_title: What You'll Find
+          element_networth: Net Worth
+          element_networth_desc: The sum of all your assets minus your debts. This is your total financial value.
+          element_cashflow: Cash Flow
+          element_cashflow_desc: Shows how much money is coming in (income) versus going out (expenses) over time.
+          element_accounts: Accounts
+          element_accounts_desc: Quick view of all your accounts and their current balances.
+        budgets:
+          title: Budgets
+          description: Budgets help you plan your spending. Set limits for each category and track how much you have left to spend.
+          how_to_title: How to Use Budgets
+          step_1: Go to Budgets in the sidebar
+          step_2: Set a spending limit for each category
+          step_3: Maybe will track your spending automatically
+          step_4: Check regularly to see if you're on track
+          tip_title: Tip
+          tip_desc: Start with realistic limits based on your actual spending. You can adjust them over time as you learn your habits.
+        jars:
+          title: The 6 Jars Method (T. Harv Eker)
+          description: The 6 Jars method is a simple way to manage your money by dividing your income into 6 "jars" with specific purposes. This method helps you balance spending, saving, and investing.
+          jars_title: The 6 Jars
+          jar_1_name: Necessities (NEC)
+          jar_1_desc: Essential expenses like rent, food, transportation, utilities, and bills. This is for everything you NEED to live.
+          jar_2_name: Financial Freedom (FFA)
+          jar_2_desc: Money for investments that will generate passive income. Never spend this money - only invest it!
+          jar_3_name: Education (EDU)
+          jar_3_desc: Investment in yourself - courses, books, training, workshops. Growing your knowledge increases your earning potential.
+          jar_4_name: Long-term Savings (LTSS)
+          jar_4_desc: Savings for larger purchases like a car, vacation, emergency fund, or down payment on a house.
+          jar_5_name: Play (PLAY)
+          jar_5_desc: Money to enjoy life guilt-free! Use it for entertainment, dining out, hobbies. You MUST spend this every month.
+          jar_6_name: Give (GIVE)
+          jar_6_desc: Money to help others - charity, gifts, supporting family. Giving creates abundance.
+          how_to_title: How to Set Up in Maybe
+          step_1: Go to Categories and create 6 main categories with these names
+          step_2: Create subcategories under each jar for more detail (e.g., "Groceries" under Necessities)
+          step_3: Set up budgets with the percentages shown above
+          step_4: When adding transactions, categorize them into the appropriate jar
+          step_5: Review monthly to see if you're following the percentages
+          example_title: Example
+          example_desc: If you earn R$5,000/month - Necessities gets R$2,750 (55%), Financial Freedom gets R$500 (10%), Education gets R$500 (10%), Long-term Savings gets R$500 (10%), Play gets R$500 (10%), and Give gets R$250 (5%).
+        daily:
+          title: Daily Activities
+          description: To get the most out of Maybe, keep your data up to date. Here's a suggested routine.
+          routine_title: Recommended Routine
+          daily_title: Daily (2-5 minutes)
+          daily_desc: Add any transactions you made today. Check notifications for any items that need attention.
+          weekly_title: Weekly (10-15 minutes)
+          weekly_desc: Review your spending for the week. Check your budget progress. Categorize any uncategorized transactions.
+          monthly_title: Monthly (20-30 minutes)
+          monthly_desc: Update account balances if not automatic. Review your net worth progress. Analyze spending trends. Adjust budgets if needed.
+        tips:
+          title: Tips and Best Practices
+          tip_1_title: Be Consistent
+          tip_1_desc: The key to good financial management is consistency. Try to add your transactions daily so nothing is forgotten.
+          tip_2_title: Use Clear Names
+          tip_2_desc: Name your accounts and categories clearly so you can easily find what you're looking for.
+          tip_3_title: Review Regularly
+          tip_3_desc: Set aside time each week to review your finances. This helps you catch any issues early.
+          tip_4_title: Start Simple
+          tip_4_desc: Don't try to categorize everything perfectly from day one. Start with a few main categories and add more as needed.
+          tip_5_title: Celebrate Progress
+          tip_5_desc: Notice when your net worth increases or when you stay under budget. Small wins lead to big results!
+      help:
+        title: Need More Help?
+        description: If you have questions, click the Feedback option in the menu to send us a message.
     changelog:
       title: What's new
     redis_configuration_error:

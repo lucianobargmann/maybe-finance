@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   end
 
   get "changelog", to: "pages#changelog"
+  get "user_guide", to: "pages#user_guide"
   get "feedback", to: "pages#feedback"
 
   resource :current_session, only: %i[update]
@@ -59,6 +60,7 @@ Rails.application.routes.draw do
     resource :preferences, only: :show
     resource :hosting, only: %i[show update] do
       delete :clear_cache, on: :collection
+      delete :clear_exchange_rate_cache, on: :collection
     end
     resource :billing, only: :show
     resource :security, only: :show

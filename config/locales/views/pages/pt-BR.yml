@@ -1,6 +1,161 @@
 ---
 pt-BR:
   pages:
+    user_guide:
+      title: Guia do Usuário
+      heading: Guia do Usuário
+      intro: Bem-vinda ao Maybe! Este guia vai te ajudar a começar e aproveitar ao máximo o gerenciamento das suas finanças pessoais. Siga estes passos simples para organizar suas finanças.
+      toc:
+        title: Índice
+        what_is: O que é o Maybe?
+        first_steps: Primeiros Passos
+        accounts: Gerenciando Contas
+        transactions: Transações
+        categories: Categorias e Tags
+        dashboard: Painel Principal
+        budgets: Orçamentos
+        jars: Método dos 6 Potes
+        daily: Atividades do Dia a Dia
+        tips: Dicas e Boas Práticas
+      sections:
+        what_is:
+          title: O que é o Maybe?
+          description: "O Maybe é seu assistente financeiro pessoal. Ele ajuda você a acompanhar todo o seu dinheiro em um só lugar: contas bancárias, cartões de crédito, investimentos, imóveis e muito mais."
+          feature_1: Veja todas as suas contas em um só lugar
+          feature_2: Acompanhe seus gastos por categoria
+          feature_3: Monitore seu patrimônio ao longo do tempo
+          feature_4: Defina e acompanhe orçamentos
+        first_steps:
+          title: Primeiros Passos
+          description: Depois do seu primeiro login, siga estes passos para configurar sua conta.
+          step_1_title: Configure suas preferências
+          step_1_desc: Vá em Configurações (ícone de engrenagem no menu) e defina sua moeda e idioma preferidos.
+          step_2_title: Adicione suas contas
+          step_2_desc: Adicione todas as suas contas financeiras - conta corrente, poupança, cartões de crédito, investimentos, etc.
+          step_3_title: Organize com categorias
+          step_3_desc: Crie categorias que combinam com seus hábitos de gastos (alimentação, transporte, lazer, etc.).
+        accounts:
+          title: Gerenciando Contas
+          description: As contas são a base do Maybe. Adicione todas as suas contas financeiras para ter uma visão completa das suas finanças.
+          types_title: Tipos de Conta
+          type_checking: Conta Corrente
+          type_checking_desc: Sua conta bancária do dia a dia para transações diárias.
+          type_savings: Poupança
+          type_savings_desc: Contas onde você guarda dinheiro.
+          type_credit: Cartão de Crédito
+          type_credit_desc: Seus cartões de crédito e seus saldos.
+          type_investment: Investimentos
+          type_investment_desc: Corretoras, fundos de aposentadoria, ações.
+          type_property: Imóveis
+          type_property_desc: Propriedades e seus valores estimados.
+          type_vehicle: Veículos
+          type_vehicle_desc: Carros, motos e seus valores.
+          type_loan: Empréstimos
+          type_loan_desc: Financiamentos, empréstimos pessoais, consignados.
+          how_to_add: Como Adicionar uma Conta
+          add_step_1: Clique no botão "+" na barra lateral
+          add_step_2: Escolha o tipo de conta
+          add_step_3: Preencha o nome e o saldo atual
+          add_step_4: Clique em "Salvar"
+        transactions:
+          title: Transações
+          description: Transações são todas as suas movimentações financeiras - dinheiro entrando ou saindo. Mantenha-as organizadas para entender para onde seu dinheiro está indo.
+          add_title: Adicionando uma Transação
+          add_step_1: Vá em Transações na barra lateral
+          add_step_2: Clique em "Nova Transação"
+          add_step_3: Selecione a conta
+          add_step_4: Digite o valor, data e descrição
+          add_step_5: Escolha uma categoria e salve
+          import_title: Importando Transações
+          import_desc: Você pode importar transações dos extratos do seu banco (arquivos CSV).
+          import_step_1: Vá em Transações e clique em "Importar"
+          import_step_2: Selecione o arquivo CSV do seu banco
+          import_step_3: Mapeie as colunas (data, valor, descrição)
+          import_step_4: Revise e confirme a importação
+        categories:
+          title: Categorias e Tags
+          description: Categorias ajudam você a organizar suas transações e entender seus padrões de gastos. Crie categorias que façam sentido para seu estilo de vida.
+          examples_title: Exemplos de Categorias Comuns
+          example_1: Alimentação (mercado, restaurantes, delivery)
+          example_2: Transporte (combustível, transporte público, aplicativos)
+          example_3: Moradia (aluguel, contas de luz/água, manutenção)
+          example_4: Lazer (streaming, cinema, hobbies)
+          example_5: Saúde (farmácia, consultas médicas, academia)
+          create_title: Criando uma Categoria
+          create_step_1: Vá em Categorias na barra lateral
+          create_step_2: Clique em "Nova Categoria"
+          create_step_3: Escolha um nome, cor e ícone
+          tip_title: Dica
+          tip_desc: Você pode criar subcategorias para um acompanhamento mais detalhado. Por exemplo, "Alimentação" pode ter as subcategorias "Mercado" e "Restaurantes".
+        dashboard:
+          title: Painel Principal
+          description: O Painel Principal é sua visão geral financeira. Aqui você pode ver um resumo de todas as suas finanças de uma só vez.
+          elements_title: O que Você Vai Encontrar
+          element_networth: Patrimônio Líquido
+          element_networth_desc: A soma de todos os seus bens menos suas dívidas. Este é o seu valor financeiro total.
+          element_cashflow: Fluxo de Caixa
+          element_cashflow_desc: Mostra quanto dinheiro está entrando (receitas) versus saindo (despesas) ao longo do tempo.
+          element_accounts: Contas
+          element_accounts_desc: Visualização rápida de todas as suas contas e seus saldos atuais.
+        budgets:
+          title: Orçamentos
+          description: Orçamentos ajudam você a planejar seus gastos. Defina limites para cada categoria e acompanhe quanto você ainda pode gastar.
+          how_to_title: Como Usar Orçamentos
+          step_1: Vá em Orçamentos na barra lateral
+          step_2: Defina um limite de gastos para cada categoria
+          step_3: O Maybe vai acompanhar seus gastos automaticamente
+          step_4: Verifique regularmente para ver se está no caminho certo
+          tip_title: Dica
+          tip_desc: Comece com limites realistas baseados nos seus gastos reais. Você pode ajustá-los com o tempo conforme aprende seus hábitos.
+        jars:
+          title: Método dos 6 Potes (T. Harv Eker)
+          description: O método dos 6 Potes é uma forma simples de gerenciar seu dinheiro dividindo sua renda em 6 "potes" com propósitos específicos. Este método ajuda você a equilibrar gastos, poupança e investimentos.
+          jars_title: Os 6 Potes
+          jar_1_name: Necessidades (NEC)
+          jar_1_desc: Despesas essenciais como aluguel, alimentação, transporte, contas de luz/água e boletos. É para tudo que você PRECISA para viver.
+          jar_2_name: Liberdade Financeira (LIB)
+          jar_2_desc: Dinheiro para investimentos que vão gerar renda passiva. Nunca gaste esse dinheiro - apenas invista!
+          jar_3_name: Educação (EDU)
+          jar_3_desc: Investimento em você mesmo - cursos, livros, treinamentos, workshops. Aumentar seu conhecimento aumenta seu potencial de ganhos.
+          jar_4_name: Poupança de Longo Prazo (PLP)
+          jar_4_desc: Poupança para compras maiores como carro, viagem, reserva de emergência ou entrada de imóvel.
+          jar_5_name: Diversão (DIV)
+          jar_5_desc: Dinheiro para aproveitar a vida sem culpa! Use para entretenimento, restaurantes, hobbies. Você DEVE gastar isso todo mês.
+          jar_6_name: Doação (DOA)
+          jar_6_desc: Dinheiro para ajudar os outros - caridade, presentes, apoiar a família. Doar cria abundância.
+          how_to_title: Como Configurar no Maybe
+          step_1: Vá em Categorias e crie 6 categorias principais com esses nomes
+          step_2: Crie subcategorias dentro de cada pote para mais detalhes (ex. "Mercado" dentro de Necessidades)
+          step_3: Configure orçamentos com as porcentagens mostradas acima
+          step_4: Ao adicionar transações, categorize-as no pote apropriado
+          step_5: Revise mensalmente para ver se está seguindo as porcentagens
+          example_title: Exemplo
+          example_desc: Se você ganha R$5.000/mês - Necessidades fica com R$2.750 (55%), Liberdade Financeira com R$500 (10%), Educação com R$500 (10%), Poupança de Longo Prazo com R$500 (10%), Diversão com R$500 (10%), e Doação com R$250 (5%).
+        daily:
+          title: Atividades do Dia a Dia
+          description: Para aproveitar o Maybe ao máximo, mantenha seus dados atualizados. Aqui está uma rotina sugerida.
+          routine_title: Rotina Recomendada
+          daily_title: Diariamente (2-5 minutos)
+          daily_desc: Adicione as transações que você fez hoje. Verifique notificações de itens que precisam de atenção.
+          weekly_title: Semanalmente (10-15 minutos)
+          weekly_desc: Revise seus gastos da semana. Verifique o progresso do orçamento. Categorize transações não categorizadas.
+          monthly_title: Mensalmente (20-30 minutos)
+          monthly_desc: Atualize os saldos das contas se não for automático. Revise o progresso do seu patrimônio. Analise tendências de gastos. Ajuste orçamentos se necessário.
+        tips:
+          title: Dicas e Boas Práticas
+          tip_1_title: Seja Consistente
+          tip_1_desc: A chave para uma boa gestão financeira é a consistência. Tente adicionar suas transações diariamente para não esquecer de nada.
+          tip_2_title: Use Nomes Claros
+          tip_2_desc: Nomeie suas contas e categorias de forma clara para encontrar facilmente o que você procura.
+          tip_3_title: Revise Regularmente
+          tip_3_desc: Reserve um tempo toda semana para revisar suas finanças. Isso ajuda a identificar problemas cedo.
+          tip_4_title: Comece Simples
+          tip_4_desc: Não tente categorizar tudo perfeitamente desde o primeiro dia. Comece com algumas categorias principais e adicione mais conforme necessário.
+          tip_5_title: Comemore o Progresso
+          tip_5_desc: Perceba quando seu patrimônio aumenta ou quando você fica dentro do orçamento. Pequenas vitórias levam a grandes resultados!
+      help:
+        title: Precisa de Mais Ajuda?
+        description: Se você tiver dúvidas, clique na opção Feedback no menu para nos enviar uma mensagem.
     changelog:
       title: Novidades
     redis_configuration_error:

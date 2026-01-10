@@ -51,11 +51,26 @@ class Category < ApplicationRecord
     end
 
     def bootstrap!
+      # Create top-level categories (6 Jars + Income)
       default_categories.each do |name, color, icon, classification|
         find_or_create_by!(name: name) do |category|
           category.color = color
           category.classification = classification
           category.lucide_icon = icon
+        end
+      end
+
+      # Create subcategories under each jar
+      default_subcategories.each do |parent_name, subcats|
+        parent = find_by(name: parent_name)
+        next unless parent
+
+        subcats.each do |subcat_name, subcat_icon|
+          find_or_create_by!(name: subcat_name, parent_id: parent.id) do |category|
+            category.color = parent.color
+            category.classification = parent.classification
+            category.lucide_icon = subcat_icon
+          end
         end
       end
     end
@@ -71,21 +86,53 @@ class Category < ApplicationRecord
     private
       def default_categories
         [
+          # Income category
           [ I18n.t("categories.default_categories.income"), "#e99537", "circle-dollar-sign", "income" ],
-          [ I18n.t("categories.default_categories.loan_payments"), "#6471eb", "credit-card", "expense" ],
-          [ I18n.t("categories.default_categories.fees"), "#6471eb", "credit-card", "expense" ],
-          [ I18n.t("categories.default_categories.entertainment"), "#df4e92", "drama", "expense" ],
-          [ I18n.t("categories.default_categories.food_and_drink"), "#eb5429", "utensils", "expense" ],
-          [ I18n.t("categories.default_categories.shopping"), "#e99537", "shopping-cart", "expense" ],
-          [ I18n.t("categories.default_categories.home_improvement"), "#6471eb", "house", "expense" ],
-          [ I18n.t("categories.default_categories.healthcare"), "#4da568", "pill", "expense" ],
-          [ I18n.t("categories.default_categories.personal_care"), "#4da568", "pill", "expense" ],
-          [ I18n.t("categories.default_categories.services"), "#4da568", "briefcase", "expense" ],
-          [ I18n.t("categories.default_categories.gifts_and_donations"), "#61c9ea", "hand-helping", "expense" ],
-          [ I18n.t("categories.default_categories.transportation"), "#df4e92", "bus", "expense" ],
-          [ I18n.t("categories.default_categories.travel"), "#df4e92", "plane", "expense" ],
-          [ I18n.t("categories.default_categories.rent_and_utilities"), "#db5a54", "lightbulb", "expense" ]
+
+          # 6 Jars - Top level expense categories
+          [ I18n.t("categories.default_categories.necessities"), "#3b82f6", "home", "expense" ],
+          [ I18n.t("categories.default_categories.financial_freedom"), "#22c55e", "trending-up", "expense" ],
+          [ I18n.t("categories.default_categories.education"), "#eab308", "graduation-cap", "expense" ],
+          [ I18n.t("categories.default_categories.long_term_savings"), "#a855f7", "piggy-bank", "expense" ],
+          [ I18n.t("categories.default_categories.play"), "#ec4899", "gamepad-2", "expense" ],
+          [ I18n.t("categories.default_categories.give"), "#f97316", "hand-helping", "expense" ]
         ]
+      end
+
+      def default_subcategories
+        {
+          I18n.t("categories.default_categories.necessities") => [
+            [ I18n.t("categories.default_categories.rent_and_utilities"), "lightbulb" ],
+            [ I18n.t("categories.default_categories.food_and_drink"), "utensils" ],
+            [ I18n.t("categories.default_categories.transportation"), "bus" ],
+            [ I18n.t("categories.default_categories.healthcare"), "pill" ],
+            [ I18n.t("categories.default_categories.personal_care"), "heart" ],
+            [ I18n.t("categories.default_categories.loan_payments"), "credit-card" ],
+            [ I18n.t("categories.default_categories.fees"), "receipt" ],
+            [ I18n.t("categories.default_categories.services"), "briefcase" ]
+          ],
+          I18n.t("categories.default_categories.financial_freedom") => [
+            [ I18n.t("categories.default_categories.investments"), "trending-up" ]
+          ],
+          I18n.t("categories.default_categories.education") => [
+            [ I18n.t("categories.default_categories.courses"), "book" ],
+            [ I18n.t("categories.default_categories.books"), "book-open" ]
+          ],
+          I18n.t("categories.default_categories.long_term_savings") => [
+            [ I18n.t("categories.default_categories.emergency_fund"), "shield-plus" ],
+            [ I18n.t("categories.default_categories.travel"), "plane" ],
+            [ I18n.t("categories.default_categories.home_improvement"), "house" ]
+          ],
+          I18n.t("categories.default_categories.play") => [
+            [ I18n.t("categories.default_categories.entertainment"), "drama" ],
+            [ I18n.t("categories.default_categories.shopping"), "shopping-cart" ],
+            [ I18n.t("categories.default_categories.dining_out"), "utensils" ]
+          ],
+          I18n.t("categories.default_categories.give") => [
+            [ I18n.t("categories.default_categories.gifts_and_donations"), "gift" ],
+            [ I18n.t("categories.default_categories.charity"), "heart" ]
+          ]
+        }
       end
   end
 
