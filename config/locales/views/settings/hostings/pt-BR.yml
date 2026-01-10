@@ -1,0 +1,50 @@
+---
+pt-BR:
+  settings:
+    hostings:
+      invite_code_settings:
+        description: Todo novo usuário que se juntar à sua instância do Maybe só pode fazer isso através de um código de convite
+        email_confirmation_description: Quando ativado, os usuários devem confirmar seu endereço de e-mail ao alterá-lo.
+        email_confirmation_title: Exigir confirmação de e-mail
+        generate_tokens: Gerar novo código
+        generated_tokens: Códigos gerados
+        title: Exigir código de convite para cadastro
+      show:
+        general: Configurações Gerais
+        invites: Códigos de Convite
+        title: Auto-Hospedagem
+        danger_zone: Zona de Perigo
+        clear_cache: Limpar cache de dados
+        clear_cache_warning: Limpar o cache de dados removerá todas as taxas de câmbio, preços de títulos, saldos de contas e outros dados. Isso não excluirá contas, transações, categorias ou outros dados de propriedade do usuário.
+        confirm_clear_cache:
+          title: Limpar cache de dados?
+          body: Tem certeza de que deseja limpar o cache de dados? Isso removerá todas as taxas de câmbio, preços de títulos, saldos de contas e outros dados. Esta ação não pode ser desfeita.
+      synth_settings:
+        api_calls_used: "%{used} / %{limit} chamadas de API usadas (%{percentage})"
+        description: Insira a chave de API fornecida pela Synth
+        label: Chave de API
+        placeholder: Digite sua chave de API aqui
+        plan: "plano %{plan}"
+        title: Configurações da Synth
+      exchange_rate_provider_settings:
+        title: Provedor de Taxa de Câmbio
+        description: Escolha seu provedor de taxa de câmbio preferido e configure as chaves de API
+        provider_label: Provedor
+        provider_prompt: Selecione um provedor
+        exchangerate_api_label: Chave ExchangeRate-API
+        exchangerate_api_placeholder: Digite sua chave ExchangeRate-API aqui
+        api_calls_used: "%{used} / %{limit} chamadas de API usadas (%{percentage})"
+        plan: "plano %{plan}"
+        clear_cache_title: Limpar Cache de Taxa de Câmbio
+        clear_cache_description: Limpar dados de taxa de câmbio em cache para buscar novas taxas da API
+        clear_cache_button: Limpar Cache de Taxa de Câmbio
+        confirm_clear_cache:
+          title: Limpar cache de taxa de câmbio?
+          body: Tem certeza de que deseja limpar o cache de taxa de câmbio? Isso forçará novas chamadas de API na próxima solicitação de taxa de câmbio.
+      update:
+        failure: Valor de configuração inválido
+        success: Configurações atualizadas
+      clear_cache:
+        cache_cleared: O cache de dados foi limpo. Isso pode levar alguns instantes para ser concluído.
+        exchange_rate_cache_cleared: O cache de taxa de câmbio foi limpo.
+      not_authorized: Você não está autorizado a realizar esta ação

@@ -1,0 +1,44 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      import: Importacao
+    attributes:
+      import:
+        currency: Moeda
+        number_format: Formato de Numero
+        status: Status
+        col_sep: Separador de colunas
+        date_format: Formato de data
+        signage_convention: Convenção de sinais
+    enums:
+      import:
+        status:
+          pending: Pendente
+          complete: Concluida
+          importing: Importando
+          reverting: Revertendo
+          revert_failed: Falha na reversao
+          failed: Falhou
+    errors:
+      models:
+        import:
+          attributes:
+            raw_file_str:
+              invalid_csv_format: nao e um formato CSV valido
+  import:
+    statuses:
+      pending: Pendente
+      complete: Concluida
+      importing: Importando
+      reverting: Revertendo
+      revert_failed: Falha na reversao
+      failed: Falhou
+    signage_conventions:
+      inflows_positive: Entradas positivas
+      inflows_negative: Entradas negativas
+    types:
+      transaction_import: Importacao de transacoes
+      trade_import: Importacao de negociacoes
+      account_import: Importacao de contas
+      mint_import: Importacao Mint

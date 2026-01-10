@@ -9,6 +9,18 @@ en:
         family_id: Family
         name: Name
         subtype: Subtype
+        classification: Classification
+        status: Status
+    enums:
+      account:
+        classification:
+          asset: Asset
+          liability: Liability
+        status:
+          active: Active
+          draft: Draft
+          disabled: Disabled
+          pending_deletion: Pending deletion
     models:
       account: Account
       account/credit: Credit Card
@@ -19,3 +31,17 @@ en:
       account/other_liability: Other Liability
       account/property: Real Estate
       account/vehicle: Vehicle
+      account/crypto: Crypto
+  account:
+    classifications:
+      asset: Asset
+      liability: Liability
+    statuses:
+      active: Active
+      draft: Draft
+      disabled: Disabled
+      pending_deletion: Pending deletion
+    balance_types:
+      cash: Cash
+      non_cash: Non-cash
+      investment: Investment

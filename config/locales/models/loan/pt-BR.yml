@@ -1,0 +1,28 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      loan: Empréstimo
+    attributes:
+      loan:
+        subtype: Tipo de empréstimo
+        interest_rate: Taxa de juros
+        rate_type: Tipo de taxa
+        term_months: Prazo em meses
+  loan:
+    subtypes:
+      mortgage:
+        short: Hipoteca
+        long: Financiamento Imobiliário
+      student:
+        short: Estudantil
+        long: Empréstimo Estudantil
+      auto:
+        short: Veículo
+        long: Financiamento de Veículo
+      other:
+        short: Outro
+        long: Outro Empréstimo
+    rate_types:
+      fixed: Taxa Fixa
+      variable: Taxa Variável

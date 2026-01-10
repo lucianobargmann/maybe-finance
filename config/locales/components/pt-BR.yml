@@ -1,0 +1,96 @@
+---
+pt-BR:
+  components:
+    ui:
+      account:
+        activity_feed:
+          title: Atividade
+          new: Novo
+          new_balance: Novo saldo
+          new_transaction: Nova transação
+          search_placeholder: Pesquisar entradas por nome
+          no_entries: Nenhuma entrada ainda
+          date: Data
+          amount: Valor
+          entry: entrada
+          entries: entradas
+        activity_date:
+          end_of_day_balance_tooltip: O saldo no final do dia, após todas as transações e ajustes
+          no_balance_data: Nenhum dado de saldo disponível para esta data
+        chart:
+          total_account_value: Valor total da conta
+          holdings_value: Valor das participações
+          cash_value: Valor em dinheiro
+          estimated_property_value: Valor estimado do imóvel
+          estimated_vehicle_value: Valor estimado do veículo
+          debt_balance: Saldo da dívida
+          remaining_principal_balance: Saldo principal restante
+          balance: Saldo
+          total_value: Valor total
+          holdings: Participações
+          cash: Dinheiro
+          no_data_available: Nenhum dado disponível
+        balance_reconciliation:
+          # Itens padrão/Depósito
+          start_balance: Saldo inicial
+          start_balance_tooltip: O saldo da conta no início deste dia
+          net_cash_flow: Fluxo de caixa líquido
+          net_cash_flow_tooltip: Variação líquida no saldo de todas as transações durante o dia
+          end_balance: Saldo final
+          end_balance_tooltip: O saldo calculado após todas as transações
+          adjustments: Ajustes
+          adjustments_tooltip: Reconciliações manuais ou outros ajustes
+          final_balance: Saldo final definitivo
+          final_balance_tooltip: O saldo final da conta para o dia
+          # Itens de cartão de crédito
+          credit_card_start_tooltip: O saldo devedor no início deste dia
+          charges: Cobranças
+          charges_tooltip: Novas cobranças feitas durante o dia
+          payments: Pagamentos
+          payments_tooltip: Pagamentos feitos ao cartão durante o dia
+          credit_card_final_tooltip: O saldo final devido para o dia
+          # Itens de investimento
+          investment_start_tooltip: O valor total do portfólio no início deste dia
+          change_in_brokerage_cash: Variação em dinheiro de corretagem
+          change_in_brokerage_cash_tooltip: Variação líquida em dinheiro de depósitos, saques e negociações
+          change_in_holdings_trades: Variação em participações (compras/vendas)
+          change_in_holdings_trades_tooltip: Impacto nas participações de compra e venda de títulos
+          change_in_holdings_market: Variação em participações (atividade de preço de mercado)
+          change_in_holdings_market_tooltip: Variação no valor das participações devido a movimentos de preços de mercado
+          investment_end_tooltip: O saldo calculado após toda a atividade
+          investment_final_tooltip: O valor final do portfólio para o dia
+          # Itens de empréstimo
+          start_principal: Principal inicial
+          start_principal_tooltip: O saldo principal no início deste dia
+          net_principal_change: Variação líquida do principal
+          net_principal_change_tooltip: Pagamentos de principal e novos empréstimos durante o dia
+          end_principal: Principal final
+          end_principal_tooltip: O principal calculado após todas as transações
+          loan_adjustments_tooltip: Reconciliações manuais ou outros ajustes
+          final_principal: Principal final definitivo
+          final_principal_tooltip: O saldo principal final para o dia
+          # Itens de ativos (Imóvel/Veículo)
+          start_value: Valor inicial
+          start_value_tooltip: O valor do ativo no início deste dia
+          net_value_change: Variação líquida do valor
+          net_value_change_tooltip: Todas as variações de valor incluindo melhorias e depreciação
+          end_value: Valor final
+          end_value_tooltip: O valor calculado após todas as mudanças
+          asset_adjustments_tooltip: Ajustes manuais de valor ou avaliações
+          final_value: Valor final definitivo
+          final_value_tooltip: O valor final do ativo para o dia
+          # Itens de criptomoeda
+          crypto_start_tooltip: O valor das participações em criptomoeda no início deste dia
+          buys: Compras
+          buys_tooltip: Compras de criptomoedas durante o dia
+          sells: Vendas
+          sells_tooltip: Vendas de criptomoedas durante o dia
+          market_changes: Variações de mercado
+          market_changes_tooltip: Variações de valor devido a movimentos de preços de mercado
+          crypto_end_tooltip: O saldo calculado após toda a atividade
+          crypto_final_tooltip: O valor final das participações em criptomoeda para o dia
+      account_page:
+        tabs:
+          activity: Atividade
+          holdings: Participações
+          overview: Visão geral

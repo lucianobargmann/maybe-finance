@@ -1,0 +1,12 @@
+---
+en:
+  activerecord:
+    models:
+      family: Family
+    attributes:
+      family:
+        name: Name
+        currency: Currency
+        locale: Language
+        date_format: Date format
+        country: Country

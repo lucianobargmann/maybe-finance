@@ -1,6 +1,33 @@
 ---
 en:
   valuations:
+    confirmation_contents:
+      investment_intro_html: "This will <strong>%{action_verb}</strong> your investment account balance as of <strong>%{date}</strong>:"
+      total_account_value: Total account value
+      holdings_value: Holdings value
+      brokerage_cash: Brokerage cash
+      action_description_html: "<strong>%{action_verb}</strong> your %{account_type} balance to <strong>%{amount}</strong> as of <strong>%{date}</strong>."
+      recalculation_notice: "This will %{change_type} all balances from this date forward."
+      change: change
+      update: update
+      account_types:
+        depository: checking/savings account
+        investment: investment account
+        crypto: crypto account
+        property: property
+        vehicle: vehicle
+        other_asset: asset
+        credit_card: credit card
+        loan: loan
+        other_liability: liability
+    confirm_create:
+      title: Confirm new balance
+      action_verb: set
+      confirm: Confirm
+    confirm_update:
+      title: Update balance
+      action_verb: update
+      update: Update
     form:
       amount: Amount
       submit: Add balance update

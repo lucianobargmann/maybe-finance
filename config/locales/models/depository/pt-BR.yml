@@ -1,0 +1,25 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      depository: Conta Bancária
+    attributes:
+      depository:
+        subtype: Tipo de conta
+  depository:
+    subtypes:
+      checking:
+        short: Corrente
+        long: Conta Corrente
+      savings:
+        short: Poupança
+        long: Conta Poupança
+      hsa:
+        short: HSA
+        long: Conta Poupança Saúde
+      cd:
+        short: CDB
+        long: Certificado de Depósito
+      money_market:
+        short: MM
+        long: Conta do Mercado Monetário

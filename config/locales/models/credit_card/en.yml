@@ -1,0 +1,18 @@
+---
+en:
+  activerecord:
+    models:
+      credit_card: Credit Card
+    attributes:
+      credit_card:
+        subtype: Type
+        available_credit: Available credit
+        minimum_payment: Minimum payment
+        annual_fee: Annual fee
+        apr: APR
+        expiration_date: Expiration date
+  credit_card:
+    subtypes:
+      credit_card:
+        short: Credit Card
+        long: Credit Card

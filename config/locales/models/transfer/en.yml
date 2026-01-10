@@ -1,6 +1,16 @@
 ---
 en:
   activerecord:
+    models:
+      transfer: Transfer
+    attributes:
+      transfer:
+        status: Status
+    enums:
+      transfer:
+        status:
+          pending: Pending
+          confirmed: Confirmed
     errors:
       models:
         transfer:
@@ -20,3 +30,10 @@ en:
   transfer:
     name: Transfer to %{to_account}
     payment_name: Payment to %{to_account}
+    statuses:
+      pending: Pending
+      confirmed: Confirmed
+    types:
+      transfer: Transfer
+      loan_payment: Loan payment
+      liability_payment: Credit card payment

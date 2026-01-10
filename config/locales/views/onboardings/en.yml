@@ -22,7 +22,13 @@ en:
       subtitle: Let's complete your profile.
       title: Let's set up the basics
     show:
-      message: We’re really excited you’re here. In the next step we’ll ask you a
+      title: Let's set up your account
+      subtitle: First things first, let's get your profile set up.
+      first_name: First name
+      last_name: Last name
+      household_name: Household name
+      country: Country
+      continue: Continue
+      message: We're really excited you're here. In the next step we'll ask you a
         few questions to complete your profile and then get you all set up.
       setup: Set up account
-      title: Meet Maybe

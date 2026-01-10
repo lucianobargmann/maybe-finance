@@ -1,0 +1,26 @@
+---
+pt-BR:
+  budgets:
+    show:
+      budgeted_tab: Orçado
+      actual_tab: Realizado
+      categories: Categorias
+      edit: Editar
+    budget_header:
+      today: Hoje
+    budget_categories:
+      categories: Categorias
+      amount: Valor
+    budgeted_summary:
+      expected_income: Receita esperada
+      earned: recebido
+      over: acima
+      left: restante
+      budgeted: Orçado
+      spent: gasto
+    actuals_summary:
+      income: Receita
+      expenses: Despesas
+    over_allocation_warning:
+      message: Você alocou mais do que o disponível no orçamento. Por favor, corrija suas alocações.
+      fix_allocations: Corrigir alocações

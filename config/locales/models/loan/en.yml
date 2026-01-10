@@ -1,0 +1,28 @@
+---
+en:
+  activerecord:
+    models:
+      loan: Loan
+    attributes:
+      loan:
+        subtype: Loan type
+        interest_rate: Interest rate
+        rate_type: Rate type
+        term_months: Term (months)
+  loan:
+    subtypes:
+      mortgage:
+        short: Mortgage
+        long: Mortgage
+      student:
+        short: Student
+        long: Student Loan
+      auto:
+        short: Auto
+        long: Auto Loan
+      other:
+        short: Other
+        long: Other Loan
+    rate_types:
+      fixed: Fixed Rate
+      variable: Variable Rate

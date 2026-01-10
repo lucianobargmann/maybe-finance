@@ -1,0 +1,12 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      family: Familia
+    attributes:
+      family:
+        name: Nome
+        currency: Moeda
+        locale: Idioma
+        date_format: Formato de data
+        country: Pais

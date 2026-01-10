@@ -3,6 +3,23 @@ en:
   accounts:
     account:
       troubleshoot: Troubleshoot
+    sidebar:
+      assets: Assets
+      debts: Debts
+      all: All
+      new_asset: New asset
+      new_debt: New debt
+      new_account: New account
+    account_sidebar_tabs:
+      missing_data_warning: Missing historical data
+      missing_data_description: Maybe uses Synth API to fetch historical exchange rates, security prices, and more. This data is required to calculate accurate historical account balances.
+      add_api_key: Add your Synth API key here.
+      assets_tab: Assets
+      debts_tab: Debts
+      all_tab: All
+      new_asset: New asset
+      new_debt: New debt
+      new_account: New account
     chart:
       data_not_available: Data not available for the selected period
     create:
@@ -23,8 +40,22 @@ en:
         other_accounts: Other accounts
       new_account: New account
       sync: Sync all
+    account_types:
+      depository: Cash
+      investment: Investment
+      crypto: Crypto
+      property: Property
+      vehicle: Vehicle
+      credit_card: Credit Card
+      loan: Loan
+      other_asset: Other Asset
+      other_liability: Other Liability
     new:
       import_accounts: Import accounts
+      container:
+        select: Select
+        navigate: Navigate
+        close: Close
       method_selector:
         connected_entry: Link account
         connected_entry_eu: Link EU account

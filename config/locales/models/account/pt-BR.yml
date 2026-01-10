@@ -1,0 +1,47 @@
+---
+pt-BR:
+  activerecord:
+    attributes:
+      account:
+        balance: Saldo
+        currency: Moeda
+        family: Familia
+        family_id: Familia
+        name: Nome
+        subtype: Subtipo
+        classification: Classificacao
+        status: Status
+    enums:
+      account:
+        classification:
+          asset: Ativo
+          liability: Passivo
+        status:
+          active: Ativa
+          draft: Rascunho
+          disabled: Desativada
+          pending_deletion: Aguardando exclusao
+    models:
+      account: Conta
+      account/credit: Cartao de Credito
+      account/depository: Conta Bancaria
+      account/investment: Investimento
+      account/loan: Emprestimo
+      account/other_asset: Outro Ativo
+      account/other_liability: Outro Passivo
+      account/property: Imovel
+      account/vehicle: Veiculo
+      account/crypto: Criptomoeda
+  account:
+    classifications:
+      asset: Ativo
+      liability: Passivo
+    statuses:
+      active: Ativa
+      draft: Rascunho
+      disabled: Desativada
+      pending_deletion: Aguardando exclusao
+    balance_types:
+      cash: Dinheiro
+      non_cash: Nao liquido
+      investment: Investimento

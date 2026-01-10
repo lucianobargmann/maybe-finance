@@ -1,0 +1,31 @@
+---
+en:
+  activerecord:
+    models:
+      property: Real Estate
+    attributes:
+      property:
+        subtype: Property type
+        area_value: Area
+        area_unit: Area unit
+        year_built: Year built
+  property:
+    subtypes:
+      single_family_home:
+        short: Single Family Home
+        long: Single Family Home
+      multi_family_home:
+        short: Multi-Family Home
+        long: Multi-Family Home
+      condominium:
+        short: Condo
+        long: Condominium
+      townhouse:
+        short: Townhouse
+        long: Townhouse
+      investment_property:
+        short: Investment Property
+        long: Investment Property
+      second_home:
+        short: Second Home
+        long: Second Home

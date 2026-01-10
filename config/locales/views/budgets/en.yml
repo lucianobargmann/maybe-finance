@@ -1,0 +1,26 @@
+---
+en:
+  budgets:
+    show:
+      budgeted_tab: Budgeted
+      actual_tab: Actual
+      categories: Categories
+      edit: Edit
+    budget_header:
+      today: Today
+    budget_categories:
+      categories: Categories
+      amount: Amount
+    budgeted_summary:
+      expected_income: Expected income
+      earned: earned
+      over: over
+      left: left
+      budgeted: Budgeted
+      spent: spent
+    actuals_summary:
+      income: Income
+      expenses: Expenses
+    over_allocation_warning:
+      message: You have over-allocated your budget. Please fix your allocations.
+      fix_allocations: Fix allocations

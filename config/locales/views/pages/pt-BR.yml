@@ -1,0 +1,58 @@
+---
+pt-BR:
+  pages:
+    changelog:
+      title: Novidades
+    redis_configuration_error:
+      page_title: Configuração do Redis Necessária - Maybe
+      heading: Configuração do Redis Necessária
+      subheading: Sua instalação auto-hospedada do Maybe precisa que o Redis esteja configurado corretamente.
+      why_redis_required: Por que o Redis é necessário?
+      redis_explanation: O Maybe usa o Redis para executar tarefas em segundo plano do Sidekiq, como sincronização de dados de contas, processamento de importações e outras operações que mantêm seus dados financeiros atualizados.
+      view_setup_guide: Ver Guia de Configuração
+      setup_guide_description: Siga nosso guia completo de configuração do Docker para configurar o Redis
+      refresh_instruction: Depois de configurar o Redis, atualize esta página para continuar.
+      refresh_page: Atualizar Página
+    feedback:
+      page_title: Feedback
+      heading: Deixe seu feedback
+      description: Deixe-nos saber se você tem algum feedback específico. Sinta-se à vontade para incluir links para vídeos ou capturas de tela.
+      feature_request: Escrever uma solicitação de recurso
+      bug_report: Registrar um relatório de bug
+      discuss: Discutir Maybe com outros
+    dashboard:
+      welcome_back: "Bem-vindo de volta, %{name}"
+      finances_subtitle: "Veja o que está acontecendo com suas finanças"
+      new: Novo
+      shutdown_notice:
+        title: "Tomamos uma decisão difícil de encerrar a versão hospedada do Maybe. Veja o que acontece a seguir:"
+        read_why: Leia por que estamos fazendo isso aqui
+        refund_notice: Você será reembolsado integralmente.
+        export_notice: "Você tem até 31 de julho de 2025 para exportar seus dados. Você pode fazer isso"
+        here: aqui
+      net_worth_chart:
+        data_not_available: Dados não disponíveis para o período selecionado
+        title: Patrimônio Líquido
+      no_account_empty_state:
+        new_account: Nova conta
+        no_account_subtitle: Como nenhuma conta foi adicionada, não há dados para exibir. Adicione suas primeiras contas para começar a ver os dados do painel.
+        no_account_title: Nenhuma conta ainda
+      no_accounts_placeholder:
+        title: Nenhuma conta ainda
+        subtitle: Adicione contas para exibir dados do patrimônio líquido
+        add_account: Adicionar conta
+      no_accounts_graph_placeholder:
+        no_accounts_title: Nenhuma conta ainda
+        no_accounts_subtitle: Adicione contas para exibir dados do patrimônio líquido
+        add_account: Adicionar conta
+      balance_sheet:
+        name: Nome
+        weight: Peso
+        value: Valor
+        no_accounts_yet: "Nenhum %{classification} ainda"
+        add_accounts_hint: "Adicione suas contas de %{classification} para ver uma análise completa"
+      cashflow:
+        title: Fluxo de Caixa
+        no_data_title: Sem dados de fluxo de caixa para este período
+        no_data_subtitle: Adicione transações para exibir dados de fluxo de caixa ou expanda o período
+        add_transaction: Adicionar transação

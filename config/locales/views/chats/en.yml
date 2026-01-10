@@ -1,0 +1,30 @@
+---
+en:
+  chats:
+    ai_greeting:
+      greeting: "Hey %{name}! I'm an AI built by Maybe to help with your finances. I have access to the web and your account data."
+      greeting_guest: "Hey there! I'm an AI built by Maybe to help with your finances. I have access to the web and your account data."
+      commands_hint: "You can use"
+      to_access_commands: "to access commands"
+      sample_questions_intro: "Here's a few questions you can ask:"
+      evaluate_portfolio: Evaluate investment portfolio
+      spending_insights: Show spending insights
+      find_patterns: Find unusual patterns
+    ai_consent:
+      title: Enable Maybe AI
+      description_enabled: Maybe AI can answer financial questions and provide insights based on your data. To use this feature you'll need to explicitly enable it.
+      description_disabled_html: "To use the AI assistant, you need to set the <code class=\"bg-surface-inset px-1 py-0.5 rounded font-mono text-xs\">OPENAI_ACCESS_TOKEN</code> environment variable in your self-hosted instance."
+      enable_button: Enable Maybe AI
+      privacy_notice: Disable anytime. All data sent to our LLM providers is anonymized.
+    chat_nav:
+      all_chats: All chats
+      start_new_chat: Start new chat
+      edit_chat_title: Edit chat title
+      delete_chat: Delete chat
+    index:
+      title: AI Chats
+      new_chat: New chat
+    thinking_indicator:
+      thinking: Thinking...
+    error:
+      error_occurred: An error occurred

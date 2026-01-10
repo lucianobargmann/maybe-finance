@@ -1,0 +1,24 @@
+---
+pt-BR:
+  layouts:
+    nav:
+      home: Início
+      transactions: Transações
+      budgets: Orçamentos
+      assistant: Assistente
+    sidebar:
+      free_trial: Período gratuito
+      days_remaining:
+        one: "%{count} dia restante"
+        other: "%{count} dias restantes"
+      upgrade: Atualizar plano
+    auth:
+      existing_account: Já tem uma conta?
+      no_account: Novo no Maybe?
+      sign_in: Entrar
+      sign_up: Criar conta
+      your_account: Sua conta
+    shared:
+      footer:
+        privacy_policy: Política de Privacidade
+        terms_of_service: Termos de Serviço

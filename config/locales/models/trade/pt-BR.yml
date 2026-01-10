@@ -1,0 +1,18 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      trade: Negociacao
+    attributes:
+      trade:
+        qty: Quantidade
+        price: Preco
+        security: Ativo
+        date: Data
+  trade:
+    types:
+      buy: Compra
+      sell: Venda
+    name:
+      buy: Comprar %{qty} acoes de %{ticker}
+      sell: Vender %{qty} acoes de %{ticker}

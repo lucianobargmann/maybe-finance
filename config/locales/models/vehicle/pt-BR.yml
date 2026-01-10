@@ -1,0 +1,12 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      vehicle: Veiculo
+    attributes:
+      vehicle:
+        make: Marca
+        model: Modelo
+        year: Ano
+        mileage_value: Quilometragem
+        mileage_unit: Unidade de quilometragem

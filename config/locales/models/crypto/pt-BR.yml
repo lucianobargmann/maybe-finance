@@ -1,0 +1,8 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      crypto: Criptomoeda
+    attributes:
+      crypto:
+        name: Nome

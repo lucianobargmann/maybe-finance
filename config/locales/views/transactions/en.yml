@@ -47,15 +47,49 @@ en:
       edit_tags: Edit tags
       import: Import
     index:
+      title: Transactions
+      new_rule: New rule
+      edit_rules: Edit rules
+      edit_categories: Edit categories
+      edit_tags: Edit tags
+      edit_merchants: Edit merchants
+      edit_imports: Edit imports
+      import: Import
+      new_transaction: New transaction
+      transaction_header: transaction
+      category_header: category
+      amount_header: amount
       transaction: transaction
       transactions: transactions
+    summary:
+      total_transactions: Total transactions
+      income: Income
+      expenses: Expenses
     searches:
+      form:
+        search_placeholder: Search transactions ...
+        filter: Filter
       filters:
+        account: Account
+        date: Date
+        type: Type
+        amount: Amount
+        category: Category
+        tag: Tag
+        merchant: Merchant
+        account_filter:
+          filter_accounts_placeholder: Filter accounts
         amount_filter:
           equal_to: Equal to
           greater_than: Greater than
           less_than: Less than
           placeholder: '0'
+        category_filter:
+          filter_category_placeholder: Filter category
+        merchant_filter:
+          filter_merchants_placeholder: Filter merchants
+        tag_filter:
+          filter_tags_placeholder: Filter tags
         badge:
           expense: Expense
           income: Income

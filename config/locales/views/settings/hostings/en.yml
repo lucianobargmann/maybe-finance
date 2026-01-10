@@ -28,9 +28,25 @@ en:
         placeholder: Enter your API key here
         plan: "%{plan} plan"
         title: Synth Settings
+      exchange_rate_provider_settings:
+        title: Exchange Rate Provider
+        description: Choose your preferred exchange rate provider and configure API keys
+        provider_label: Provider
+        provider_prompt: Select a provider
+        exchangerate_api_label: ExchangeRate-API Key
+        exchangerate_api_placeholder: Enter your ExchangeRate-API key here
+        api_calls_used: "%{used} / %{limit} API calls used (%{percentage})"
+        plan: "%{plan} plan"
+        clear_cache_title: Clear Exchange Rate Cache
+        clear_cache_description: Clear cached exchange rate data to fetch fresh rates from the API
+        clear_cache_button: Clear Exchange Rate Cache
+        confirm_clear_cache:
+          title: Clear exchange rate cache?
+          body: Are you sure you want to clear the exchange rate cache? This will force fresh API calls on the next exchange rate request.
       update:
         failure: Invalid setting value
         success: Settings updated
       clear_cache:
         cache_cleared: Data cache has been cleared. This may take a few moments to complete.
+        exchange_rate_cache_cleared: Exchange rate cache has been cleared.
       not_authorized: You are not authorized to perform this action

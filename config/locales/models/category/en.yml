@@ -1,0 +1,31 @@
+---
+en:
+  activerecord:
+    models:
+      category: Category
+    attributes:
+      category:
+        name: Name
+        color: Color
+        classification: Classification
+        parent: Parent category
+  category:
+    classifications:
+      income: Income
+      expense: Expense
+    defaults:
+      income: Income
+      loan_payments: Loan Payments
+      fees: Fees
+      entertainment: Entertainment
+      food_and_drink: Food & Drink
+      shopping: Shopping
+      home_improvement: Home Improvement
+      healthcare: Healthcare
+      personal_care: Personal Care
+      services: Services
+      gifts_and_donations: Gifts & Donations
+      transportation: Transportation
+      travel: Travel
+      rent_and_utilities: Rent & Utilities
+    uncategorized: Uncategorized

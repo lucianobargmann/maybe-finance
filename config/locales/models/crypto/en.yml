@@ -1,0 +1,8 @@
+---
+en:
+  activerecord:
+    models:
+      crypto: Crypto
+    attributes:
+      crypto:
+        name: Name

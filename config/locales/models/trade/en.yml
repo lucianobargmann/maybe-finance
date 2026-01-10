@@ -1,0 +1,18 @@
+---
+en:
+  activerecord:
+    models:
+      trade: Trade
+    attributes:
+      trade:
+        qty: Quantity
+        price: Price
+        security: Security
+        date: Date
+  trade:
+    types:
+      buy: Buy
+      sell: Sell
+    name:
+      buy: Buy %{qty} shares of %{ticker}
+      sell: Sell %{qty} shares of %{ticker}

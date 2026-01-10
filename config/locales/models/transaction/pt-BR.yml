@@ -1,0 +1,32 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      transaction: Transacao
+    attributes:
+      transaction:
+        name: Nome
+        amount: Valor
+        date: Data
+        category: Categoria
+        merchant: Comerciante
+        notes: Notas
+        kind: Tipo
+    enums:
+      transaction:
+        kind:
+          standard: Padrao
+          funds_movement: Movimentacao de fundos
+          cc_payment: Pagamento de cartao
+          loan_payment: Pagamento de emprestimo
+          one_time: Unico
+  transaction:
+    kinds:
+      standard: Padrao
+      funds_movement: Movimentacao de fundos
+      cc_payment: Pagamento de cartao de credito
+      loan_payment: Pagamento de emprestimo
+      one_time: Unico
+    classification:
+      income: Receita
+      expense: Despesa

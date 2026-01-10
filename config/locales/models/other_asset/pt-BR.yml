@@ -1,0 +1,8 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      other_asset: Outro Ativo
+    attributes:
+      other_asset:
+        name: Nome

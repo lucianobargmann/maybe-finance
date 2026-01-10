@@ -1,0 +1,43 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      investment: Investimento
+    attributes:
+      investment:
+        subtype: Tipo de investimento
+  investment:
+    subtypes:
+      brokerage:
+        short: Corretora
+        long: Corretora
+      pension:
+        short: Previdência
+        long: Previdência Privada
+      retirement:
+        short: Aposentadoria
+        long: Aposentadoria
+      "401k":
+        short: 401(k)
+        long: 401(k)
+      roth_401k:
+        short: Roth 401(k)
+        long: Roth 401(k)
+      "529_plan":
+        short: Plano 529
+        long: Plano 529
+      hsa:
+        short: HSA
+        long: Conta Poupança Saúde
+      mutual_fund:
+        short: Fundo Mútuo
+        long: Fundo Mútuo
+      ira:
+        short: IRA
+        long: IRA Tradicional
+      roth_ira:
+        short: Roth IRA
+        long: Roth IRA
+      angel:
+        short: Anjo
+        long: Investimento Anjo

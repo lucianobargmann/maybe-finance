@@ -1,0 +1,32 @@
+---
+en:
+  activerecord:
+    models:
+      transaction: Transaction
+    attributes:
+      transaction:
+        name: Name
+        amount: Amount
+        date: Date
+        category: Category
+        merchant: Merchant
+        notes: Notes
+        kind: Kind
+    enums:
+      transaction:
+        kind:
+          standard: Standard
+          funds_movement: Funds movement
+          cc_payment: Credit card payment
+          loan_payment: Loan payment
+          one_time: One-time
+  transaction:
+    kinds:
+      standard: Standard
+      funds_movement: Funds movement
+      cc_payment: Credit card payment
+      loan_payment: Loan payment
+      one_time: One-time
+    classification:
+      income: Income
+      expense: Expense

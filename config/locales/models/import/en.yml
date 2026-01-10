@@ -1,13 +1,44 @@
 ---
 en:
   activerecord:
+    models:
+      import: Import
     attributes:
       import:
         currency: Currency
         number_format: Number Format
+        status: Status
+        col_sep: Column separator
+        date_format: Date format
+        signage_convention: Signage convention
+    enums:
+      import:
+        status:
+          pending: Pending
+          complete: Complete
+          importing: Importing
+          reverting: Reverting
+          revert_failed: Revert failed
+          failed: Failed
     errors:
       models:
         import:
           attributes:
             raw_file_str:
               invalid_csv_format: is not a valid CSV format
+  import:
+    statuses:
+      pending: Pending
+      complete: Complete
+      importing: Importing
+      reverting: Reverting
+      revert_failed: Revert failed
+      failed: Failed
+    signage_conventions:
+      inflows_positive: Inflows positive
+      inflows_negative: Inflows negative
+    types:
+      transaction_import: Transaction import
+      trade_import: Trade import
+      account_import: Account import
+      mint_import: Mint import

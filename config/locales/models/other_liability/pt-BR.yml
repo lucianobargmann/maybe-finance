@@ -1,0 +1,8 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      other_liability: Outro Passivo
+    attributes:
+      other_liability:
+        name: Nome

@@ -1,0 +1,21 @@
+---
+en:
+  activerecord:
+    models:
+      valuation: Valuation
+    attributes:
+      valuation:
+        kind: Kind
+        amount: Amount
+        date: Date
+    enums:
+      valuation:
+        kind:
+          reconciliation: Reconciliation
+          opening_anchor: Opening balance
+          current_anchor: Current balance
+  valuation:
+    kinds:
+      reconciliation: Reconciliation
+      opening_anchor: Opening balance
+      current_anchor: Current balance

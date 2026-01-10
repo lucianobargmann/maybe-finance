@@ -1,0 +1,21 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      valuation: Avaliacao
+    attributes:
+      valuation:
+        kind: Tipo
+        amount: Valor
+        date: Data
+    enums:
+      valuation:
+        kind:
+          reconciliation: Reconciliacao
+          opening_anchor: Saldo inicial
+          current_anchor: Saldo atual
+  valuation:
+    kinds:
+      reconciliation: Reconciliacao
+      opening_anchor: Saldo inicial
+      current_anchor: Saldo atual

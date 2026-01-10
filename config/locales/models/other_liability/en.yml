@@ -1,0 +1,8 @@
+---
+en:
+  activerecord:
+    models:
+      other_liability: Other Liability
+    attributes:
+      other_liability:
+        name: Name

@@ -1,0 +1,25 @@
+---
+pt-BR:
+  impersonation_sessions:
+    approval_bar:
+      access_label: "Acesso %{type}"
+      session: Sessão
+      request: Solicitação
+      pending_message: A equipe de suporte do Maybe solicitou acesso à sua conta (provavelmente para ajudá-lo com uma solicitação de suporte). Se você aprovar a solicitação, toda atividade realizada será registrada para fins de segurança e auditoria.
+      approve: Aprovar
+      reject: Rejeitar
+      in_progress_message: Alguém da equipe do Maybe Finance está visualizando seus dados. Você pode encerrar a sessão a qualquer momento.
+      end_session: Encerrar Sessão
+      error_message: Algo deu errado. Por favor, entre em contato conosco.
+    approve:
+      success: Solicitação aprovada
+    complete:
+      success: Sessão concluída
+    create:
+      success: Solicitação enviada ao usuário. Aguardando aprovação.
+    join:
+      success: Entrou na sessão
+    leave:
+      success: Saiu da sessão
+    reject:
+      success: Solicitação rejeitada

@@ -1,0 +1,31 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      category: Categoria
+    attributes:
+      category:
+        name: Nome
+        color: Cor
+        classification: Classificacao
+        parent: Categoria pai
+  category:
+    classifications:
+      income: Receita
+      expense: Despesa
+    defaults:
+      income: Receita
+      loan_payments: Pagamentos de Emprestimo
+      fees: Taxas
+      entertainment: Entretenimento
+      food_and_drink: Alimentacao
+      shopping: Compras
+      home_improvement: Melhorias Residenciais
+      healthcare: Saude
+      personal_care: Cuidados Pessoais
+      services: Servicos
+      gifts_and_donations: Presentes e Doacoes
+      transportation: Transporte
+      travel: Viagem
+      rent_and_utilities: Aluguel e Contas
+    uncategorized: Sem categoria

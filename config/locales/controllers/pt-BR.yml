@@ -1,0 +1,88 @@
+---
+pt-BR:
+  controllers:
+    settings:
+      profiles:
+        destroy:
+          member_removed: Membro removido com sucesso.
+          failed_to_remove: Falha ao remover membro.
+      api_keys:
+        create:
+          success: Sua chave de API foi criada com sucesso
+        destroy:
+          success: Chave de API foi revogada com sucesso
+          failure: Falha ao revogar chave de API
+    transactions:
+      create:
+        success: Transação criada
+      update:
+        success: Transação atualizada
+    holdings:
+      destroy:
+        cannot_delete: Você não pode excluir este ativo
+    categories:
+      destroy_all:
+        success: Todas as categorias foram excluídas
+    tags:
+      destroy_all:
+        success: Todas as tags foram excluídas
+    chats:
+      update:
+        success: Chat atualizado
+      destroy:
+        success: Chat foi excluído com sucesso
+    imports:
+      create:
+        started: Sua importação foi iniciada em segundo plano.
+      upload:
+        success: CSV carregado com sucesso.
+      configuration:
+        success: Importação configurada com sucesso.
+      revert:
+        started: Importação está sendo revertida em segundo plano.
+      apply_template:
+        success: Modelo aplicado.
+      destroy:
+        success: Sua importação foi excluída.
+    transactions:
+      bulk_deletions:
+        success:
+          one: "%{count} transação excluída"
+          other: "%{count} transações excluídas"
+      bulk_updates:
+        success: "%{count} transações atualizadas"
+    rules:
+      activate:
+        success: "Regra de %{type} ativada"
+      update:
+        success: Regra atualizada
+      destroy:
+        success: Regra excluída
+      destroy_all:
+        success: Todas as regras foram excluídas
+    family_exports:
+      create:
+        started: Exportação iniciada. Você poderá baixá-la em breve.
+    subscriptions:
+      create:
+        already_subscribed: Você já possui uma assinatura.
+        welcome: Bem-vindo ao Maybe!
+        welcome_subscribed: Bem-vindo ao Maybe! Sua assinatura foi criada.
+    accounts:
+      sync:
+        started: Sincronizando contas...
+      destroy:
+        scheduled: Conta agendada para exclusão
+    valuations:
+      create:
+        success: Conta atualizada
+      update:
+        success: Entrada atualizada
+    invite_codes:
+      create:
+        success: Código gerado
+    transfer_matches:
+      create:
+        success: Transferência criada
+    self_hosting:
+      redis_configured: Redis agora está configurado corretamente! Você pode configurar sua aplicação Maybe.

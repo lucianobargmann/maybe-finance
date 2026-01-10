@@ -19,6 +19,29 @@ en:
         date_format_label: Date format
       transaction_import:
         date_format_label: Date format
+        date_label: Date
+        select_column: Select column
+        select_format: Select format
+        amount_label: Amount
+        currency_label: Currency
+        format_label: Format
+        default: Default
+        amount_type_strategy_label: Amount type strategy
+        select_strategy: Select strategy
+        incomes_positive: Incomes are positive
+        incomes_negative: Incomes are negative
+        amount_type_label: Amount type
+        select_convention: Select convention
+        set: Set
+        as_amount_type_column: as amount type column
+        as_income_value: as "income" (inflow) value
+        account_label: Account
+        name_label: Name
+        category_label: Category
+        tags_label: Tags
+        notes_label: Notes
+        leave_empty: Leave empty
+        apply_configuration: Apply configuration
     confirms:
       mappings:
         create_account: Create account
@@ -56,6 +79,15 @@ en:
         instructions_5: No commas, no currency symbols, and no parentheses in numbers.
         title: Import your data
   imports:
+    importing:
+      title: Import in progress
+      description: Your import is in progress. Check the imports menu for status updates or click 'Check Status' to refresh the page for updates. Feel free to continue using the app.
+      check_status: Check status
+      back_to_dashboard: Back to dashboard
+    success:
+      title: Import successful
+      description: Your imported data has been successfully added to the app and is now ready for use.
+      back_to_dashboard: Back to dashboard
     empty:
       message: No imports yet.
       new: New import

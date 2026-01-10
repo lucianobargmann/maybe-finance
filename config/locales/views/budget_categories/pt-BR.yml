@@ -1,0 +1,11 @@
+---
+pt-BR:
+  budget_categories:
+    index:
+      title: Edite seus orçamentos por categoria
+      subtitle: Ajuste os orçamentos das categorias para definir limites de gastos. Os fundos não alocados serão automaticamente atribuídos como não categorizados.
+    no_categories:
+      title: Ops!
+      message: Você ainda não criou ou atribuiu nenhuma categoria de despesas às suas transações.
+      use_defaults: Usar padrões (recomendado)
+      new_category: Nova categoria

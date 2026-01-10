@@ -1,0 +1,88 @@
+---
+en:
+  controllers:
+    settings:
+      profiles:
+        destroy:
+          member_removed: Member removed successfully.
+          failed_to_remove: Failed to remove member.
+      api_keys:
+        create:
+          success: Your API key has been created successfully
+        destroy:
+          success: API key has been revoked successfully
+          failure: Failed to revoke API key
+    transactions:
+      create:
+        success: Transaction created
+      update:
+        success: Transaction updated
+    holdings:
+      destroy:
+        cannot_delete: You cannot delete this holding
+    categories:
+      destroy_all:
+        success: All categories deleted
+    tags:
+      destroy_all:
+        success: All tags deleted
+    chats:
+      update:
+        success: Chat updated
+      destroy:
+        success: Chat was successfully deleted
+    imports:
+      create:
+        started: Your import has started in the background.
+      upload:
+        success: CSV uploaded successfully.
+      configuration:
+        success: Import configured successfully.
+      revert:
+        started: Import is reverting in the background.
+      apply_template:
+        success: Template applied.
+      destroy:
+        success: Your import has been deleted.
+    transactions:
+      bulk_deletions:
+        success:
+          one: "%{count} transaction deleted"
+          other: "%{count} transactions deleted"
+      bulk_updates:
+        success: "%{count} transactions updated"
+    rules:
+      activate:
+        success: "%{type} rule activated"
+      update:
+        success: Rule updated
+      destroy:
+        success: Rule deleted
+      destroy_all:
+        success: All rules deleted
+    family_exports:
+      create:
+        started: Export started. You'll be able to download it shortly.
+    subscriptions:
+      create:
+        already_subscribed: You are already subscribed.
+        welcome: Welcome to Maybe!
+        welcome_subscribed: Welcome to Maybe! Your subscription has been created.
+    accounts:
+      sync:
+        started: Syncing accounts...
+      destroy:
+        scheduled: Account scheduled for deletion
+    valuations:
+      create:
+        success: Account updated
+      update:
+        success: Entry updated
+    invite_codes:
+      create:
+        success: Code generated
+    transfer_matches:
+      create:
+        success: Transfer created
+    self_hosting:
+      redis_configured: Redis is now configured properly! You can now setup your Maybe application.

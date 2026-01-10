@@ -1,0 +1,31 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      property: Imóvel
+    attributes:
+      property:
+        subtype: Tipo de imóvel
+        area_value: Área
+        area_unit: Unidade de área
+        year_built: Ano de construção
+  property:
+    subtypes:
+      single_family_home:
+        short: Casa Unifamiliar
+        long: Casa Unifamiliar
+      multi_family_home:
+        short: Casa Multifamiliar
+        long: Casa Multifamiliar
+      condominium:
+        short: Apartamento
+        long: Condomínio
+      townhouse:
+        short: Sobrado
+        long: Sobrado
+      investment_property:
+        short: Imóvel de Investimento
+        long: Imóvel de Investimento
+      second_home:
+        short: Segunda Casa
+        long: Segunda Casa

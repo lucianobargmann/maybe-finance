@@ -1,0 +1,69 @@
+---
+en:
+  rules:
+    index:
+      title: Rules
+      delete_all_rules: Delete all rules
+      new_rule: New rule
+      rules: Rules
+      sort_by: "Sort by:"
+      name: Name
+      updated_at: Updated At
+      toggle_sort_direction: Toggle sort direction
+      no_rules_title: No rules yet
+      no_rules_description: Set up rules to perform actions to your transactions and other data on every account sync.
+      ai_warning: AI-enabled rule actions will cost money. Be sure to filter as narrowly as possible to avoid unnecessary costs.
+    new:
+      title: New rule
+    edit:
+      title: Edit rule
+    form:
+      rule_name: Rule name
+      rule_name_placeholder: Enter rule name
+      conditions: Conditions
+      add_condition: Add condition
+      actions: Actions
+      add_action: Add action
+      save: Save rule
+      cancel: Cancel
+      when: When
+      then: Then
+      all_conditions: All conditions match
+      any_conditions: Any condition matches
+      rule_name_optional: Rule name (optional)
+      enter_rule_name: Enter a name for this rule
+      if_label: IF
+      then_label: THEN
+      for_label: FOR
+      add_condition_group: Add condition group
+      all_past_and_future: All past and future %{resource_type}
+      starting_from: Starting from
+    rule:
+      edit: Edit
+      delete: Delete
+      active: Active
+      inactive: Inactive
+      activate: Activate
+      deactivate: Deactivate
+      if_label: IF
+      then_label: THEN
+      for_label: FOR
+      to: to
+      and_more_conditions:
+        one: and 1 more condition
+        other: and %{count} more conditions
+      and_more_actions:
+        one: and 1 more action
+        other: and %{count} more actions
+      all_past_and_future: All past and future %{resource_type}
+      on_or_after: "%{resource_type} on or after %{date}"
+      reapply_rule: Re-apply rule
+    confirm:
+      title: Confirm rule
+      description: Review and confirm the rule configuration
+      confirm: Confirm
+      cancel: Cancel
+    category_rule_cta:
+      create_rule: Create rule
+      dismiss: Dismiss
+      message: "Would you like to create a rule that automatically categorizes similar transactions as %{category}?"

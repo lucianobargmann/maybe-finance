@@ -1,0 +1,8 @@
+---
+en:
+  activerecord:
+    models:
+      other_asset: Other Asset
+    attributes:
+      other_asset:
+        name: Name

@@ -1,0 +1,33 @@
+---
+pt-BR:
+  onboardings:
+    header:
+      sign_out: Sair
+    preferences:
+      currency: Moeda
+      date_format: Formato de data
+      example: Conta de exemplo
+      locale: Idioma
+      preview: Pré-visualize como os dados são exibidos com base nas preferências.
+      submit: Concluir
+      subtitle: Vamos configurar suas preferências.
+      title: Configure suas preferências
+    profile:
+      country: País
+      first_name: Nome
+      household_name: Nome da Família
+      last_name: Sobrenome
+      profile_image: Foto de Perfil
+      submit: Continuar
+      subtitle: Vamos completar seu perfil.
+      title: Vamos configurar o básico
+    show:
+      title: Vamos configurar sua conta
+      subtitle: Primeiro, vamos configurar seu perfil.
+      first_name: Nome
+      last_name: Sobrenome
+      household_name: Nome da família
+      country: País
+      continue: Continuar
+      message: Estamos muito felizes que você está aqui. No próximo passo, faremos algumas perguntas para completar seu perfil e então deixá-lo tudo configurado.
+      setup: Configurar conta

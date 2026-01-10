@@ -1,0 +1,19 @@
+---
+pt-BR:
+  users:
+    user_menu:
+      version: Versão
+      settings: Configurações
+      changelog: Novidades
+      feedback: Feedback
+      contact: Contato
+      log_out: Sair
+    destroy:
+      success: Sua conta foi excluída.
+    update:
+      email_change_failed: Falha ao alterar endereço de e-mail.
+      email_change_initiated: Por favor, verifique seu novo endereço de e-mail para instruções de confirmação.
+      success: Seu perfil foi atualizado.
+    reset:
+      success: Sua conta foi redefinida. Os dados serão excluídos em segundo plano em alguns instantes.
+      unauthorized: Você não está autorizado a realizar esta ação

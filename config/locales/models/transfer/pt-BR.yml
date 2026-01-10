@@ -1,0 +1,35 @@
+---
+pt-BR:
+  activerecord:
+    models:
+      transfer: Transferencia
+    attributes:
+      transfer:
+        status: Status
+    enums:
+      transfer:
+        status:
+          pending: Pendente
+          confirmed: Confirmada
+    errors:
+      models:
+        transfer:
+          attributes:
+            base:
+              inflow_cannot_be_in_multiple_transfers: A transacao de entrada nao pode fazer parte de multiplas transferencias
+              must_be_from_different_accounts: A transferencia deve ter contas diferentes
+              must_be_from_same_family: A transferencia deve ser da mesma familia
+              must_be_within_date_range: As datas das transacoes de transferencia devem estar dentro de 4 dias uma da outra
+              must_have_opposite_amounts: As transacoes de transferencia devem ter valores opostos
+              must_have_single_currency: A transferencia deve ter uma unica moeda
+              outflow_cannot_be_in_multiple_transfers: A transacao de saida nao pode fazer parte de multiplas transferencias
+  transfer:
+    name: Transferencia para %{to_account}
+    payment_name: Pagamento para %{to_account}
+    statuses:
+      pending: Pendente
+      confirmed: Confirmada
+    types:
+      transfer: Transferencia
+      loan_payment: Pagamento de emprestimo
+      liability_payment: Pagamento de cartao

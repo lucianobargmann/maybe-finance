@@ -1,6 +1,17 @@
 ---
 en:
   layouts:
+    nav:
+      home: Home
+      transactions: Transactions
+      budgets: Budgets
+      assistant: Assistant
+    sidebar:
+      free_trial: Free trial
+      days_remaining:
+        one: "%{count} day remaining"
+        other: "%{count} days remaining"
+      upgrade: Upgrade
     auth:
       existing_account: Already have an account?
       no_account: New to Maybe?

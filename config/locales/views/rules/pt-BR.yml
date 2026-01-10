@@ -1,0 +1,69 @@
+---
+pt-BR:
+  rules:
+    index:
+      title: Regras
+      delete_all_rules: Excluir todas as regras
+      new_rule: Nova regra
+      rules: Regras
+      sort_by: "Ordenar por:"
+      name: Nome
+      updated_at: Atualizado em
+      toggle_sort_direction: Alternar direção de ordenação
+      no_rules_title: Nenhuma regra ainda
+      no_rules_description: Configure regras para executar ações em suas transações e outros dados a cada sincronização de conta.
+      ai_warning: Ações de regras habilitadas por IA custarão dinheiro. Certifique-se de filtrar o mais estritamente possível para evitar custos desnecessários.
+    new:
+      title: Nova regra
+    edit:
+      title: Editar regra
+    form:
+      rule_name: Nome da regra
+      rule_name_placeholder: Digite o nome da regra
+      conditions: Condicoes
+      add_condition: Adicionar condicao
+      actions: Acoes
+      add_action: Adicionar acao
+      save: Salvar regra
+      cancel: Cancelar
+      when: Quando
+      then: Entao
+      all_conditions: Todas as condicoes correspondem
+      any_conditions: Qualquer condicao corresponde
+      rule_name_optional: Nome da regra (opcional)
+      enter_rule_name: Digite um nome para esta regra
+      if_label: SE
+      then_label: ENTAO
+      for_label: PARA
+      add_condition_group: Adicionar grupo de condicao
+      all_past_and_future: Todos os %{resource_type} passados e futuros
+      starting_from: A partir de
+    rule:
+      edit: Editar
+      delete: Excluir
+      active: Ativa
+      inactive: Inativa
+      activate: Ativar
+      deactivate: Desativar
+      if_label: SE
+      then_label: ENTAO
+      for_label: PARA
+      to: para
+      and_more_conditions:
+        one: e mais 1 condicao
+        other: e mais %{count} condicoes
+      and_more_actions:
+        one: e mais 1 acao
+        other: e mais %{count} acoes
+      all_past_and_future: Todos os %{resource_type} passados e futuros
+      on_or_after: "%{resource_type} em ou apos %{date}"
+      reapply_rule: Reaplicar regra
+    confirm:
+      title: Confirmar regra
+      description: Revise e confirme a configuração da regra
+      confirm: Confirmar
+      cancel: Cancelar
+    category_rule_cta:
+      create_rule: Criar regra
+      dismiss: Dispensar
+      message: "Você gostaria de criar uma regra que categorize automaticamente transações semelhantes como %{category}?"

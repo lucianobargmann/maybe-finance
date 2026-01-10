@@ -1,0 +1,15 @@
+---
+pt-BR:
+  subscriptions:
+    self_hosted_alert: "Maybe+ não está disponível no modo auto-hospedado."
+    upgrade:
+      title: Upgrade
+      account_settings: Configurações da Conta
+      sign_out: Sair
+      trial_remaining: "Seu período de teste tem %{days} dias restantes"
+      trial_over: Seu período de teste terminou
+      unlock: Desbloqueie
+      today: hoje
+      pick_plan: Para continuar usando o Maybe, escolha um plano abaixo.
+      subscribe_button: Assinar e desbloquear Maybe
+      stripe_redirect_notice: Na próxima etapa, você será redirecionado para o Stripe, que gerencia nosso faturamento.

@@ -6,6 +6,17 @@ en:
         page_title: Billing
         subscription_subtitle: Update your subscription and billing details
         subscription_title: Manage subscription
+        subscribed_to_html: 'You are currently subscribed to the <span class="font-medium">%{plan_name}</span>.'
+        plan_renews_html: 'Your plan renews on <span class="font-medium">%{renewal_date}</span>.'
+        trialing: You are currently trialing Maybe
+        days_remaining:
+          one: "%{count} day remaining"
+          other: "%{count} days remaining"
+        not_subscribed_html: 'You are currently <span class="font-medium">not subscribed</span>'
+        subscribe_prompt: Once you subscribe to Maybe+, you'll see your billing settings here.
+        manage: Manage
+        choose_plan: Choose plan
+        billing_via_stripe: Billing via Stripe
     preferences:
       show:
         country: Country

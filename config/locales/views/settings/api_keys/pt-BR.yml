@@ -1,0 +1,71 @@
+---
+pt-BR:
+  settings:
+    api_keys_controller:
+      success: "Sua chave de API foi criada com sucesso"
+      revoked_successfully: "Chave de API foi revogada com sucesso"
+      revoke_failed: "Falha ao revogar chave de API"
+      scope_descriptions:
+        read_accounts: "Visualizar Contas"
+        read_transactions: "Visualizar Transações"
+        read_balances: "Visualizar Saldos"
+        write_transactions: "Criar Transações"
+    api_keys:
+      new:
+        page_title: "Criar Nova Chave de API"
+        title: "Criar Nova Chave de API"
+        subtitle: "Gere uma nova chave de API para acessar seus dados do Maybe programaticamente."
+        name_label: "Nome da Chave de API"
+        name_placeholder: "ex., Meu App de Orçamento, Rastreador de Portfólio"
+        name_help: "Escolha um nome descritivo para ajudá-lo a identificar esta chave depois."
+        permissions_label: "Permissões"
+        permissions_help: "Selecione as permissões que esta chave de API deve ter:"
+        scope_read: "Somente Leitura"
+        scope_read_description: "Visualizar suas contas, transações e saldos"
+        scope_read_write: "Leitura/Escrita"
+        scope_read_write_description: "Visualizar seus dados e criar novas transações"
+        security_warning_title: "Aviso de Segurança"
+        security_warning: "Sua chave de API será exibida apenas uma vez após a criação. Certifique-se de copiá-la e armazená-la com segurança. Qualquer pessoa com acesso a esta chave pode acessar seus dados de acordo com as permissões que você selecionar."
+        cancel: "Cancelar"
+        create_key: "Criar Chave de API"
+      show:
+        page_title: "Chave de API"
+        # Strings compartilhadas usadas em múltiplas seções
+        your_api_key: "Sua Chave de API"
+        copy_and_store: "Copie e armazene esta chave com segurança. Você precisará dela para autenticar suas requisições de API."
+        copy_api_key: "Copiar Chave de API"
+        how_to_use: "Como usar sua chave de API"
+        include_header: "Inclua sua chave de API no cabeçalho X-Api-Key ao fazer requisições:"
+        scope_read: "Somente Leitura"
+        scope_read_write: "Leitura/Escrita"
+        # Seção de criação (exibida após criar uma nova chave)
+        created:
+          title: "Chave de API Criada com Sucesso"
+          subtitle: "Sua nova chave de API foi gerada com sucesso."
+          success_heading: "Chave de API Criada com Sucesso!"
+          success_message: "Sua nova chave de API \"%{name}\" foi criada e está pronta para uso."
+        continue_to_settings: "Continuar para Configurações de Chave de API"
+        # Seção de chave atual (exibida quando o usuário tem uma chave existente)
+        current:
+          title: "Sua Chave de API"
+          subtitle: "Gerencie sua chave de API para acesso programático aos seus dados do Maybe."
+        created_ago: "Criada há %{time}"
+        last_used_ago: "Último uso há %{time}"
+        never_used: "Nunca usada"
+        active: "Ativa"
+        permissions: "Permissões"
+        create_new_key: "Criar Nova Chave"
+        revoke_key: "Revogar Chave"
+        revoke_confirmation: "Tem certeza de que deseja revogar esta chave de API?"
+        # Seção sem chave (exibida quando o usuário não tem chave de API)
+        no_key:
+          title: "Crie Sua Chave de API"
+          subtitle: "Obtenha acesso programático aos seus dados do Maybe"
+          heading: "Acesse seus dados de conta programaticamente"
+          description: "Gere uma chave de API para integrar com suas aplicações e acessar seus dados financeiros com segurança."
+          what_you_can_do: "O que você pode fazer com chaves de API:"
+          feature_1: "Acessar suas contas e saldos"
+          feature_2: "Visualizar histórico de transações"
+          feature_3: "Criar novas transações"
+          feature_4: "Integrar com aplicações de terceiros"
+          create_api_key: "Criar Chave de API"
