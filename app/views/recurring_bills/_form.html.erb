@@ -1,0 +1,73 @@
+<%# locals: (recurring_bill:) %>
+
+<%= styled_form_with model: recurring_bill, class: "space-y-4" do |f| %>
+  <% if recurring_bill.errors.any? %>
+    <%= render "shared/form_errors", model: recurring_bill %>
+  <% end %>
+
+  <section class="space-y-4">
+    <%= f.text_field :name,
+        placeholder: t("recurring_bills.form.name_placeholder"),
+        required: true,
+        autofocus: true,
+        label: t("recurring_bills.form.name") %>
+
+    <div class="grid grid-cols-2 gap-4">
+      <%= f.number_field :expected_amount,
+          step: 0.01,
+          min: 0,
+          required: true,
+          label: t("recurring_bills.form.amount") %>
+
+      <%= f.select :currency,
+          Money::Currency.as_options.map { |c| ["#{c.name} (#{c.iso_code})", c.iso_code] },
+          { label: t("recurring_bills.form.currency"), selected: recurring_bill.currency || Current.family.currency },
+          required: true %>
+    </div>
+
+    <%= f.select :due_day,
+        (1..31).map { |d| [d.ordinalize, d] },
+        { label: t("recurring_bills.form.due_day") },
+        required: true %>
+
+    <%= f.select :merchant_id,
+        Current.family.assigned_merchants.alphabetically.map { |m| [m.name, m.id] },
+        { include_blank: t("recurring_bills.form.no_merchant"), label: t("recurring_bills.form.merchant") } %>
+
+    <%= f.select :status,
+        RecurringBill.statuses.keys.map { |s| [t("recurring_bills.form.statuses.#{s}"), s] },
+        { label: t("recurring_bills.form.status") } %>
+
+    <details class="group">
+      <summary class="cursor-pointer text-sm text-secondary hover:text-primary flex items-center gap-1">
+        <%= icon "chevron-right", size: "sm", class: "group-open:rotate-90 transition-transform" %>
+        <%= t("recurring_bills.form.advanced_options") %>
+      </summary>
+
+      <div class="mt-4 space-y-4 pl-4 border-l-2 border-secondary">
+        <%= f.date_field :start_date,
+            label: t("recurring_bills.form.start_date"),
+            hint: t("recurring_bills.form.start_date_hint") %>
+
+        <%= f.date_field :end_date,
+            label: t("recurring_bills.form.end_date"),
+            hint: t("recurring_bills.form.end_date_hint") %>
+
+        <%= f.text_area :notes,
+            rows: 3,
+            label: t("recurring_bills.form.notes"),
+            placeholder: t("recurring_bills.form.notes_placeholder") %>
+      </div>
+    </details>
+  </section>
+
+  <section class="flex gap-2">
+    <%= f.submit recurring_bill.new_record? ? t("recurring_bills.form.create") : t("recurring_bills.form.update") %>
+    <%= render DS::Button.new(
+      text: t("recurring_bills.form.cancel"),
+      variant: "ghost",
+      type: "button",
+      data: { action: "click->dialog#close" }
+    ) %>
+  </section>
+<% end %>

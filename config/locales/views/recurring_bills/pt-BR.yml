@@ -1,0 +1,69 @@
+---
+pt-BR:
+  recurring_bills:
+    index:
+      title: Contas Mensais
+      add_bill: Adicionar Conta
+      no_bills: Nenhuma conta cadastrada ainda
+      monthly_bills: Contas Mensais
+      alerts:
+        overdue_message: "%{name} está vencida (vencimento %{date})"
+        due_today_message: "%{name} vence hoje"
+        due_soon_message: "%{name} vence em %{days} dias"
+    new:
+      title: Nova Conta
+    edit:
+      title: Editar Conta
+    header:
+      today: Hoje
+    form:
+      name: Nome da Conta
+      name_placeholder: "ex: Conta de Luz"
+      amount: Valor Estimado
+      due_day: Dia de Vencimento
+      merchant: Estabelecimento (para correspondência automática)
+      no_merchant: Sem estabelecimento (correspondência apenas por valor)
+      currency: Moeda
+      status: Status
+      statuses:
+        active: Ativo
+        paused: Pausado
+        cancelled: Cancelado
+      start_date: Data de Início (opcional)
+      start_date_hint: Quando esta conta começou a ser recorrente
+      end_date: Data de Fim (opcional)
+      end_date_hint: Quando esta conta deixará de ser recorrente
+      notes: Notas (opcional)
+      notes_placeholder: Notas adicionais sobre esta conta...
+      advanced_options: Opções Avançadas
+      create: Criar Conta
+      update: Atualizar Conta
+      save: Salvar Conta
+      cancel: Cancelar
+    calendar:
+      title: Calendário de Contas
+      overdue: Vencida/Hoje
+      due_soon: Próxima
+      paid: Paga
+      pending: Pendente
+    cashflow:
+      title: Projeção de Fluxo de Caixa - 12 Meses
+      income: Receita
+      bills: Contas
+      net: Líquido
+      bills_count:
+        one: "%{count} conta"
+        other: "%{count} contas"
+      income_note: "* Estimativa de receita baseada na mediana da renda mensal do seu histórico de transações."
+    list:
+      no_bills: Nenhuma conta cadastrada ainda
+      add_first: Adicione sua primeira conta
+      due: "Vence %{date}"
+      paid: "Pago %{date}"
+      paid_amount: Pago
+      overdue: Vencida
+      skipped: Pulada
+      view_details: Ver Detalhes
+      skip_month: Pular Este Mês
+      unmatch: Desvincular Pagamento
+      edit_bill: Editar Conta

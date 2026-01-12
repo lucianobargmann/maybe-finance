@@ -1,0 +1,69 @@
+---
+en:
+  recurring_bills:
+    index:
+      title: Monthly Bills
+      add_bill: Add Bill
+      no_bills: No bills set up yet
+      monthly_bills: Monthly Bills
+      alerts:
+        overdue_message: "%{name} is overdue (due %{date})"
+        due_today_message: "%{name} is due today"
+        due_soon_message: "%{name} due in %{days} days"
+    new:
+      title: New Bill
+    edit:
+      title: Edit Bill
+    header:
+      today: Today
+    form:
+      name: Bill Name
+      name_placeholder: "e.g., Electricity Bill"
+      amount: Expected Amount
+      due_day: Due Day of Month
+      merchant: Merchant (for auto-matching)
+      no_merchant: No merchant (match by amount only)
+      currency: Currency
+      status: Status
+      statuses:
+        active: Active
+        paused: Paused
+        cancelled: Cancelled
+      start_date: Start Date (optional)
+      start_date_hint: When this bill started recurring
+      end_date: End Date (optional)
+      end_date_hint: When this bill will stop recurring
+      notes: Notes (optional)
+      notes_placeholder: Any additional notes about this bill...
+      advanced_options: Advanced Options
+      create: Create Bill
+      update: Update Bill
+      save: Save Bill
+      cancel: Cancel
+    calendar:
+      title: Bill Calendar
+      overdue: Overdue/Today
+      due_soon: Due Soon
+      paid: Paid
+      pending: Pending
+    cashflow:
+      title: 12-Month Cashflow Projection
+      income: Income
+      bills: Bills
+      net: Net
+      bills_count:
+        one: "%{count} bill"
+        other: "%{count} bills"
+      income_note: "* Income estimate based on median monthly income from your transaction history."
+    list:
+      no_bills: No bills set up yet
+      add_first: Add your first bill
+      due: "Due %{date}"
+      paid: "Paid %{date}"
+      paid_amount: Paid
+      overdue: Overdue
+      skipped: Skipped
+      view_details: View Details
+      skip_month: Skip This Month
+      unmatch: Unmatch Payment
+      edit_bill: Edit Bill

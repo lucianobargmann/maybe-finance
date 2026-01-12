@@ -44,7 +44,7 @@ pt-BR:
       new_account: Nova conta
       sync: Sincronizar todas
     account_types:
-      depository: Dinheiro
+      depository: Banco
       investment: Investimento
       crypto: Criptomoeda
       property: Imóvel
