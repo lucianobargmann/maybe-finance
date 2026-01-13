@@ -20,7 +20,7 @@
           label: t("recurring_bills.form.amount") %>
 
       <%= f.select :currency,
-          Money::Currency.as_options.map { |c| ["#{c.name} (#{c.iso_code})", c.iso_code] },
+          currency_options_for_select,
           { label: t("recurring_bills.form.currency"), selected: recurring_bill.currency || Current.family.currency },
           required: true %>
     </div>

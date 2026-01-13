@@ -68,6 +68,18 @@ module ApplicationHelper
     Money.new(number_or_money).format(options)
   end
 
+  # Returns translated currency name with fallback to English name from Money gem
+  def currency_name(iso_code)
+    I18n.t("currencies.#{iso_code}", default: Money::Currency.new(iso_code).name)
+  rescue Money::Currency::UnknownCurrency
+    iso_code
+  end
+
+  # Returns currency options for select fields with translated names
+  def currency_options_for_select
+    Money::Currency.as_options.map { |c| ["#{currency_name(c.iso_code)} (#{c.iso_code})", c.iso_code] }
+  end
+
   def totals_by_currency(collection:, money_method:, separator: " | ", negate: false)
     collection.group_by(&:currency)
               .transform_values { |item| calculate_total(item, money_method, negate) }

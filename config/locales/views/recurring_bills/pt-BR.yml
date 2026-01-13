@@ -40,6 +40,14 @@ pt-BR:
       update: Atualizar Conta
       save: Salvar Conta
       cancel: Cancelar
+    summary:
+      title: "Resumo de %{month}"
+      to_pay: A Pagar
+      paid: Pago
+      bills_count:
+        zero: Nenhuma conta
+        one: "%{count} conta"
+        other: "%{count} contas"
     calendar:
       title: Calendário de Contas
       overdue: Vencida/Hoje

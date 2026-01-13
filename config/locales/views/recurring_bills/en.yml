@@ -40,6 +40,14 @@ en:
       update: Update Bill
       save: Save Bill
       cancel: Cancel
+    summary:
+      title: "%{month} Summary"
+      to_pay: To Pay
+      paid: Paid
+      bills_count:
+        zero: No bills
+        one: "%{count} bill"
+        other: "%{count} bills"
     calendar:
       title: Bill Calendar
       overdue: Overdue/Today

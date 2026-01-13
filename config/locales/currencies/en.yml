@@ -1,0 +1,183 @@
+---
+en:
+  currencies:
+    USD: United States Dollar
+    EUR: Euro
+    GBP: British Pound
+    AUD: Australian Dollar
+    CAD: Canadian Dollar
+    JPY: Japanese Yen
+    BYR: Belarusian Ruble
+    AFN: Afghan Afghani
+    ALL: Albanian Lek
+    DZD: Algerian Dinar
+    AOA: Angolan Kwanza
+    ARS: Argentine Peso
+    AMD: Armenian Dram
+    AWG: Aruban Florin
+    AZN: Azerbaijani Manat
+    BSD: Bahamian Dollar
+    BHD: Bahraini Dinar
+    BDT: Bangladeshi Taka
+    BBD: Barbadian Dollar
+    BYN: Belarusian Ruble
+    BZD: Belize Dollar
+    BMD: Bermudian Dollar
+    BTN: Bhutanese Ngultrum
+    BTC: Bitcoin
+    BOB: Bolivian Boliviano
+    BAM: Bosnia and Herzegovina Convertible Mark
+    BWP: Botswana Pula
+    BRL: Brazilian Real
+    GBX: British Penny
+    BND: Brunei Dollar
+    BGN: Bulgarian Lev
+    BIF: Burundian Franc
+    KHR: Cambodian Riel
+    CVE: Cape Verdean Escudo
+    KYD: Cayman Islands Dollar
+    XAF: Central African CFA Franc
+    XPF: CFP Franc
+    CLP: Chilean Peso
+    CNY: Chinese Renminbi Yuan
+    CNH: Chinese Renminbi Yuan Offshore
+    XTS: Test Currency
+    COP: Colombian Peso
+    KMF: Comorian Franc
+    CDF: Congolese Franc
+    CRC: Costa Rican Colon
+    CUC: Cuban Convertible Peso
+    CUP: Cuban Peso
+    CZK: Czech Koruna
+    DKK: Danish Krone
+    DJF: Djiboutian Franc
+    DOP: Dominican Peso
+    XCD: East Caribbean Dollar
+    EGP: Egyptian Pound
+    ERN: Eritrean Nakfa
+    ETH: Ethereum
+    ETB: Ethiopian Birr
+    XBA: European Composite Unit
+    XBB: European Monetary Unit
+    XBD: European Unit of Account 17
+    XBC: European Unit of Account 9
+    FKP: Falkland Pound
+    FJD: Fijian Dollar
+    GMD: Gambian Dalasi
+    GEL: Georgian Lari
+    GHS: Ghanaian Cedi
+    GIP: Gibraltar Pound
+    XAU: Gold (Troy Ounce)
+    GTQ: Guatemalan Quetzal
+    GGP: Guernsey Pound
+    GNF: Guinean Franc
+    GYD: Guyanese Dollar
+    HTG: Haitian Gourde
+    HNL: Honduran Lempira
+    HKD: Hong Kong Dollar
+    HUF: Hungarian Forint
+    ISK: Icelandic Krona
+    INR: Indian Rupee
+    IDR: Indonesian Rupiah
+    IRR: Iranian Rial
+    IQD: Iraqi Dinar
+    IMP: Isle of Man Pound
+    ILS: Israeli New Shekel
+    JMD: Jamaican Dollar
+    JEP: Jersey Pound
+    JOD: Jordanian Dinar
+    KZT: Kazakhstani Tenge
+    KES: Kenyan Shilling
+    KWD: Kuwaiti Dinar
+    KGS: Kyrgyzstani Som
+    LAK: Lao Kip
+    LBP: Lebanese Pound
+    LSL: Lesotho Loti
+    LRD: Liberian Dollar
+    LYD: Libyan Dinar
+    MOP: Macanese Pataca
+    MKD: Macedonian Denar
+    MGA: Malagasy Ariary
+    MWK: Malawian Kwacha
+    MYR: Malaysian Ringgit
+    MVR: Maldivian Rufiyaa
+    MRU: Mauritanian Ouguiya
+    MUR: Mauritian Rupee
+    MXN: Mexican Peso
+    MDL: Moldovan Leu
+    MNT: Mongolian Tugrik
+    MAD: Moroccan Dirham
+    MZN: Mozambican Metical
+    MMK: Myanmar Kyat
+    NAD: Namibian Dollar
+    NPR: Nepalese Rupee
+    ANG: Netherlands Antillean Guilder
+    SLE: Sierra Leonean Leone (New)
+    TWD: New Taiwan Dollar
+    NZD: New Zealand Dollar
+    NIO: Nicaraguan Cordoba
+    NGN: Nigerian Naira
+    KPW: North Korean Won
+    NOK: Norwegian Krone
+    OMR: Omani Rial
+    PKR: Pakistani Rupee
+    XPD: Palladium
+    PAB: Panamanian Balboa
+    PGK: Papua New Guinean Kina
+    PYG: Paraguayan Guarani
+    PEN: Peruvian Sol
+    PHP: Philippine Peso
+    XPT: Platinum
+    PLN: Polish Zloty
+    QAR: Qatari Riyal
+    RON: Romanian Leu
+    RUB: Russian Ruble
+    RWF: Rwandan Franc
+    SHP: Saint Helena Pound
+    SVC: Salvadoran Colon
+    WST: Samoan Tala
+    SAR: Saudi Riyal
+    RSD: Serbian Dinar
+    SCR: Seychellois Rupee
+    SLL: Sierra Leonean Leone
+    XAG: Silver (Troy Ounce)
+    SGD: Singapore Dollar
+    SKK: Slovak Koruna
+    SBD: Solomon Islands Dollar
+    SOS: Somali Shilling
+    ZAR: South African Rand
+    KRW: South Korean Won
+    SSP: South Sudanese Pound
+    XDR: Special Drawing Rights
+    LKR: Sri Lankan Rupee
+    SDG: Sudanese Pound
+    SRD: Surinamese Dollar
+    SZL: Swazi Lilangeni
+    SEK: Swedish Krona
+    CHF: Swiss Franc
+    SYP: Syrian Pound
+    STD: Sao Tome and Principe Dobra
+    STN: Sao Tome and Principe Dobra (New)
+    TJS: Tajikistani Somoni
+    TZS: Tanzanian Shilling
+    THB: Thai Baht
+    TOP: Tongan Paanga
+    TTD: Trinidad and Tobago Dollar
+    TND: Tunisian Dinar
+    TRY: Turkish Lira
+    TMT: Turkmenistani Manat
+    XFU: UIC Franc
+    USDC: USD Coin
+    UGX: Ugandan Shilling
+    UAH: Ukrainian Hryvnia
+    CLF: Chilean Unit of Account
+    AED: United Arab Emirates Dirham
+    UYU: Uruguayan Peso
+    UZS: Uzbekistan Som
+    VUV: Vanuatu Vatu
+    VES: Venezuelan Bolivar
+    VND: Vietnamese Dong
+    XOF: West African CFA Franc
+    YER: Yemeni Rial
+    ZMK: Zambian Kwacha (Old)
+    ZMW: Zambian Kwacha

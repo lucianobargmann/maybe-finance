@@ -1,0 +1,55 @@
+<div class="pb-12">
+  <%= render "recurring_bills/header", month: @month %>
+
+  <%= render "recurring_bills/summary", summary: @summary, month: @month %>
+
+  <% if @alerts[:overdue].any? || @alerts[:due_today].any? || @alerts[:due_soon].any? %>
+    <div class="mb-6 space-y-2">
+      <% @alerts[:overdue].each do |payment| %>
+        <%= render DS::Alert.new(
+          message: t(".alerts.overdue_message", name: payment.recurring_bill.name, date: l(payment.due_date, format: :short)),
+          variant: :error
+        ) %>
+      <% end %>
+      <% @alerts[:due_today].each do |payment| %>
+        <%= render DS::Alert.new(
+          message: t(".alerts.due_today_message", name: payment.recurring_bill.name),
+          variant: :error
+        ) %>
+      <% end %>
+      <% @alerts[:due_soon].each do |payment| %>
+        <%= render DS::Alert.new(
+          message: t(".alerts.due_soon_message", name: payment.recurring_bill.name, days: (payment.due_date - Date.current).to_i),
+          variant: :warning
+        ) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="flex flex-col items-start gap-4 md:flex-row">
+    <div class="w-full md:max-w-[400px]">
+      <%= render "recurring_bills/calendar", month: @month, calendar_data: @calendar_data %>
+    </div>
+
+    <div class="w-full grow bg-container rounded-xl shadow-border-xs p-4">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-medium"><%= t(".monthly_bills") %></h2>
+        <%= render DS::Link.new(
+          text: t(".add_bill"),
+          variant: "primary",
+          icon: "plus",
+          href: new_recurring_bill_path,
+          frame: :modal
+        ) %>
+      </div>
+
+      <div class="bg-container-inset rounded-xl p-1">
+        <%= render "recurring_bills/list", bill_payments: @bill_payments %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6">
+    <%= render "recurring_bills/cashflow_projection", projection: @cashflow_projection %>
+  </div>
+</div>
