@@ -15,13 +15,21 @@ class BillPaymentsController < ApplicationController
 
   def match
     transaction = Current.family.transactions.find(params[:transaction_id])
-    @bill_payment.mark_paid!(transaction)
-    redirect_to recurring_bills_path, notice: t("bill_payments.notices.marked_paid")
+    @bill_payment.add_transaction!(transaction)
+    redirect_to bill_payment_path(@bill_payment), notice: t("bill_payments.notices.transaction_added")
   end
 
   def unmatch
-    @bill_payment.update!(matched_transaction: nil, actual_amount: nil, status: :pending, paid_date: nil)
-    redirect_to recurring_bills_path, notice: t("bill_payments.notices.unmatched")
+    if params[:transaction_id].present?
+      transaction = Current.family.transactions.find(params[:transaction_id])
+      @bill_payment.remove_transaction!(transaction)
+      redirect_to bill_payment_path(@bill_payment), notice: t("bill_payments.notices.transaction_removed")
+    else
+      # Remove all transactions
+      @bill_payment.bill_payment_transactions.destroy_all
+      @bill_payment.recalculate_totals!
+      redirect_to recurring_bills_path, notice: t("bill_payments.notices.unmatched")
+    end
   end
 
   def skip
@@ -43,6 +51,6 @@ class BillPaymentsController < ApplicationController
     end
 
     def bill_payment_params
-      params.require(:bill_payment).permit(:status)
+      params.require(:bill_payment).permit(:status, :expected_amount)
     end
 end

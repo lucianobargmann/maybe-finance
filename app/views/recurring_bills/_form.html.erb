@@ -70,4 +70,17 @@
       data: { action: "click->dialog#close" }
     ) %>
   </section>
+
+  <% unless recurring_bill.new_record? %>
+    <section class="pt-4 border-t border-secondary">
+      <%= render DS::Button.new(
+        text: t("recurring_bills.form.delete"),
+        variant: "destructive",
+        href: recurring_bill_path(recurring_bill),
+        method: :delete,
+        frame: "_top",
+        data: { turbo_confirm: t("recurring_bills.form.delete_confirm") }
+      ) %>
+    </section>
+  <% end %>
 <% end %>

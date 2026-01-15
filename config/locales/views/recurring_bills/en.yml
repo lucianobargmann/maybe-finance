@@ -12,6 +12,12 @@ en:
       add_bill: Add Bill
       no_bills: No bills set up yet
       monthly_bills: Monthly Bills
+      filters:
+        all: All
+        overdue_today: Overdue/Today
+        upcoming: Upcoming
+        paid: Paid
+        pending: Pending
       alerts:
         overdue_message: "%{name} is overdue (due %{date})"
         due_today_message: "%{name} is due today"
@@ -46,6 +52,8 @@ en:
       update: Update Bill
       save: Save Bill
       cancel: Cancel
+      delete: Delete Bill
+      delete_confirm: Are you sure you want to delete this bill? This will also remove all payment history.
     summary:
       title: "%{month} Summary"
       to_pay: To Pay
@@ -71,6 +79,7 @@ en:
       income_note: "* Income estimate based on median monthly income from your transaction history."
     list:
       no_bills: No bills set up yet
+      no_bills_filtered: No bills match the selected filter
       add_first: Add your first bill
       due: "Due %{date}"
       paid: "Paid %{date}"

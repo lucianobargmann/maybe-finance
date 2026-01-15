@@ -31,7 +31,7 @@
       <%= render "recurring_bills/calendar", month: @month, calendar_data: @calendar_data %>
     </div>
 
-    <div class="w-full grow bg-container rounded-xl shadow-border-xs p-4">
+    <div class="w-full grow bg-container rounded-xl shadow-border-xs p-4" data-controller="bill-status-filter">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-lg font-medium"><%= t(".monthly_bills") %></h2>
         <%= render DS::Link.new(
@@ -43,7 +43,30 @@
         ) %>
       </div>
 
-      <div class="bg-container-inset rounded-xl p-1">
+      <div class="flex gap-1 mb-4 p-1 bg-container-inset rounded-lg">
+        <button type="button" data-bill-status-filter-target="tab" data-status="all" data-action="click->bill-status-filter#select"
+          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors bg-container text-primary shadow-xs">
+          <%= t(".filters.all") %>
+        </button>
+        <button type="button" data-bill-status-filter-target="tab" data-status="overdue_today" data-action="click->bill-status-filter#select"
+          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+          <%= t(".filters.overdue_today") %>
+        </button>
+        <button type="button" data-bill-status-filter-target="tab" data-status="upcoming" data-action="click->bill-status-filter#select"
+          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+          <%= t(".filters.upcoming") %>
+        </button>
+        <button type="button" data-bill-status-filter-target="tab" data-status="paid" data-action="click->bill-status-filter#select"
+          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+          <%= t(".filters.paid") %>
+        </button>
+        <button type="button" data-bill-status-filter-target="tab" data-status="pending" data-action="click->bill-status-filter#select"
+          class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+          <%= t(".filters.pending") %>
+        </button>
+      </div>
+
+      <div class="bg-container-inset rounded-xl p-1 max-h-[400px] overflow-y-auto">
         <%= render "recurring_bills/list", bill_payments: @bill_payments %>
       </div>
     </div>

@@ -1,16 +1,32 @@
 <%# locals: (bill_payments:) %>
 
 <% if bill_payments.empty? %>
-  <div class="p-8 text-center text-secondary">
+  <div class="p-8 text-center text-secondary" data-bill-status-filter-target="emptyMessage">
     <p><%= t("recurring_bills.list.no_bills") %></p>
     <p class="mt-2">
       <%= link_to t("recurring_bills.list.add_first"), new_recurring_bill_path, class: "text-primary hover:underline", data: { turbo_frame: :modal } %>
     </p>
   </div>
 <% else %>
+  <div class="p-8 text-center text-secondary hidden" data-bill-status-filter-target="emptyMessage">
+    <p><%= t("recurring_bills.list.no_bills_filtered") %></p>
+  </div>
   <div class="divide-y divide-secondary">
     <% bill_payments.sort_by(&:due_date).each do |payment| %>
-      <div class="flex items-center justify-between p-3 hover:bg-surface-hover rounded-lg">
+      <%
+        # Determine filter status for this payment
+        filter_status = if payment.paid?
+          "paid"
+        elsif payment.overdue? || payment.due_date <= Date.current
+          "overdue_today"
+        elsif payment.pending? && payment.due_date > Date.current
+          payment.due_date <= Date.current + 7.days ? "upcoming" : "pending"
+        else
+          "pending"
+        end
+      %>
+      <div class="flex items-center justify-between p-3 hover:bg-surface-hover rounded-lg"
+           data-bill-status-filter-target="item" data-bill-status="<%= filter_status %>">
         <div class="flex items-center gap-3">
           <% status_color = case payment.status
             when "paid" then "bg-green-500"

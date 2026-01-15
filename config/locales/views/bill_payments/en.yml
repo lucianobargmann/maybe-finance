@@ -5,6 +5,8 @@ en:
       marked_paid: Bill marked as paid
       unmatched: Payment unmatched
       skipped: Bill skipped for this month
+      transaction_added: Transaction added to payment
+      transaction_removed: Transaction removed from payment
     show:
       due_date: Due Date
       expected_amount: Expected Amount
@@ -16,9 +18,11 @@ en:
         paid: Paid
         overdue: Overdue
         skipped: Skipped
-      matched_transaction: Matched Transaction
+      matched_transactions: Matched Transactions
       unmatch: Unmatch Payment
-      match_candidates: Match Candidates
+      add_transactions: Add Transactions
+      add: Add
+      remove: Remove
       match: Match
       reject: Reject
       no_candidates: "No matching transactions found. Transactions are matched by:"
@@ -27,3 +31,4 @@ en:
         date: Date within 7 days of due date
         merchant: "Merchant: %{name}"
       skip_month: Skip This Month
+      close: Close

@@ -1,0 +1,10 @@
+# == Schema Information
+#
+# Table name: bill_payment_transactions
+#
+#  id               :uuid             not null, primary key
+#  bill_payment_id  :uuid             not null
+#  transaction_id   :uuid             not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#

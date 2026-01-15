@@ -2,8 +2,9 @@ class BillPayment < ApplicationRecord
   include Monetizable
 
   belongs_to :recurring_bill
-  belongs_to :matched_transaction, class_name: "Transaction", foreign_key: "transaction_id", optional: true
 
+  has_many :bill_payment_transactions, dependent: :destroy
+  has_many :matched_transactions, through: :bill_payment_transactions, source: :linked_transaction
   has_many :rejected_bill_matches, dependent: :destroy
 
   monetize :expected_amount, :actual_amount
@@ -17,13 +18,37 @@ class BillPayment < ApplicationRecord
   scope :unpaid, -> { where(status: %i[pending overdue]) }
   scope :due_soon, ->(days = 7) { pending.where(due_date: Date.current..(Date.current + days.days)) }
 
+  def add_transaction!(txn)
+    bill_payment_transactions.find_or_create_by!(transaction: txn)
+    recalculate_totals!
+  end
+
+  def remove_transaction!(txn)
+    bill_payment_transactions.find_by(transaction: txn)&.destroy
+    recalculate_totals!
+  end
+
+  def recalculate_totals!
+    if matched_transactions.any?
+      total = matched_transactions.sum { |t| t.entry.amount.abs }
+      latest_date = matched_transactions.map { |t| t.entry.date }.max
+      update!(
+        actual_amount: total,
+        status: :paid,
+        paid_date: latest_date
+      )
+    else
+      update!(
+        actual_amount: nil,
+        status: :pending,
+        paid_date: nil
+      )
+    end
+  end
+
+  # Legacy method for backwards compatibility
   def mark_paid!(txn)
-    update!(
-      matched_transaction: txn,
-      actual_amount: txn.entry.amount.abs,
-      status: :paid,
-      paid_date: txn.entry.date
-    )
+    add_transaction!(txn)
   end
 
   def alert_level

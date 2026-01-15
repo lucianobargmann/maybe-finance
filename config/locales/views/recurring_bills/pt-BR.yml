@@ -12,6 +12,12 @@ pt-BR:
       add_bill: Adicionar Conta
       no_bills: Nenhuma conta cadastrada ainda
       monthly_bills: Contas Mensais
+      filters:
+        all: Todas
+        overdue_today: Vencida/Hoje
+        upcoming: Próxima
+        paid: Paga
+        pending: Pendente
       alerts:
         overdue_message: "%{name} está vencida (vencimento %{date})"
         due_today_message: "%{name} vence hoje"
@@ -46,6 +52,8 @@ pt-BR:
       update: Atualizar Conta
       save: Salvar Conta
       cancel: Cancelar
+      delete: Excluir Conta
+      delete_confirm: Tem certeza que deseja excluir esta conta? Isso também removerá todo o histórico de pagamentos.
     summary:
       title: "Resumo de %{month}"
       to_pay: A Pagar
@@ -71,6 +79,7 @@ pt-BR:
       income_note: "* Estimativa de receita baseada na mediana da renda mensal do seu histórico de transações."
     list:
       no_bills: Nenhuma conta cadastrada ainda
+      no_bills_filtered: Nenhuma conta corresponde ao filtro selecionado
       add_first: Adicione sua primeira conta
       due: "Vence %{date}"
       paid: "Pago %{date}"

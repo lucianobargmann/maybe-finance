@@ -5,6 +5,8 @@ pt-BR:
       marked_paid: Conta marcada como paga
       unmatched: Pagamento desvinculado
       skipped: Conta pulada para este mês
+      transaction_added: Transação adicionada ao pagamento
+      transaction_removed: Transação removida do pagamento
     show:
       due_date: Data de Vencimento
       expected_amount: Valor Esperado
@@ -16,9 +18,11 @@ pt-BR:
         paid: Pago
         overdue: Vencido
         skipped: Pulado
-      matched_transaction: Transação Vinculada
+      matched_transactions: Transações Vinculadas
       unmatch: Desvincular Pagamento
-      match_candidates: Transações Candidatas
+      add_transactions: Adicionar Transações
+      add: Adicionar
+      remove: Remover
       match: Vincular
       reject: Rejeitar
       no_candidates: "Nenhuma transação correspondente encontrada. Transações são vinculadas por:"
@@ -27,3 +31,4 @@ pt-BR:
         date: Data dentro de 7 dias do vencimento
         merchant: "Comerciante: %{name}"
       skip_month: Pular Este Mês
+      close: Fechar
