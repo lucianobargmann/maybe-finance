@@ -80,6 +80,7 @@ pt-BR:
         title: Atividade
       header:
         complete_setup: Completar configuração
+        import: Importar
       chart:
         balance: Saldo
         owed: Valor devido

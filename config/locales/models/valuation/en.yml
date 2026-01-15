@@ -19,3 +19,28 @@ en:
       reconciliation: Reconciliation
       opening_anchor: Opening balance
       current_anchor: Current balance
+    names:
+      opening_anchor:
+        default: Opening balance
+        property: Original purchase price
+        vehicle: Original purchase price
+        loan: Original principal
+        investment: Opening account value
+        crypto: Opening account value
+        other_asset: Opening account value
+      current_anchor:
+        default: Current balance
+        property: Current market value
+        vehicle: Current market value
+        loan: Current loan balance
+        investment: Current account value
+        crypto: Current account value
+        other_asset: Current account value
+      reconciliation:
+        default: Manual balance update
+        property: Manual value update
+        vehicle: Manual value update
+        investment: Manual value update
+        crypto: Manual value update
+        other_asset: Manual value update
+        loan: Manual principal update

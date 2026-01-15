@@ -4,6 +4,7 @@ en:
     nav:
       home: Home
       transactions: Transactions
+      bills: Bills
       budgets: Budgets
       assistant: Assistant
     sidebar:

@@ -12,15 +12,35 @@ en:
         generated_tokens: Generated codes
         title: Require invite code for signup
       show:
-        general: General Settings
+        data_providers: Data Providers
+        ai_provider: AI Provider
         invites: Invite Codes
-        title: Self-Hosting
+        title: Integrations
         danger_zone: Danger Zone
         clear_cache: Clear data cache
         clear_cache_warning: Clearing the data cache will remove all exchange rates, security prices, account balances, and other data. This will not delete accounts, transactions, categories, or other user-owned data.
         confirm_clear_cache:
           title: Clear data cache?
           body: Are you sure you want to clear the data cache? This will remove all exchange rates, security prices, account balances, and other data. This action cannot be undone.
+      ai_provider_settings:
+        title: AI Provider Settings
+        description: Configure the AI provider used for auto-categorization, merchant detection, and chat features.
+        provider_label: Provider
+        provider_prompt: Select a provider
+        anthropic_api_key_label: Anthropic API Key
+        anthropic_api_key_placeholder: Enter your Anthropic API key here
+        anthropic_env_configured: You have configured your Anthropic API key through the ANTHROPIC_API_KEY environment variable.
+        openai_api_key_label: OpenAI API Key
+        openai_api_key_placeholder: Enter your OpenAI API key here
+        openai_env_configured: You have configured your OpenAI API key through the OPENAI_ACCESS_TOKEN environment variable.
+        model_label: Model
+        model_placeholder: e.g., claude-sonnet-4-20250514
+      finnhub_settings:
+        title: Finnhub (Stock Prices)
+        description: "Get a free API key from finnhub.io - 60 requests/minute on free tier"
+        label: Finnhub API Key
+        placeholder: Enter your Finnhub API key here
+        plan: "%{plan} plan"
       synth_settings:
         api_calls_used: "%{used} / %{limit} API calls used (%{percentage})"
         description: Input the API key provided by Synth
@@ -35,6 +55,10 @@ en:
         provider_prompt: Select a provider
         exchangerate_api_label: ExchangeRate-API Key
         exchangerate_api_placeholder: Enter your ExchangeRate-API key here
+        alpha_vantage_api_label: Alpha Vantage API Key
+        alpha_vantage_api_placeholder: Enter your Alpha Vantage API key here
+        crypto_compare_api_label: CryptoCompare API Key
+        crypto_compare_api_placeholder: Enter your CryptoCompare API key here
         api_calls_used: "%{used} / %{limit} API calls used (%{percentage})"
         plan: "%{plan} plan"
         clear_cache_title: Clear Exchange Rate Cache
@@ -43,6 +67,7 @@ en:
         confirm_clear_cache:
           title: Clear exchange rate cache?
           body: Are you sure you want to clear the exchange rate cache? This will force fresh API calls on the next exchange rate request.
+      auto_save_hint: Changes save automatically
       update:
         failure: Invalid setting value
         success: Settings updated

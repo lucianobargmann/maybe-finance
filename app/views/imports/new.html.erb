@@ -1,3 +1,4 @@
+<%= turbo_frame_tag "modal" do %>
 <%= render DS::Dialog.new do |dialog| %>
   <% dialog.with_header(title: t(".title"), subtitle: t(".description")) %>
 
@@ -15,7 +16,7 @@
                   </span>
                 </div>
                 <span class="text-sm text-primary group-hover:text-secondary">
-                  <%= t(".resume", type: @pending_import.type.titleize) %>
+                  <%= t(".resume", type: t("imports.types.#{@pending_import.type.underscore}")) %>
                 </span>
               </div>
               <%= icon("chevron-right") %>
@@ -37,6 +38,54 @@
                 <span class="text-sm text-primary group-hover:text-secondary">
                   <%= t(".import_transactions") %>
                 </span>
+              </div>
+              <%= icon("chevron-right") %>
+            <% end %>
+
+            <%= render "shared/ruler" %>
+          </li>
+        <% end %>
+
+        <% if Current.family.accounts.any? && ai_configured? && (params[:type].nil? || params[:type] == "TransactionImport") %>
+          <li>
+            <%= button_to imports_path(import: { type: "TransactionImport", source: "pdf" }), class: "flex items-center justify-between p-4 group cursor-pointer w-full", data: { turbo: false } do %>
+              <div class="flex items-center gap-2">
+                <div class="bg-rose-500/5 rounded-md w-8 h-8 flex items-center justify-center">
+                  <span class="text-rose-500">
+                    <%= icon("file-text", color: "current") %>
+                  </span>
+                </div>
+                <div class="text-left">
+                  <span class="text-sm text-primary group-hover:text-secondary block">
+                    <%= t(".import_pdf") %>
+                  </span>
+                  <span class="text-xs text-secondary">
+                    <%= t(".import_pdf_description") %>
+                  </span>
+                </div>
+              </div>
+              <%= icon("chevron-right") %>
+            <% end %>
+
+            <%= render "shared/ruler" %>
+          </li>
+
+          <li>
+            <%= button_to imports_path(import: { type: "TransactionImport", source: "text" }), class: "flex items-center justify-between p-4 group cursor-pointer w-full", data: { turbo: false } do %>
+              <div class="flex items-center gap-2">
+                <div class="bg-emerald-500/5 rounded-md w-8 h-8 flex items-center justify-center">
+                  <span class="text-emerald-500">
+                    <%= icon("clipboard-paste", color: "current") %>
+                  </span>
+                </div>
+                <div class="text-left">
+                  <span class="text-sm text-primary group-hover:text-secondary block">
+                    <%= t(".import_text") %>
+                  </span>
+                  <span class="text-xs text-secondary">
+                    <%= t(".import_text_description") %>
+                  </span>
+                </div>
               </div>
               <%= icon("chevron-right") %>
             <% end %>
@@ -103,4 +152,5 @@
       </ul>
     </div>
   <% end %>
+<% end %>
 <% end %>

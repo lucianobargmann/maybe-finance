@@ -44,6 +44,14 @@
                     { label: t(".category_label"),
                       class: "text-subdued", include_blank: t(".uncategorized") },
                     "data-auto-submit-form-target": "auto" %>
+
+              <%= ef.collection_select :merchant_id,
+                    [@entry.transaction.merchant, *Current.family.merchants.alphabetically].compact.uniq,
+                    :id, :name,
+                    { include_blank: t(".none"),
+                      label: t(".merchant_label"),
+                      class: "text-subdued" },
+                    "data-auto-submit-form-target": "auto" %>
             <% end %>
           <% end %>
 
@@ -67,15 +75,6 @@
                 { disabled: true } %>
 
             <%= f.fields_for :entryable do |ef| %>
-
-              <%= ef.collection_select :merchant_id,
-                    [@entry.transaction.merchant, *Current.family.merchants.alphabetically].compact,
-                    :id, :name,
-                    { include_blank: t(".none"),
-                      label: t(".merchant_label"),
-                      class: "text-subdued" },
-                    "data-auto-submit-form-target": "auto" %>
-
               <%= ef.select :tag_ids,
                     Current.family.tags.alphabetically.pluck(:name, :id),
                     {
@@ -99,6 +98,22 @@
     <% end %>
 
     <% dialog.with_section(title: t(".settings")) do %>
+      <div class="pb-4">
+        <%= styled_form_with model: @entry,
+              url: transaction_path(@entry),
+              class: "p-3",
+              data: { controller: "auto-submit-form" } do |f| %>
+          <div class="flex cursor-pointer items-center gap-4 justify-between">
+            <div class="text-sm space-y-1">
+              <h4 class="text-primary"><%= t(".reviewed_title") %></h4>
+              <p class="text-secondary"><%= t(".reviewed_description") %></p>
+            </div>
+
+            <%= f.toggle :reviewed, { data: { auto_submit_form_target: "auto" } } %>
+          </div>
+        <% end %>
+      </div>
+
       <div class="pb-4">
         <%= styled_form_with model: @entry,
               url: transaction_path(@entry),
@@ -149,6 +164,23 @@
             frame: :modal
           ) %>
         </div>
+
+        <% unless @entry.transaction.transfer? %>
+          <div class="flex items-center justify-between gap-4 p-3">
+            <div class="text-sm space-y-1">
+              <h4 class="text-primary"><%= t(".recurring_bill_title") %></h4>
+              <p class="text-secondary"><%= t(".recurring_bill_description") %></p>
+            </div>
+
+            <%= render DS::Link.new(
+              text: t(".create_recurring_bill"),
+              icon: "calendar-check",
+              variant: "outline",
+              href: new_recurring_bill_path(from_transaction: @entry.entryable_id),
+              frame: :modal
+            ) %>
+          </div>
+        <% end %>
 
         <!-- Delete Transaction Form -->
         <div class="flex items-center justify-between gap-2 p-3">

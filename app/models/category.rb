@@ -108,6 +108,7 @@ class Category < ApplicationRecord
             [ I18n.t("categories.default_categories.healthcare"), "pill" ],
             [ I18n.t("categories.default_categories.personal_care"), "heart" ],
             [ I18n.t("categories.default_categories.loan_payments"), "credit-card" ],
+            [ I18n.t("categories.default_categories.taxes"), "landmark" ],
             [ I18n.t("categories.default_categories.fees"), "receipt" ],
             [ I18n.t("categories.default_categories.services"), "briefcase" ]
           ],

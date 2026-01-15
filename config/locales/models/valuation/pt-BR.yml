@@ -2,7 +2,7 @@
 pt-BR:
   activerecord:
     models:
-      valuation: Avaliacao
+      valuation: Avaliação
     attributes:
       valuation:
         kind: Tipo
@@ -11,11 +11,36 @@ pt-BR:
     enums:
       valuation:
         kind:
-          reconciliation: Reconciliacao
+          reconciliation: Reconciliação
           opening_anchor: Saldo inicial
           current_anchor: Saldo atual
   valuation:
     kinds:
-      reconciliation: Reconciliacao
+      reconciliation: Reconciliação
       opening_anchor: Saldo inicial
       current_anchor: Saldo atual
+    names:
+      opening_anchor:
+        default: Saldo inicial
+        property: Preço de compra original
+        vehicle: Preço de compra original
+        loan: Principal original
+        investment: Valor inicial da conta
+        crypto: Valor inicial da conta
+        other_asset: Valor inicial da conta
+      current_anchor:
+        default: Saldo atual
+        property: Valor de mercado atual
+        vehicle: Valor de mercado atual
+        loan: Saldo atual do empréstimo
+        investment: Valor atual da conta
+        crypto: Valor atual da conta
+        other_asset: Valor atual da conta
+      reconciliation:
+        default: Atualização manual do saldo
+        property: Atualização manual do valor
+        vehicle: Atualização manual do valor
+        investment: Atualização manual do valor
+        crypto: Atualização manual do valor
+        other_asset: Atualização manual do valor
+        loan: Atualização manual do principal

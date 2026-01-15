@@ -83,6 +83,10 @@ Rails.application.routes.draw do
     resource :dropdown, only: :show
   end
 
+  namespace :merchant do
+    resource :dropdown, only: :show
+  end
+
   resources :categories, except: :show do
     resources :deletions, only: %i[new create], module: :category
 
@@ -96,7 +100,20 @@ Rails.application.routes.draw do
     resources :budget_categories, only: %i[index show update]
   end
 
-  resources :family_merchants, only: %i[index new create edit update destroy]
+  resources :recurring_bills, except: :show do
+    get :picker, on: :collection
+  end
+
+  resources :bill_payments, only: %i[show update] do
+    member do
+      post :match
+      post :unmatch
+      post :skip
+    end
+    post :reject_match, on: :collection
+  end
+
+  resources :family_merchants, only: %i[index show new create edit update destroy]
 
   resources :transfers, only: %i[new create destroy show update]
 
@@ -108,6 +125,12 @@ Rails.application.routes.draw do
     end
 
     resource :upload, only: %i[show update], module: :import
+    resource :pdf_upload, only: %i[show update], module: :import do
+      post :retry, on: :member
+    end
+    resource :text_paste, only: %i[show update], module: :import do
+      post :retry, on: :member
+    end
     resource :configuration, only: %i[show update], module: :import
     resource :clean, only: :show, module: :import
     resource :confirm, only: :show, module: :import

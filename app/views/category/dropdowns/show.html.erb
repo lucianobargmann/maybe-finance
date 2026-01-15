@@ -14,7 +14,13 @@
       </div>
       <div data-list-filter-target="list" class="flex flex-col gap-0.5 p-1.5 mt-0.5 mr-2 max-h-64 overflow-y-scroll scrollbar">
         <div class="pb-2 pl-4 mr-2 text-secondary hidden" data-list-filter-target="emptyMessage">
-          <%= t(".no_categories") %>
+          <span data-empty-text><%= t(".no_categories") %></span>
+          <%= link_to new_category_path(transaction_id: @transaction.id),
+                  class: "flex text-sm font-medium items-center gap-2 text-primary w-full rounded-lg p-2 hover:bg-container-inset-hover mt-2",
+                  data: { turbo_frame: "modal" } do %>
+            <%= icon("plus") %>
+            <span><%= t(".new_category") %></span>
+          <% end %>
         </div>
         <% if @categories.any? %>
           <% Category::Group.for(@categories).each do |group| %>
@@ -55,13 +61,19 @@
           <% end %>
         <% end %>
 
+        <%= link_to new_category_path(transaction_id: @transaction.id),
+                class: "flex text-sm font-medium items-center gap-2 text-secondary w-full rounded-lg p-2 hover:bg-container-inset-hover",
+                data: { turbo_frame: "modal" } do %>
+          <%= icon("plus") %>
+          <p><%= t(".new_category") %></p>
+        <% end %>
+
         <% unless @transaction.transfer? %>
           <%= link_to new_transaction_transfer_match_path(@transaction.entry),
                   class: "flex text-sm font-medium items-center gap-2 text-secondary w-full rounded-lg p-2 hover:bg-container-inset-hover",
                   data: { turbo_frame: "modal" } do %>
             <%= icon("refresh-cw") %>
-
-            <p>Match transfer/payment</p>
+            <p><%= t(".match_transfer") %></p>
           <% end %>
         <% end %>
 
@@ -78,7 +90,7 @@
             <% end %>
           </div>
 
-          <p>One-time <%= @transaction.entry.amount.negative? ? "income" : "expense" %></p>
+          <p><%= @transaction.entry.amount.negative? ? t(".one_time_income") : t(".one_time_expense") %></p>
 
           <span class="text-orange-500 ml-auto">
             <%= icon("asterisk", color: "current") %>

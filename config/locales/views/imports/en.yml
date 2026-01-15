@@ -10,6 +10,9 @@ en:
           details.
         title: Clean your data
         next_step: Next step
+        data_cleaned: Your data has been cleaned
+        all_rows: All rows
+        error_rows: Error rows
     configurations:
       account_import:
         entity_type_label: Entity Type
@@ -40,6 +43,7 @@ en:
         title: Configure your import
         manually_configure: Manually configure
         apply_template: Apply template
+        sample_data: Sample data from your uploaded CSV
       trade_import:
         date_format_label: Date format
         date_label: Date
@@ -79,6 +83,7 @@ en:
         account_label: Account
         name_label: Name
         category_label: Category
+        merchant_label: Merchant
         tags_label: Tags
         notes_label: Notes
         leave_empty: Leave empty
@@ -106,6 +111,10 @@ en:
           to Maybe's existing categories.  You can also add new categories or leave
           them uncategorized.
         category_mapping_title: Assign your categories
+        merchant_mapping_description: Assign all of your imported file's merchants
+          to Maybe's existing merchants.  You can also add new merchants or leave
+          them unassigned.
+        merchant_mapping_title: Assign your merchants
         tag_mapping_description: Assign all of your imported file's tags to Maybe's
           existing tags.  You can also add new tags or leave them uncategorized.
         tag_mapping_title: Assign your tags
@@ -127,7 +136,109 @@ en:
         browse: Browse
         add_csv_here: to add your CSV file here
         paste_csv_placeholder: Paste your CSV file contents here
+    pdf_uploads:
+      show:
+        title: Import from PDF
+        description: Upload a bank or credit card statement PDF. AI will extract transactions automatically.
+        use_csv_instead: Prefer CSV? Use CSV import instead
+      form:
+        account_optional: Account (optional)
+        multi_account: Multi-account import
+        browse: Browse
+        add_pdf_here: to add your PDF file here
+        supported_formats: PDF files up to 10MB
+        upload_pdf: Upload PDF
+      processing:
+        processing: Processing PDF...
+        processing_description: Please wait while we process your file.
+        extracting_text: Extracting text from PDF...
+        extracting_text_description: Reading the contents of your statement.
+        extracting_transactions: Extracting transactions with AI...
+        extracting_transactions_description: AI is analyzing your statement and extracting transactions.
+      complete:
+        extraction_complete: Extraction Complete
+        transactions_found:
+          one: Found %{count} transaction
+          other: Found %{count} transactions
+        continue_to_configuration: Continue to Configuration
+      error:
+        extraction_failed: Extraction Failed
+        unknown_error: An unknown error occurred.
+        try_again: Try Again
+        use_csv_instead: Use CSV Import
+      update:
+        no_file: Please select a PDF file to upload.
+        invalid_type: Please upload a PDF file.
+        file_too_large: PDF files must be smaller than 10MB.
+        processing_started: PDF extraction started. This may take a moment.
+        ai_not_configured: AI is not configured. Please configure an AI provider in Settings to use PDF import.
+    text_pastes:
+      show:
+        title: Import from Text
+        description: Paste transaction data from a bank statement, PDF viewer, or website. AI will extract transactions automatically.
+        use_csv_instead: Prefer CSV? Use CSV import instead
+      form:
+        account_optional: Account (optional)
+        multi_account: Multi-account import
+        paste_label: Paste your transaction data
+        paste_placeholder: "Paste your bank statement or transaction list here..."
+        paste_hint: Paste text copied from a PDF viewer, bank website, or any source containing transaction data.
+        extract_transactions: Extract Transactions
+      processing:
+        processing: Processing text...
+        processing_description: Please wait while AI extracts your transactions.
+        extracting_transactions: Extracting transactions with AI...
+        extracting_transactions_description: AI is analyzing your text and extracting transactions.
+      complete:
+        extraction_complete: Extraction Complete
+        transactions_found:
+          one: Found %{count} transaction
+          other: Found %{count} transactions
+        continue_to_configuration: Continue to Configuration
+      error:
+        extraction_failed: Extraction Failed
+        unknown_error: An unknown error occurred.
+        try_again: Try Again
+        use_csv_instead: Use CSV Import
+      update:
+        no_text: Please paste some text to import.
+        text_too_large: Text content is too large. Please paste a smaller section.
+        processing_started: Text extraction started. This may take a moment.
+        ai_not_configured: AI is not configured. Please configure an AI provider in Settings to use text import.
   imports:
+    nav:
+      upload: Upload
+      configure: Configure
+      clean: Clean
+      map: Map
+      confirm: Confirm
+      step_of: Step %{step} of %{total}
+    types:
+      transaction_import: Transaction Import
+      trade_import: Trade Import
+      account_import: Account Import
+      mint_import: Mint Import
+    mappings:
+      account_type: Account Type
+      account: Account
+      category: Category
+      merchant: Merchant
+      tag: Tag
+    columns:
+      date: Date
+      amount: Amount
+      name: Name
+      currency: Currency
+      category: Category
+      merchant: Merchant
+      tags: Tags
+      account: Account
+      notes: Notes
+      qty: Quantity
+      ticker: Ticker
+      exchange: Exchange
+      price: Price
+      entity_type: Type
     failure:
       title: Import failed
       description: Please check that your file format, for any errors and that all required fields are filled, then come back and try again.
@@ -170,6 +281,10 @@ en:
         of our import templates like Mint.
       import_accounts: Import accounts
       import_mint: Import from Mint
+      import_pdf: Import from PDF (AI)
+      import_pdf_description: Bank & credit card statements
+      import_text: Paste Text (AI)
+      import_text_description: Copy from PDF viewer or website
       import_portfolio: Import investments
       import_transactions: Import transactions
       resume: Resume %{type}

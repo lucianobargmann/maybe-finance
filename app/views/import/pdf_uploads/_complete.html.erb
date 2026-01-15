@@ -1,0 +1,19 @@
+<%# locals: (import:) %>
+
+<div id="pdf_upload_status" class="flex flex-col items-center justify-center p-8 border border-success bg-surface-inset rounded-xl">
+  <div class="mb-4 text-success">
+    <%= icon("check-circle", size: "lg", color: "current") %>
+  </div>
+
+  <h3 class="text-lg font-medium text-primary mb-2">
+    <%= t(".extraction_complete") %>
+  </h3>
+
+  <p class="text-sm text-secondary text-center mb-4">
+    <%= t(".transactions_found", count: import.rows.count) %>
+  </p>
+
+  <%= link_to t(".continue_to_configuration"),
+              import_configuration_path(import),
+              class: "btn btn-primary" %>
+</div>

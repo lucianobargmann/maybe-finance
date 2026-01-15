@@ -1,0 +1,66 @@
+<div class="space-y-4">
+  <div>
+    <h2 class="font-medium mb-1 flex items-center gap-2">
+      <%= t(".title") %>
+      <% ai_connected = case Setting.llm_provider
+        when "anthropic" then @anthropic_connected
+        when "openai" then @openai_connected
+        else false
+      end %>
+      <% if ai_connected %>
+        <span class="w-2 h-2 rounded-full bg-green-500" title="Connected"></span>
+      <% end %>
+    </h2>
+    <p class="text-secondary text-sm mb-4"><%= t(".description") %></p>
+  </div>
+
+  <%= styled_form_with model: Setting.new,
+                       url: settings_hosting_path,
+                       method: :patch,
+                       data: {
+                         controller: "auto-submit-form",
+                         "auto-submit-form-trigger-event-value": "blur"
+                       } do |form| %>
+    <div class="space-y-4">
+      <%= form.select :llm_provider,
+                      options_for_select([
+                        ["Anthropic (Claude)", "anthropic"],
+                        ["OpenAI", "openai"]
+                      ], Setting.llm_provider),
+                      { label: t(".provider_label"), prompt: t(".provider_prompt") },
+                      { data: { "auto-submit-form-target": "auto" } } %>
+
+      <% if Setting.llm_provider == "anthropic" %>
+        <% if ENV["ANTHROPIC_API_KEY"].present? %>
+          <p class="text-sm text-secondary"><%= t(".anthropic_env_configured") %></p>
+        <% else %>
+          <%= form.text_field :anthropic_api_key,
+                              label: t(".anthropic_api_key_label"),
+                              type: "password",
+                              placeholder: t(".anthropic_api_key_placeholder"),
+                              value: Setting.anthropic_api_key,
+                              data: { "auto-submit-form-target": "auto" } %>
+        <% end %>
+      <% elsif Setting.llm_provider == "openai" %>
+        <% if ENV["OPENAI_ACCESS_TOKEN"].present? %>
+          <p class="text-sm text-secondary"><%= t(".openai_env_configured") %></p>
+        <% else %>
+          <%= form.text_field :openai_access_token,
+                              label: t(".openai_api_key_label"),
+                              type: "password",
+                              placeholder: t(".openai_api_key_placeholder"),
+                              value: Setting.openai_access_token,
+                              data: { "auto-submit-form-target": "auto" } %>
+        <% end %>
+      <% end %>
+
+      <%= form.text_field :llm_model,
+                          label: t(".model_label"),
+                          placeholder: t(".model_placeholder"),
+                          value: Setting.llm_model,
+                          data: { "auto-submit-form-target": "auto" } %>
+
+      <p class="text-xs text-tertiary italic"><%= t("settings.hostings.auto_save_hint") %></p>
+    </div>
+  <% end %>
+</div>

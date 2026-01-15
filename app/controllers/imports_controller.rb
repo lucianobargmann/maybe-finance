@@ -21,17 +21,35 @@ class ImportsController < ApplicationController
 
   def create
     account = Current.family.accounts.find_by(id: params.dig(:import, :account_id))
+    source = import_params[:source] || "csv"
+
     import = Current.family.imports.create!(
       type: import_params[:type],
       account: account,
+      source: source,
       date_format: Current.family.date_format,
     )
 
-    redirect_to import_upload_path(import)
+    case source
+    when "pdf"
+      redirect_to import_pdf_upload_path(import)
+    when "text"
+      redirect_to import_text_paste_path(import)
+    else
+      redirect_to import_upload_path(import)
+    end
   end
 
   def show
-    if !@import.uploaded?
+    if @import.pdf_import? && @import.ai_processing?
+      redirect_to import_pdf_upload_path(@import)
+    elsif @import.pdf_import? && @import.pdf_pdf_failed?
+      redirect_to import_pdf_upload_path(@import)
+    elsif @import.text_import? && @import.ai_processing?
+      redirect_to import_text_paste_path(@import)
+    elsif @import.text_import? && @import.pdf_pdf_failed?
+      redirect_to import_text_paste_path(@import)
+    elsif !@import.uploaded?
       redirect_to import_upload_path(@import), alert: "Please finalize your file upload."
     elsif !@import.publishable?
       redirect_to import_confirm_path(@import), alert: "Please finalize your mappings before proceeding."
@@ -64,6 +82,6 @@ class ImportsController < ApplicationController
     end
 
     def import_params
-      params.require(:import).permit(:type)
+      params.require(:import).permit(:type, :source)
     end
 end

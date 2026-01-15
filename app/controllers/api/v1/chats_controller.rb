@@ -24,7 +24,7 @@ class Api::V1::ChatsController < Api::V1::BaseController
         @message = @chat.messages.build(
           content: chat_params[:message],
           type: "UserMessage",
-          ai_model: chat_params[:model] || "gpt-4"
+          ai_model: chat_params[:model] || default_ai_model
         )
 
         if @message.save
@@ -80,5 +80,9 @@ class Api::V1::ChatsController < Api::V1::BaseController
 
     def update_chat_params
       params.permit(:title)
+    end
+
+    def default_ai_model
+      Setting.llm_provider == "anthropic" ? "claude-sonnet-4-20250514" : "gpt-4.1"
     end
 end

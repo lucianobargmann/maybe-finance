@@ -1,6 +1,12 @@
 ---
 en:
   recurring_bills:
+    create:
+      created: Bill created successfully
+    update:
+      updated: Bill updated successfully
+    destroy:
+      deleted: Bill deleted
     index:
       title: Monthly Bills
       add_bill: Add Bill

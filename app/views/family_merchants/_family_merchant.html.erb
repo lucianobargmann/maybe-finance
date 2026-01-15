@@ -10,9 +10,9 @@
       <%= render partial: "shared/color_avatar", locals: { name: family_merchant.name, color: family_merchant.color } %>
     <% end %>
 
-    <p class="text-primary text-sm truncate">
-      <%= family_merchant.name %>
-    </p>
+    <%= link_to family_merchant.name,
+        family_merchant_path(family_merchant),
+        class: "text-primary text-sm truncate hover:underline" %>
   </div>
   <div class="justify-self-end">
     <%= render DS::Menu.new do |menu| %>

@@ -1,0 +1,29 @@
+<%# locals: (import:) %>
+
+<div id="text_paste_status" class="flex flex-col items-center justify-center p-8 border border-destructive bg-surface-inset rounded-xl">
+  <div class="mb-4 text-destructive">
+    <%= icon("alert-circle", size: "lg", color: "current") %>
+  </div>
+
+  <h3 class="text-lg font-medium text-destructive mb-2">
+    <%= t(".extraction_failed") %>
+  </h3>
+
+  <p class="text-sm text-secondary text-center mb-4">
+    <%= t(".unknown_error") %>
+  </p>
+
+  <% if import.pdf_error_message.present? %>
+    <details class="w-full mb-4">
+      <summary class="text-xs text-tertiary cursor-pointer hover:text-secondary text-center">
+        <%= t("shared.show_details") %>
+      </summary>
+      <pre class="mt-2 p-2 bg-container rounded text-xs text-tertiary overflow-auto max-h-32"><%= import.pdf_error_message %></pre>
+    </details>
+  <% end %>
+
+  <%= button_to t(".try_again"),
+                retry_import_text_paste_path(import),
+                method: :post,
+                class: "btn btn-primary" %>
+</div>

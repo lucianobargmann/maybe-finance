@@ -1,0 +1,43 @@
+<%# locals: (import:) %>
+
+<% password_protected = import.pdf_error_message&.include?("password protected") %>
+
+<div id="pdf_upload_status" class="flex flex-col items-center justify-center p-8 border border-destructive bg-surface-inset rounded-xl">
+  <div class="mb-4 text-destructive">
+    <%= icon("alert-circle", size: "lg", color: "current") %>
+  </div>
+
+  <h3 class="text-lg font-medium text-destructive mb-2">
+    <%= t(".extraction_failed") %>
+  </h3>
+
+  <% if password_protected %>
+    <p class="text-sm text-secondary text-center mb-2">
+      <%= t(".password_protected") %>
+    </p>
+    <p class="text-xs text-tertiary text-center mb-4">
+      <%= t(".password_protected_hint") %>
+    </p>
+  <% elsif import.pdf_error_message.present? %>
+    <p class="text-sm text-secondary text-center mb-4">
+      <%= import.pdf_error_message %>
+    </p>
+  <% else %>
+    <p class="text-sm text-secondary text-center mb-4">
+      <%= t(".unknown_error") %>
+    </p>
+  <% end %>
+
+  <div class="flex flex-col gap-2 w-full max-w-xs">
+    <% if password_protected %>
+      <%= link_to t(".try_text_paste"),
+                  new_import_path(type: import.type, account_id: import.account_id),
+                  class: "btn btn-primary w-full text-center" %>
+    <% end %>
+
+    <%= button_to t(".try_again"),
+                  retry_import_pdf_upload_path(import),
+                  method: :post,
+                  class: "btn btn-secondary w-full" %>
+  </div>
+</div>

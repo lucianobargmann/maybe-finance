@@ -1,0 +1,18 @@
+---
+en:
+  merchant:
+    dropdowns:
+      row:
+        delete: Delete merchant
+        edit: Edit merchant
+      show:
+        clear: Clear merchant
+        empty: No merchants yet
+        new_merchant: New merchant
+        no_merchants: No merchants found
+        search_placeholder: Search
+  merchants:
+    menu:
+      loading: Loading...
+    badge:
+      none: No merchant

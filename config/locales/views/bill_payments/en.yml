@@ -1,0 +1,29 @@
+---
+en:
+  bill_payments:
+    notices:
+      marked_paid: Bill marked as paid
+      unmatched: Payment unmatched
+      skipped: Bill skipped for this month
+    show:
+      due_date: Due Date
+      expected_amount: Expected Amount
+      status: Status
+      paid_date: Paid Date
+      actual_amount: Actual Amount
+      statuses:
+        pending: Pending
+        paid: Paid
+        overdue: Overdue
+        skipped: Skipped
+      matched_transaction: Matched Transaction
+      unmatch: Unmatch Payment
+      match_candidates: Match Candidates
+      match: Match
+      reject: Reject
+      no_candidates: "No matching transactions found. Transactions are matched by:"
+      match_criteria:
+        amount: "Amount within 20%% of expected (%{min} - %{max})"
+        date: Date within 7 days of due date
+        merchant: "Merchant: %{name}"
+      skip_month: Skip This Month

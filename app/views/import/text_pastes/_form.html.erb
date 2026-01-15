@@ -1,0 +1,21 @@
+<%# locals: (import:) %>
+
+<%= styled_form_with model: import, scope: :import, url: import_text_paste_path(import), class: "space-y-4" do |form| %>
+  <% if import.type == "TransactionImport" || import.type == "TradeImport" %>
+    <%= form.select :account_id,
+                    import.family.accounts.visible.pluck(:name, :id),
+                    { label: t(".account_optional"), include_blank: t(".multi_account"), selected: import.account_id } %>
+  <% end %>
+
+  <div class="space-y-2">
+    <label class="text-sm font-medium text-primary"><%= t(".paste_label") %></label>
+    <%= form.text_area :pasted_text,
+                       rows: 12,
+                       required: true,
+                       placeholder: t(".paste_placeholder"),
+                       class: "w-full border border-secondary rounded-xl p-4 text-sm font-mono bg-container" %>
+    <p class="text-xs text-secondary"><%= t(".paste_hint") %></p>
+  </div>
+
+  <%= form.submit t(".extract_transactions"), disabled: import.complete? %>
+<% end %>

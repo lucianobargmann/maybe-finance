@@ -33,7 +33,7 @@ class Provider::Registry
       end
 
       def synth
-        api_key = ENV.fetch("SYNTH_API_KEY", Setting.synth_api_key)
+        api_key = ENV["SYNTH_API_KEY"].presence || Setting.synth_api_key
 
         return nil unless api_key.present?
 
@@ -61,19 +61,51 @@ class Provider::Registry
       end
 
       def openai
-        access_token = ENV.fetch("OPENAI_ACCESS_TOKEN", Setting.openai_access_token)
+        access_token = ENV["OPENAI_ACCESS_TOKEN"].presence || Setting.openai_access_token
 
         return nil unless access_token.present?
 
         Provider::Openai.new(access_token)
       end
 
+      def anthropic
+        api_key = ENV["ANTHROPIC_API_KEY"].presence || Setting.anthropic_api_key
+
+        return nil unless api_key.present?
+
+        Provider::Anthropic.new(api_key)
+      end
+
       def exchangerate_api
-        api_key = ENV.fetch("EXCHANGERATE_API_KEY", Setting.exchangerate_api_key)
+        api_key = ENV["EXCHANGERATE_API_KEY"].presence || Setting.exchangerate_api_key
 
         return nil unless api_key.present?
 
         Provider::ExchangeRateApi.new(api_key)
+      end
+
+      def finnhub
+        api_key = ENV["FINNHUB_API_KEY"].presence || Setting.finnhub_api_key
+
+        return nil unless api_key.present?
+
+        Provider::Finnhub.new(api_key)
+      end
+
+      def alpha_vantage
+        api_key = ENV["ALPHA_VANTAGE_API_KEY"].presence || Setting.alpha_vantage_api_key
+
+        return nil unless api_key.present?
+
+        Provider::AlphaVantage.new(api_key)
+      end
+
+      def crypto_compare
+        api_key = ENV["CRYPTO_COMPARE_API_KEY"].presence || Setting.crypto_compare_api_key
+
+        return nil unless api_key.present?
+
+        Provider::CryptoCompare.new(api_key)
       end
   end
 
@@ -100,13 +132,13 @@ class Provider::Registry
     def available_providers
       case concept
       when :exchange_rates
-        %i[synth exchangerate_api]
+        %i[synth exchangerate_api alpha_vantage crypto_compare]
       when :securities
-        %i[synth]
+        %i[synth finnhub alpha_vantage]
       when :llm
-        %i[openai]
+        %i[openai anthropic]
       else
-        %i[synth plaid_us plaid_eu github openai exchangerate_api]
+        %i[synth finnhub plaid_us plaid_eu github openai anthropic exchangerate_api alpha_vantage crypto_compare]
       end
     end
 end

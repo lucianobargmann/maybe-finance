@@ -29,6 +29,7 @@ class Rule::Registry::TransactionResource < Rule::Registry
 
   private
     def ai_enabled?
-      Provider::Registry.get_provider(:openai).present?
+      provider_name = Setting.llm_provider&.to_sym || :anthropic
+      Provider::Registry.get_provider(provider_name).present?
     end
 end

@@ -1,0 +1,15 @@
+<%# locals: (transaction:) %>
+
+<%= render DS::Menu.new(variant: "button") do |menu| %>
+  <% menu.with_button do %>
+    <% render partial: "merchants/badge", locals: { merchant: transaction.merchant } %>
+  <% end %>
+
+  <% menu.with_custom_content do %>
+    <%= turbo_frame_tag "merchant_dropdown", src: merchant_dropdown_path(merchant_id: transaction.merchant_id, transaction_id: transaction.id), loading: :lazy do %>
+      <div class="p-6 flex items-center justify-center">
+        <p class="text-sm text-secondary animate-pulse"><%= t(".loading") %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

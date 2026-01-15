@@ -1,0 +1,34 @@
+<%= content_for :header_nav do %>
+  <%= render "imports/nav", import: @import %>
+<% end %>
+
+<%= content_for :previous_path, imports_path %>
+
+<div class="space-y-4">
+  <div class="space-y-4 mx-auto max-w-md">
+    <div class="text-center space-y-2">
+      <h1 class="text-3xl text-primary font-medium"><%= t(".title") %></h1>
+      <p class="text-secondary text-sm"><%= t(".description") %></p>
+    </div>
+
+    <div id="pdf_upload_status">
+      <% if @import.pdf_pdf_failed? %>
+        <%= render "import/pdf_uploads/error", import: @import %>
+      <% elsif @import.ai_processing? %>
+        <%= render "import/pdf_uploads/processing", import: @import %>
+      <% elsif @import.pdf_pdf_complete? %>
+        <%= render "import/pdf_uploads/complete", import: @import %>
+      <% else %>
+        <%= render "import/pdf_uploads/form", import: @import %>
+      <% end %>
+    </div>
+
+    <%= turbo_stream_from @import %>
+  </div>
+
+  <div class="flex justify-center">
+    <span class="text-secondary text-sm">
+      <%= link_to t(".use_csv_instead"), import_upload_path(@import), class: "text-primary underline" %>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+---
+pt-BR:
+  bill_payments:
+    notices:
+      marked_paid: Conta marcada como paga
+      unmatched: Pagamento desvinculado
+      skipped: Conta pulada para este mês
+    show:
+      due_date: Data de Vencimento
+      expected_amount: Valor Esperado
+      status: Status
+      paid_date: Data de Pagamento
+      actual_amount: Valor Pago
+      statuses:
+        pending: Pendente
+        paid: Pago
+        overdue: Vencido
+        skipped: Pulado
+      matched_transaction: Transação Vinculada
+      unmatch: Desvincular Pagamento
+      match_candidates: Transações Candidatas
+      match: Vincular
+      reject: Rejeitar
+      no_candidates: "Nenhuma transação correspondente encontrada. Transações são vinculadas por:"
+      match_criteria:
+        amount: "Valor dentro de 20%% do esperado (%{min} - %{max})"
+        date: Data dentro de 7 dias do vencimento
+        merchant: "Comerciante: %{name}"
+      skip_month: Pular Este Mês

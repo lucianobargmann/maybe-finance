@@ -10,15 +10,35 @@ pt-BR:
         generated_tokens: Códigos gerados
         title: Exigir código de convite para cadastro
       show:
-        general: Configurações Gerais
+        data_providers: Provedores de Dados
+        ai_provider: Provedor de IA
         invites: Códigos de Convite
-        title: Auto-Hospedagem
+        title: Integrações
         danger_zone: Zona de Perigo
         clear_cache: Limpar cache de dados
         clear_cache_warning: Limpar o cache de dados removerá todas as taxas de câmbio, preços de títulos, saldos de contas e outros dados. Isso não excluirá contas, transações, categorias ou outros dados de propriedade do usuário.
         confirm_clear_cache:
           title: Limpar cache de dados?
           body: Tem certeza de que deseja limpar o cache de dados? Isso removerá todas as taxas de câmbio, preços de títulos, saldos de contas e outros dados. Esta ação não pode ser desfeita.
+      ai_provider_settings:
+        title: Configurações do Provedor de IA
+        description: Configure o provedor de IA usado para auto-categorização, detecção de comerciantes e recursos de chat.
+        provider_label: Provedor
+        provider_prompt: Selecione um provedor
+        anthropic_api_key_label: Chave de API Anthropic
+        anthropic_api_key_placeholder: Digite sua chave de API Anthropic aqui
+        anthropic_env_configured: Você configurou sua chave de API Anthropic através da variável de ambiente ANTHROPIC_API_KEY.
+        openai_api_key_label: Chave de API OpenAI
+        openai_api_key_placeholder: Digite sua chave de API OpenAI aqui
+        openai_env_configured: Você configurou sua chave de API OpenAI através da variável de ambiente OPENAI_ACCESS_TOKEN.
+        model_label: Modelo
+        model_placeholder: ex., claude-sonnet-4-20250514
+      finnhub_settings:
+        title: Finnhub (Preços de Ações)
+        description: "Obtenha uma chave de API gratuita em finnhub.io - 60 requisições/minuto no plano gratuito"
+        label: Chave de API Finnhub
+        placeholder: Digite sua chave de API Finnhub aqui
+        plan: "plano %{plan}"
       synth_settings:
         api_calls_used: "%{used} / %{limit} chamadas de API usadas (%{percentage})"
         description: Insira a chave de API fornecida pela Synth
@@ -33,6 +53,10 @@ pt-BR:
         provider_prompt: Selecione um provedor
         exchangerate_api_label: Chave ExchangeRate-API
         exchangerate_api_placeholder: Digite sua chave ExchangeRate-API aqui
+        alpha_vantage_api_label: Chave Alpha Vantage API
+        alpha_vantage_api_placeholder: Digite sua chave Alpha Vantage API aqui
+        crypto_compare_api_label: Chave CryptoCompare API
+        crypto_compare_api_placeholder: Digite sua chave CryptoCompare API aqui
         api_calls_used: "%{used} / %{limit} chamadas de API usadas (%{percentage})"
         plan: "plano %{plan}"
         clear_cache_title: Limpar Cache de Taxa de Câmbio
@@ -41,6 +65,7 @@ pt-BR:
         confirm_clear_cache:
           title: Limpar cache de taxa de câmbio?
           body: Tem certeza de que deseja limpar o cache de taxa de câmbio? Isso forçará novas chamadas de API na próxima solicitação de taxa de câmbio.
+      auto_save_hint: Alterações são salvas automaticamente
       update:
         failure: Valor de configuração inválido
         success: Configurações atualizadas

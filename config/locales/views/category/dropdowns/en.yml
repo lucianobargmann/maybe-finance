@@ -6,6 +6,13 @@ en:
         delete: Delete category
         edit: Edit category
       show:
+        bootstrap: Create default categories
         clear: Clear category
+        empty: No categories yet
+        match_transfer: Match transfer/payment
+        new_category: New category
         no_categories: No categories found
+        no_results_create: Create "%{query}"
+        one_time_expense: One-time expense
+        one_time_income: One-time income
         search_placeholder: Search

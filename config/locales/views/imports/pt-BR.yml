@@ -8,6 +8,9 @@ pt-BR:
         errors_notice_mobile: Você tem erros nos seus dados. Toque na dica de erro para ver detalhes.
         title: Limpe seus dados
         next_step: Próximo passo
+        data_cleaned: Seus dados foram limpos
+        all_rows: Todas as linhas
+        error_rows: Linhas com erro
     configurations:
       account_import:
         entity_type_label: Tipo de entidade
@@ -38,6 +41,7 @@ pt-BR:
         title: Configure sua importação
         manually_configure: Configurar manualmente
         apply_template: Aplicar modelo
+        sample_data: Amostra de dados do seu CSV enviado
       trade_import:
         date_format_label: Formato de data
         date_label: Data
@@ -77,7 +81,8 @@ pt-BR:
         account_label: Conta
         name_label: Nome
         category_label: Categoria
-        tags_label: Tags
+        merchant_label: Comerciante
+        tags_label: Etiquetas
         notes_label: Notas
         leave_empty: Deixar vazio
         apply_configuration: Aplicar configuração
@@ -97,8 +102,10 @@ pt-BR:
         account_type_mapping_title: Atribua seus tipos de conta
         category_mapping_description: Atribua todas as categorias do seu arquivo importado às categorias existentes do Maybe. Você também pode adicionar novas categorias ou deixá-las sem categoria.
         category_mapping_title: Atribua suas categorias
-        tag_mapping_description: Atribua todas as tags do seu arquivo importado às tags existentes do Maybe. Você também pode adicionar novas tags ou deixá-las sem categoria.
-        tag_mapping_title: Atribua suas tags
+        merchant_mapping_description: Atribua todos os comerciantes do seu arquivo importado aos comerciantes existentes do Maybe. Você também pode adicionar novos comerciantes ou deixá-los sem atribuição.
+        merchant_mapping_title: Atribua seus comerciantes
+        tag_mapping_description: Atribua todas as etiquetas do seu arquivo importado às etiquetas existentes do Maybe. Você também pode adicionar novas etiquetas ou deixá-las sem categoria.
+        tag_mapping_title: Atribua suas etiquetas
     uploads:
       show:
         description: Cole ou carregue seu arquivo CSV abaixo. Por favor, revise as instruções na tabela abaixo antes de começar.
@@ -115,7 +122,116 @@ pt-BR:
         browse: Procurar
         add_csv_here: para adicionar seu arquivo CSV aqui
         paste_csv_placeholder: Cole o conteúdo do seu arquivo CSV aqui
+    pdf_uploads:
+      show:
+        title: Importar de PDF
+        description: Envie um extrato bancário ou de cartão de crédito em PDF. A IA extrairá as transações automaticamente.
+        use_csv_instead: Prefere CSV? Use a importação CSV
+      form:
+        account_optional: Conta (opcional)
+        multi_account: Importação multi-conta
+        browse: Procurar
+        add_pdf_here: para adicionar seu arquivo PDF aqui
+        supported_formats: Arquivos PDF até 10MB
+        upload_pdf: Enviar PDF
+      processing:
+        processing: Processando PDF...
+        processing_description: Por favor, aguarde enquanto processamos seu arquivo.
+        extracting_text: Extraindo texto do PDF...
+        extracting_text_description: Lendo o conteúdo do seu extrato.
+        extracting_transactions: Extraindo transações com IA...
+        extracting_transactions_description: A IA está analisando seu extrato e extraindo transações.
+      complete:
+        extraction_complete: Extração Concluída
+        transactions_found:
+          one: Encontrada %{count} transação
+          other: Encontradas %{count} transações
+        continue_to_configuration: Continuar para Configuração
+      error:
+        extraction_failed: Extração Falhou
+        unknown_error: Ocorreu um erro desconhecido.
+        password_protected: Este PDF está protegido por senha.
+        password_protected_hint: Remova a senha do PDF e tente novamente, ou copie o texto do extrato e use a importação de texto.
+        try_again: Tentar Novamente
+        try_text_paste: Usar Importação de Texto
+        use_csv_instead: Usar Importação CSV
+      update:
+        no_file: Por favor, selecione um arquivo PDF para enviar.
+        invalid_type: Por favor, envie um arquivo PDF.
+        file_too_large: Arquivos PDF devem ter menos de 10MB.
+        processing_started: Extração de PDF iniciada. Isso pode levar um momento.
+        ai_not_configured: A IA não está configurada. Configure um provedor de IA em Configurações para usar a importação de PDF.
+    text_pastes:
+      show:
+        title: Importar de Texto
+        description: Cole dados de transações de um extrato bancário, visualizador de PDF ou site. A IA extrairá as transações automaticamente.
+        use_csv_instead: Prefere CSV? Use a importação CSV
+      form:
+        account_optional: Conta (opcional)
+        multi_account: Importação multi-conta
+        paste_label: Cole seus dados de transações
+        paste_placeholder: "Cole seu extrato bancário ou lista de transações aqui..."
+        paste_hint: Cole texto copiado de um visualizador de PDF, site bancário ou qualquer fonte contendo dados de transações.
+        extract_transactions: Extrair Transações
+      processing:
+        processing: Processando texto...
+        processing_description: Por favor, aguarde enquanto a IA extrai suas transações.
+        extracting_transactions: Extraindo transações com IA...
+        extracting_transactions_description: A IA está analisando seu texto e extraindo transações.
+        sending_to_ai: Enviando para IA...
+        sending_to_ai_description: Enviando seus dados para processamento pela IA.
+        formatting: Formatando transações...
+        formatting_description: Organizando as transações extraídas para importação.
+      complete:
+        extraction_complete: Extração Concluída
+        transactions_found:
+          one: Encontrada %{count} transação
+          other: Encontradas %{count} transações
+        continue_to_configuration: Continuar para Configuração
+      error:
+        extraction_failed: Extração Falhou
+        unknown_error: Ocorreu um erro desconhecido.
+        try_again: Tentar Novamente
+        use_csv_instead: Usar Importação CSV
+      update:
+        no_text: Por favor, cole algum texto para importar.
+        text_too_large: O conteúdo do texto é muito grande. Por favor, cole uma seção menor.
+        processing_started: Extração de texto iniciada. Isso pode levar um momento.
+        ai_not_configured: A IA não está configurada. Configure um provedor de IA em Configurações para usar a importação de texto.
   imports:
+    nav:
+      upload: Enviar
+      configure: Configurar
+      clean: Limpar
+      map: Mapear
+      confirm: Confirmar
+      step_of: Passo %{step} de %{total}
+    types:
+      transaction_import: Importação de Transações
+      trade_import: Importação de Investimentos
+      account_import: Importação de Contas
+      mint_import: Importação do Mint
+    mappings:
+      account_type: Tipo de Conta
+      account: Conta
+      category: Categoria
+      merchant: Comerciante
+      tag: Etiqueta
+    columns:
+      date: Data
+      amount: Valor
+      name: Nome
+      currency: Moeda
+      category: Categoria
+      merchant: Comerciante
+      tags: Etiquetas
+      account: Conta
+      notes: Notas
+      qty: Quantidade
+      ticker: Ticker
+      exchange: Bolsa
+      price: Preço
+      entity_type: Tipo
     failure:
       title: Importação falhou
       description: Por favor, verifique o formato do seu arquivo, se há erros e se todos os campos obrigatórios estão preenchidos, então volte e tente novamente.
@@ -157,6 +273,10 @@ pt-BR:
       description: Você pode importar manualmente vários tipos de dados via CSV ou usar um dos nossos modelos de importação como Mint.
       import_accounts: Importar contas
       import_mint: Importar do Mint
+      import_pdf: Importar de PDF (IA)
+      import_pdf_description: Extratos bancários e de cartão
+      import_text: Colar Texto (IA)
+      import_text_description: Copiar do visualizador de PDF ou site
       import_portfolio: Importar investimentos
       import_transactions: Importar transações
       resume: Retomar %{type}
@@ -164,5 +284,11 @@ pt-BR:
       title: Nova Importação CSV
     ready:
       description: Aqui está um resumo dos novos itens que serão adicionados à sua conta assim que você publicar esta importação.
+      item_header: Item
+      count_header: Quantidade
+      transactions: Transações
+      accounts: Contas
+      categories: Categorias
+      tags: Etiquetas
       title: Confirme seus dados de importação
       publish_import: Publicar importação

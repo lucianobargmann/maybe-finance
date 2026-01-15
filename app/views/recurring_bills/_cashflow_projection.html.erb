@@ -1,0 +1,40 @@
+<%# locals: (projection:) %>
+
+<div class="bg-container rounded-xl shadow-border-xs p-4">
+  <h3 class="text-lg font-medium mb-4"><%= t("recurring_bills.cashflow.title") %></h3>
+
+  <div class="overflow-x-auto scrollbar">
+    <div class="flex gap-4 min-w-max pb-4">
+      <% projection.each_with_index do |month_data, index| %>
+        <div class="flex flex-col items-center p-3 bg-surface-inset rounded-lg min-w-[120px] <%= 'border-2 border-primary' if index == 0 %>">
+          <span class="text-sm font-medium text-primary"><%= month_data[:month_name] %></span>
+          <span class="text-xs text-secondary mt-1"><%= t("recurring_bills.cashflow.bills_count", count: month_data[:bills_count]) %></span>
+
+          <div class="mt-3 w-full space-y-1">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-secondary"><%= t("recurring_bills.cashflow.income") %></span>
+              <span class="text-green-600 font-mono">+<%= format_money(month_data[:estimated_income]) %></span>
+            </div>
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-secondary"><%= t("recurring_bills.cashflow.bills") %></span>
+              <span class="text-red-600 font-mono">-<%= format_money(month_data[:total_bills]) %></span>
+            </div>
+          </div>
+
+          <div class="border-t border-secondary mt-2 pt-2 w-full">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-secondary"><%= t("recurring_bills.cashflow.net") %></span>
+              <span class="font-medium font-mono <%= month_data[:net_cashflow] >= 0 ? 'text-green-600' : 'text-red-600' %>">
+                <%= month_data[:net_cashflow] >= 0 ? '+' : '' %><%= format_money(month_data[:net_cashflow]) %>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <p class="mt-4 text-xs text-secondary">
+    <%= t("recurring_bills.cashflow.income_note") %>
+  </p>
+</div>

@@ -27,6 +27,17 @@
     </div>
 
     <div class="flex items-center gap-1 ml-auto">
+      <% unless account.crypto? %>
+        <%= render DS::Link.new(
+            variant: :icon,
+            icon: "download",
+            size: :sm,
+            href: new_import_path(type: account.investment? ? "TradeImport" : "TransactionImport", account_id: account.id),
+            frame: :modal,
+            title: t(".import")
+          ) %>
+      <% end %>
+
       <% if Rails.env.development? || self_hosted? %>
         <%= icon(
             "refresh-cw",

@@ -7,6 +7,8 @@ en:
       amount: Amount
       category: Category
       category_prompt: Select a Category
+      merchant: Merchant
+      merchant_prompt: Select a Merchant
       date: Date
       description: Description
       description_placeholder: Describe transaction
@@ -45,11 +47,18 @@ en:
       uncategorized: "(uncategorized)"
       exclude_title: Exclude
       exclude_description: Excluded transactions will be removed from budgeting calculations and reports.
+      reviewed_title: Reviewed
+      reviewed_description: Mark this transaction as reviewed to track your reconciliation progress.
+      mark_reviewed: Mark as reviewed
+      mark_unreviewed: Mark as not reviewed
       one_time_income: One-time Income
       one_time_expense: One-time Expense
       one_time_description: One-time transactions will be excluded from certain budgeting calculations and reports to help you see what's really important.
       transfer_title: Transfer or Debt Payment?
       transfer_description: Transfers and payments are special types of transactions that indicate money movement between 2 accounts.
+      recurring_bill_title: Recurring Bill
+      recurring_bill_description: Create a monthly recurring bill from this transaction to track and forecast your expenses.
+      create_recurring_bill: Create bill
     bulk_updates:
       new:
         edit_transactions: Edit transactions

@@ -16,7 +16,7 @@ pt-BR:
     ai_consent:
       title: Ativar Maybe AI
       description_enabled: O Maybe AI pode responder perguntas financeiras e fornecer insights com base nos seus dados. Para usar este recurso, você precisa ativá-lo explicitamente.
-      description_disabled_html: "Para usar o assistente de IA, você precisa definir a variável de ambiente <code class=\"bg-surface-inset px-1 py-0.5 rounded font-mono text-xs\">OPENAI_ACCESS_TOKEN</code> na sua instância auto-hospedada."
+      description_disabled_html: "Para usar o assistente de IA, configure um provedor de IA (OpenAI ou Anthropic) em <a href=\"/settings/hosting\" class=\"text-primary underline hover:text-primary-hover\">Configurações → Integrações</a>."
       enable_button: Ativar Maybe AI
       privacy_notice: Desative a qualquer momento. Todos os dados enviados aos nossos provedores de LLM são anonimizados.
     chat:

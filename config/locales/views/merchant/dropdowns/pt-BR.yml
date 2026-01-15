@@ -1,0 +1,18 @@
+---
+pt-BR:
+  merchant:
+    dropdowns:
+      row:
+        delete: Excluir comerciante
+        edit: Editar comerciante
+      show:
+        clear: Limpar comerciante
+        empty: Nenhum comerciante ainda
+        new_merchant: Novo comerciante
+        no_merchants: Nenhum comerciante encontrado
+        search_placeholder: Buscar
+  merchants:
+    menu:
+      loading: Carregando...
+    badge:
+      none: Sem comerciante

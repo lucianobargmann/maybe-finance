@@ -2,6 +2,7 @@ class Import < ApplicationRecord
   MaxRowCountExceededError = Class.new(StandardError)
 
   TYPES = %w[TransactionImport TradeImport AccountImport MintImport].freeze
+  SOURCES = %w[csv pdf text].freeze
   SIGNAGE_CONVENTIONS = %w[inflows_positive inflows_negative]
   SEPARATORS = [ [ "Comma (,)", "," ], [ "Semicolon (;)", ";" ] ].freeze
 
@@ -30,7 +31,16 @@ class Import < ApplicationRecord
     failed: "failed"
   }, validate: true, default: "pending"
 
+  enum :pdf_processing_status, {
+    pdf_pending: "pdf_pending",
+    extracting_text: "extracting_text",
+    extracting_transactions: "extracting_transactions",
+    pdf_complete: "pdf_complete",
+    pdf_failed: "pdf_failed"
+  }, prefix: :pdf
+
   validates :type, inclusion: { in: TYPES }
+  validates :source, inclusion: { in: SOURCES }, allow_nil: true
   validates :amount_type_strategy, inclusion: { in: AMOUNT_TYPE_STRATEGIES }
   validates :col_sep, inclusion: { in: SEPARATORS.map(&:last) }
   validates :signage_convention, inclusion: { in: SIGNAGE_CONVENTIONS }, allow_nil: true
@@ -144,6 +154,7 @@ class Import < ApplicationRecord
         currency: (row[currency_col_label] || default_currency).to_s,
         name: (row[name_col_label] || default_row_name).to_s,
         category: row[category_col_label].to_s,
+        merchant: row[merchant_col_label].to_s,
         tags: row[tags_col_label].to_s,
         entity_type: row[entity_type_col_label].to_s,
         notes: row[notes_col_label].to_s
@@ -195,6 +206,22 @@ class Import < ApplicationRecord
     complete? || revert_failed?
   end
 
+  def pdf_import?
+    source == "pdf"
+  end
+
+  def text_import?
+    source == "text"
+  end
+
+  def ai_import?
+    source.in?(%w[pdf text])
+  end
+
+  def ai_processing?
+    pdf_pdf_pending? || pdf_extracting_text? || pdf_extracting_transactions?
+  end
+
   def has_unassigned_account?
     mappings.accounts.where(key: "").any?
   end
@@ -216,7 +243,7 @@ class Import < ApplicationRecord
     update!(
       import_template.attributes.slice(
         "date_col_label", "amount_col_label", "name_col_label",
-        "category_col_label", "tags_col_label", "account_col_label",
+        "category_col_label", "merchant_col_label", "tags_col_label", "account_col_label",
         "qty_col_label", "ticker_col_label", "price_col_label",
         "entity_type_col_label", "notes_col_label", "currency_col_label",
         "date_format", "signage_convention", "number_format",

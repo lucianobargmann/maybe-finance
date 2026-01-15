@@ -1,0 +1,24 @@
+electricity:
+  family: dylan_family
+  name: Electricity Bill
+  expected_amount: 150.00
+  currency: USD
+  due_day: 15
+  status: active
+
+internet:
+  family: dylan_family
+  merchant: netflix
+  name: Internet Service
+  expected_amount: 89.99
+  currency: USD
+  due_day: 1
+  status: active
+
+car_insurance:
+  family: dylan_family
+  name: Car Insurance
+  expected_amount: 250.00
+  currency: USD
+  due_day: 20
+  status: paused

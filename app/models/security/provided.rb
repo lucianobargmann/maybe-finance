@@ -6,7 +6,23 @@ module Security::Provided
   class_methods do
     def provider
       registry = Provider::Registry.for_concept(:securities)
-      registry.get_provider(:synth)
+      preferred_provider = Setting.security_provider&.to_sym || :finnhub
+
+      begin
+        provider = registry.get_provider(preferred_provider)
+        return provider if provider.present?
+
+        # Fallback to any available provider
+        Rails.logger.warn("Configured security provider '#{preferred_provider}' not available, trying alternatives")
+        %i[finnhub synth].each do |alt_provider|
+          provider = registry.get_provider(alt_provider) rescue nil
+          return provider if provider.present?
+        end
+
+        nil
+      rescue Provider::Registry::Error
+        nil
+      end
     end
 
     def search_provider(symbol, country_code: nil, exchange_operating_mic: nil)

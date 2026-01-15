@@ -1,5 +1,5 @@
 class Family < ApplicationRecord
-  include PlaidConnectable, Syncable, AutoTransferMatchable, Subscribeable
+  include PlaidConnectable, Syncable, AutoTransferMatchable, AutoBillMatchable, Subscribeable
 
   DATE_FORMATS = [
     [ "MM-DD-YYYY", "%m-%d-%Y" ],
@@ -32,6 +32,8 @@ class Family < ApplicationRecord
 
   has_many :budgets, dependent: :destroy
   has_many :budget_categories, through: :budgets
+
+  has_many :recurring_bills, dependent: :destroy
 
   validates :locale, inclusion: { in: I18n.available_locales.map(&:to_s) }
   validates :date_format, inclusion: { in: DATE_FORMATS.map(&:last) }
@@ -85,7 +87,13 @@ class Family < ApplicationRecord
   end
 
   def missing_data_provider?
-    requires_data_provider? && Provider::Registry.get_provider(:synth).nil?
+    return false unless requires_data_provider?
+
+    # Check if any security provider is available
+    synth_available = Provider::Registry.get_provider(:synth).present?
+    finnhub_available = Provider::Registry.get_provider(:finnhub).present?
+
+    !synth_available && !finnhub_available
   end
 
   def oldest_entry_date

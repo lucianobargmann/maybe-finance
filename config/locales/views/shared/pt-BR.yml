@@ -1,6 +1,10 @@
 ---
 pt-BR:
   shared:
+    transaction_tabs:
+      expense: Despesa
+      income: Receita
+      transfer: Transferência
     confirm_dialog:
       are_you_sure: Tem certeza?
       cannot_be_undone: Esta ação não pode ser desfeita.
@@ -16,3 +20,4 @@ pt-BR:
       syncing: Sincronizando dados das contas...
     trend_change:
       no_change: "sem alteração"
+    show_details: "Mostrar detalhes"

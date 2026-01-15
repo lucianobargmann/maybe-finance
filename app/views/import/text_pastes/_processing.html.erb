@@ -1,0 +1,36 @@
+<%# locals: (import:, step: :extracting) %>
+
+<div id="text_paste_status" class="flex flex-col items-center justify-center p-8 border border-secondary rounded-xl">
+  <div class="animate-spin mb-4">
+    <%= icon("loader-2", size: "lg", class: "text-emerald-500") %>
+  </div>
+
+  <h3 class="text-lg font-medium text-primary mb-2">
+    <% case step %>
+    <% when :sending_to_ai %>
+      <%= t(".sending_to_ai") %>
+    <% when :formatting %>
+      <%= t(".formatting") %>
+    <% else %>
+      <%= t(".extracting_transactions") %>
+    <% end %>
+  </h3>
+
+  <p class="text-sm text-secondary text-center">
+    <% case step %>
+    <% when :sending_to_ai %>
+      <%= t(".sending_to_ai_description") %>
+    <% when :formatting %>
+      <%= t(".formatting_description") %>
+    <% else %>
+      <%= t(".extracting_transactions_description") %>
+    <% end %>
+  </p>
+
+  <% if import.original_text_preview.present? %>
+    <p class="mt-4 text-xs text-secondary truncate max-w-full">
+      <%= icon("clipboard", size: "sm", class: "inline-block mr-1") %>
+      <%= truncate(import.original_text_preview, length: 50) %>
+    </p>
+  <% end %>
+</div>

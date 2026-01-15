@@ -1,0 +1,14 @@
+<%# locals: (merchant:) %>
+
+<div class="flex items-center gap-1.5 text-sm">
+  <% if merchant %>
+    <% if merchant.logo_url %>
+      <%= image_tag merchant.logo_url, class: "w-4 h-4 rounded-full" %>
+    <% else %>
+      <%= render partial: "shared/color_avatar", locals: { name: merchant.name, color: merchant.color, size: "xs" } %>
+    <% end %>
+    <span class="text-primary truncate max-w-24"><%= merchant.name %></span>
+  <% else %>
+    <span class="text-secondary"><%= t("merchants.badge.none") %></span>
+  <% end %>
+</div>

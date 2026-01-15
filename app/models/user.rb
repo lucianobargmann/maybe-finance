@@ -87,7 +87,13 @@ class User < ApplicationRecord
   end
 
   def ai_available?
-    !Rails.application.config.app_mode.self_hosted? || ENV["OPENAI_ACCESS_TOKEN"].present?
+    return true unless Rails.application.config.app_mode.self_hosted?
+
+    # Check for any configured LLM provider (ENV var or Setting)
+    openai_configured = ENV["OPENAI_ACCESS_TOKEN"].present? || Setting.openai_access_token.present?
+    anthropic_configured = ENV["ANTHROPIC_API_KEY"].present? || Setting.anthropic_api_key.present?
+
+    openai_configured || anthropic_configured
   end
 
   def ai_enabled?

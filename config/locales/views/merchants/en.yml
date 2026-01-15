@@ -29,3 +29,12 @@ en:
     family_merchant:
       edit: Edit
       delete: Delete
+    show:
+      edit: Edit
+      transactions: Transactions
+      transactions_description:
+        zero: No transactions with this merchant
+        one: "%{count} transaction with this merchant"
+        other: "%{count} transactions with this merchant"
+      view_all: View all transactions
+      no_transactions: No transactions found for this merchant

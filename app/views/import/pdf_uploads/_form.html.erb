@@ -1,0 +1,38 @@
+<%# locals: (import:) %>
+
+<%= styled_form_with model: import, scope: :import, url: import_pdf_upload_path(import), multipart: true, class: "space-y-2" do |form| %>
+  <% if import.type == "TransactionImport" || import.type == "TradeImport" %>
+    <%= form.select :account_id,
+                    import.family.accounts.visible.pluck(:name, :id),
+                    { label: t(".account_optional"), include_blank: t(".multi_account"), selected: import.account_id } %>
+  <% end %>
+
+  <div class="flex flex-col items-center justify-center w-full h-64 border border-secondary border-dashed rounded-xl cursor-pointer"
+       data-controller="file-upload"
+       data-action="click->file-upload#triggerFileInput"
+       data-file-upload-target="uploadArea">
+    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+      <div data-file-upload-target="uploadText" class="flex flex-col items-center">
+        <%= icon("file-text", size: "lg", class: "mb-4 mx-auto text-rose-500") %>
+        <p class="mb-2 text-md text-gray text-center">
+          <span class="font-medium text-primary"><%= t(".browse") %></span> <%= t(".add_pdf_here") %>
+        </p>
+        <p class="text-xs text-secondary"><%= t(".supported_formats") %></p>
+      </div>
+
+      <div class="flex flex-col gap-4 items-center hidden mb-2" data-file-upload-target="fileName">
+        <span class="text-rose-500">
+          <%= icon("file-text", size: "lg", color: "current") %>
+        </span>
+        <p class="text-md font-medium text-primary"></p>
+      </div>
+
+      <%= form.file_field :pdf_file,
+                          accept: "application/pdf",
+                          class: "hidden",
+                          "data-file-upload-target": "input" %>
+    </div>
+  </div>
+
+  <%= form.submit t(".upload_pdf"), disabled: import.complete? %>
+<% end %>

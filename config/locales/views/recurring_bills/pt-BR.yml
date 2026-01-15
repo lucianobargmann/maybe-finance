@@ -1,6 +1,12 @@
 ---
 pt-BR:
   recurring_bills:
+    create:
+      created: Conta criada com sucesso
+    update:
+      updated: Conta atualizada com sucesso
+    destroy:
+      deleted: Conta excluída
     index:
       title: Contas Mensais
       add_bill: Adicionar Conta

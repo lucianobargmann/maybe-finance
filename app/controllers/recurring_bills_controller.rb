@@ -41,7 +41,15 @@ class RecurringBillsController < ApplicationController
   def create
     @recurring_bill = Current.family.recurring_bills.build(recurring_bill_params)
     if @recurring_bill.save
-      redirect_to recurring_bills_path, notice: "Bill created successfully"
+      # If created from a transaction, auto-match that transaction as paid
+      if params[:from_transaction].present?
+        transaction = Current.family.transactions.find_by(id: params[:from_transaction])
+        if transaction
+          payment = @recurring_bill.ensure_payment_for_month(transaction.entry.date)
+          payment.mark_paid!(transaction)
+        end
+      end
+      redirect_to recurring_bills_path, notice: t(".created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -52,7 +60,7 @@ class RecurringBillsController < ApplicationController
 
   def update
     if @recurring_bill.update(recurring_bill_params)
-      redirect_to recurring_bills_path, notice: "Bill updated successfully"
+      redirect_to recurring_bills_path, notice: t(".updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -60,7 +68,7 @@ class RecurringBillsController < ApplicationController
 
   def destroy
     @recurring_bill.destroy
-    redirect_to recurring_bills_path, notice: "Bill deleted"
+    redirect_to recurring_bills_path, notice: t(".deleted")
   end
 
   def picker

@@ -181,7 +181,13 @@ export default class extends Controller {
       .attr("y", (d) => (d.y1 + d.y0) / 2)
       .attr("dy", "-0.2em")
       .attr("text-anchor", (d) => (d.x0 < width / 2 ? "start" : "end"))
-      .attr("class", "text-xs font-medium text-primary fill-current")
+      .attr("class", (d) => `text-xs font-medium fill-current ${d.url ? "cursor-pointer hover:underline text-primary" : "text-primary"}`)
+      .style("cursor", (d) => d.url ? "pointer" : "default")
+      .on("click", (event, d) => {
+        if (d.url) {
+          window.location.href = d.url;
+        }
+      })
       .each(function (d) {
         const textElement = d3.select(this);
         textElement.selectAll("tspan").remove();

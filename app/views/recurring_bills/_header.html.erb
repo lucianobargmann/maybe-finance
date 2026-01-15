@@ -1,0 +1,36 @@
+<%# locals: (month:) %>
+
+<div class="flex items-center gap-1 mb-4">
+  <div class="flex items-center gap-2">
+    <%= render DS::Link.new(
+      variant: "icon",
+      icon: "chevron-left",
+      href: recurring_bills_path(month: (month - 1.month).strftime("%Y-%m-%d")),
+    ) %>
+
+    <%= render DS::Link.new(
+      variant: "icon",
+      icon: "chevron-right",
+      href: recurring_bills_path(month: (month + 1.month).strftime("%Y-%m-%d")),
+    ) %>
+  </div>
+
+  <%= render DS::Menu.new(variant: "button") do |menu| %>
+    <% menu.with_button class: "flex items-center gap-1 hover:bg-alpha-black-25 cursor-pointer rounded-md p-2" do %>
+      <span class="text-primary font-medium text-lg lg:text-base"><%= l(month, format: "%B %Y") %></span>
+      <%= icon("chevron-down") %>
+    <% end %>
+
+    <% menu.with_custom_content do %>
+      <%= render "recurring_bills/picker", family: Current.family, year: month.year %>
+    <% end %>
+  <% end %>
+
+  <div class="ml-auto">
+    <%= render DS::Link.new(
+        text: t("recurring_bills.header.today"),
+        variant: "outline",
+        href: recurring_bills_path,
+    ) %>
+  </div>
+</div>

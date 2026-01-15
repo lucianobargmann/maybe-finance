@@ -19,7 +19,7 @@ class Import::Row < ApplicationRecord
   end
 
   def date_iso
-    Date.strptime(date, import.date_format).iso8601
+    parse_date_with_year_correction(date, import.date_format).iso8601
   end
 
   def signed_amount
@@ -68,7 +68,7 @@ class Import::Row < ApplicationRecord
     def date_valid
       return if date.blank?
 
-      parsed_date = Date.strptime(date, import.date_format) rescue nil
+      parsed_date = parse_date_with_year_correction(date, import.date_format)
 
       if parsed_date.nil?
         errors.add(:date, "must exactly match the format: #{import.date_format}")
@@ -81,6 +81,25 @@ class Import::Row < ApplicationRecord
       if parsed_date < min_date || parsed_date > max_date
         errors.add(:date, "must be between #{min_date} and #{max_date}")
       end
+    end
+
+    # When date format doesn't include year, Date.strptime defaults to current year.
+    # If the resulting date is in the future, use the previous year instead.
+    # This handles cases like importing December statements in January.
+    def parse_date_with_year_correction(date_str, format)
+      parsed_date = Date.strptime(date_str, format) rescue nil
+      return nil if parsed_date.nil?
+
+      # If date is in the future and format doesn't include year, use previous year
+      if parsed_date > Date.current && !format_includes_year?(format)
+        parsed_date = parsed_date.prev_year
+      end
+
+      parsed_date
+    end
+
+    def format_includes_year?(format)
+      format.include?("%Y") || format.include?("%y")
     end
 
     def currency_is_valid

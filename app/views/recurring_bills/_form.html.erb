@@ -1,6 +1,6 @@
 <%# locals: (recurring_bill:) %>
 
-<%= styled_form_with model: recurring_bill, class: "space-y-4" do |f| %>
+<%= styled_form_with model: recurring_bill, class: "space-y-4", data: { turbo_frame: "_top" } do |f| %>
   <% if recurring_bill.errors.any? %>
     <%= render "shared/form_errors", model: recurring_bill %>
   <% end %>

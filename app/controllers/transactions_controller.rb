@@ -74,10 +74,13 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    if @entry.update(entry_params)
-      transaction = @entry.transaction
+    transaction = @entry.transaction
+    previous_category_id = transaction.category_id
 
-      if needs_rule_notification?(transaction)
+    if @entry.update(entry_params)
+      transaction.reload
+
+      if needs_rule_notification?(transaction, previous_category_id)
         flash[:cta] = {
           type: "category_rule",
           category_id: transaction.category_id,
@@ -113,7 +116,7 @@ class TransactionsController < ApplicationController
       params[:per_page].to_i.positive? ? params[:per_page].to_i : 20
     end
 
-    def needs_rule_notification?(transaction)
+    def needs_rule_notification?(transaction, previous_category_id)
       return false if Current.user.rule_prompts_disabled
 
       if Current.user.rule_prompt_dismissed_at.present?
@@ -121,13 +124,14 @@ class TransactionsController < ApplicationController
         return false if time_since_last_rule_prompt < 1.day
       end
 
-      transaction.saved_change_to_category_id? && transaction.category_id.present? &&
+      category_changed = transaction.category_id != previous_category_id
+      category_changed && transaction.category_id.present? &&
       transaction.eligible_for_category_rule?
     end
 
     def entry_params
       entry_params = params.require(:entry).permit(
-        :name, :date, :amount, :currency, :excluded, :notes, :nature, :entryable_type,
+        :name, :date, :amount, :currency, :excluded, :reviewed, :notes, :nature, :entryable_type,
         entryable_attributes: [ :id, :category_id, :merchant_id, :kind, { tag_ids: [] } ]
       )
 

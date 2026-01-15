@@ -1,0 +1,57 @@
+<%# locals: (month:, calendar_data:) %>
+
+<% today = Time.current.in_time_zone(Current.family.timezone).to_date %>
+<div class="bg-container rounded-xl shadow-border-xs p-4">
+  <h3 class="text-lg font-medium mb-4"><%= l(month, format: "%B %Y") %></h3>
+
+  <div class="grid grid-cols-7 gap-1 text-center text-sm">
+    <% t("date.abbr_day_names").each do |day| %>
+      <div class="font-medium text-secondary p-2"><%= day %></div>
+    <% end %>
+
+    <% month.beginning_of_month.wday.times do %>
+      <div class="p-2"></div>
+    <% end %>
+
+    <% (1..month.end_of_month.day).each do |day| %>
+      <% is_today = day == today.day && month.month == today.month && month.year == today.year %>
+      <div class="p-2 relative <%= 'bg-surface-inset rounded-lg' if is_today %>">
+        <span class="<%= 'font-bold text-primary' if is_today %>">
+          <%= day %>
+        </span>
+        <% if calendar_data[day].present? %>
+          <div class="flex gap-0.5 justify-center mt-1 flex-wrap">
+            <% calendar_data[day].each do |bill| %>
+              <% dot_color = case bill[:alert_level]
+                when :error then "bg-red-500"
+                when :warning then "bg-yellow-500"
+                else bill[:status] == "paid" ? "bg-green-500" : "bg-gray-400"
+              end %>
+              <span class="w-2 h-2 rounded-full <%= dot_color %>"
+                    title="<%= bill[:name] %> - <%= format_money(bill[:amount]) %>"></span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-4 flex items-center gap-4 text-xs text-secondary">
+    <div class="flex items-center gap-1">
+      <span class="w-2 h-2 rounded-full bg-red-500"></span>
+      <span><%= t("recurring_bills.calendar.overdue") %></span>
+    </div>
+    <div class="flex items-center gap-1">
+      <span class="w-2 h-2 rounded-full bg-yellow-500"></span>
+      <span><%= t("recurring_bills.calendar.due_soon") %></span>
+    </div>
+    <div class="flex items-center gap-1">
+      <span class="w-2 h-2 rounded-full bg-green-500"></span>
+      <span><%= t("recurring_bills.calendar.paid") %></span>
+    </div>
+    <div class="flex items-center gap-1">
+      <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+      <span><%= t("recurring_bills.calendar.pending") %></span>
+    </div>
+  </div>
+</div>

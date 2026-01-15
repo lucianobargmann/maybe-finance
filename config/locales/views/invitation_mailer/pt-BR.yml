@@ -2,6 +2,7 @@
 pt-BR:
   invitation_mailer:
     invite_email:
+      subject: "%{inviter} convidou você para o Maybe"
       accept_button: Aceitar Convite
       body: "%{inviter} convidou você para se juntar à família %{family} no Maybe!"
       expiry_notice: Este convite expirará em %{days} dias

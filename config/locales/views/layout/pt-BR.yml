@@ -4,6 +4,7 @@ pt-BR:
     nav:
       home: Início
       transactions: Transações
+      bills: Contas
       budgets: Orçamentos
       assistant: Assistente
     sidebar:

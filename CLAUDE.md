@@ -32,6 +32,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Setup
 - `bin/setup` - Initial project setup (installs dependencies, prepares database)
 
+### Versioning
+- App version is defined in `config/initializers/version.rb` (the `semver` method)
+- When deploying, bump the version and use the same version for Docker image tag
+- Example: version `0.6.16` → Docker image `lucianobargmann/maybe:0.6.16`
+
 ## Pre-Pull Request CI Workflow
 
 ALWAYS run these commands before opening a pull request:

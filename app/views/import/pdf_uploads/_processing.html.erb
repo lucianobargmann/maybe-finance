@@ -1,0 +1,34 @@
+<%# locals: (import:) %>
+
+<div id="pdf_upload_status" class="flex flex-col items-center justify-center p-8 border border-secondary rounded-xl">
+  <div class="animate-spin mb-4">
+    <%= icon("loader-2", size: "lg", class: "text-rose-500") %>
+  </div>
+
+  <h3 class="text-lg font-medium text-primary mb-2">
+    <% if import.pdf_extracting_text? %>
+      <%= t(".extracting_text") %>
+    <% elsif import.pdf_extracting_transactions? %>
+      <%= t(".extracting_transactions") %>
+    <% else %>
+      <%= t(".processing") %>
+    <% end %>
+  </h3>
+
+  <p class="text-sm text-secondary text-center">
+    <% if import.pdf_extracting_text? %>
+      <%= t(".extracting_text_description") %>
+    <% elsif import.pdf_extracting_transactions? %>
+      <%= t(".extracting_transactions_description") %>
+    <% else %>
+      <%= t(".processing_description") %>
+    <% end %>
+  </p>
+
+  <% if import.original_pdf_filename.present? %>
+    <p class="mt-4 text-xs text-secondary">
+      <%= icon("file-text", size: "sm", class: "inline-block mr-1") %>
+      <%= import.original_pdf_filename %>
+    </p>
+  <% end %>
+</div>

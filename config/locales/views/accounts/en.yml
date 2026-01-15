@@ -80,6 +80,7 @@ en:
         title: Activity
       header:
         complete_setup: Complete setup
+        import: Import
       chart:
         balance: Balance
         owed: Amount owed

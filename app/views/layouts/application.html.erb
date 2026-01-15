@@ -1,6 +1,7 @@
 <% mobile_nav_items = [
   { name: t("layouts.nav.home"), path: root_path, icon: "pie-chart", icon_custom: false, active: page_active?(root_path) },
   { name: t("layouts.nav.transactions"), path: transactions_path, icon: "credit-card", icon_custom: false, active: page_active?(transactions_path) },
+  { name: t("layouts.nav.bills"), path: recurring_bills_path, icon: "calendar-check", icon_custom: false, active: page_active?(recurring_bills_path) },
   { name: t("layouts.nav.budgets"), path: budgets_path, icon: "map", icon_custom: false, active: page_active?(budgets_path) },
   { name: t("layouts.nav.assistant"), path: chats_path, icon: "icon-assistant", icon_custom: true, active: page_active?(chats_path), mobile_only: true }
 ] %>

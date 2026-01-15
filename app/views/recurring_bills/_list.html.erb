@@ -1,0 +1,88 @@
+<%# locals: (bill_payments:) %>
+
+<% if bill_payments.empty? %>
+  <div class="p-8 text-center text-secondary">
+    <p><%= t("recurring_bills.list.no_bills") %></p>
+    <p class="mt-2">
+      <%= link_to t("recurring_bills.list.add_first"), new_recurring_bill_path, class: "text-primary hover:underline", data: { turbo_frame: :modal } %>
+    </p>
+  </div>
+<% else %>
+  <div class="divide-y divide-secondary">
+    <% bill_payments.sort_by(&:due_date).each do |payment| %>
+      <div class="flex items-center justify-between p-3 hover:bg-surface-hover rounded-lg">
+        <div class="flex items-center gap-3">
+          <% status_color = case payment.status
+            when "paid" then "bg-green-500"
+            when "overdue" then "bg-red-500"
+            when "skipped" then "bg-gray-400"
+            else payment.due_date <= Date.current ? "bg-red-500" : payment.due_date <= Date.current + 7.days ? "bg-yellow-500" : "bg-gray-400"
+          end %>
+          <div class="w-3 h-3 rounded-full <%= status_color %>"></div>
+
+          <div>
+            <p class="font-medium text-primary"><%= payment.recurring_bill.name %></p>
+            <p class="text-sm text-secondary">
+              <%= t("recurring_bills.list.due", date: l(payment.due_date, format: :short)) %>
+              <% if payment.paid? && payment.paid_date %>
+                <span class="text-green-600">- <%= t("recurring_bills.list.paid", date: l(payment.paid_date, format: :short)) %></span>
+              <% elsif payment.overdue? %>
+                <span class="text-red-600">- <%= t("recurring_bills.list.overdue") %></span>
+              <% elsif payment.skipped? %>
+                <span class="text-gray-500">- <%= t("recurring_bills.list.skipped") %></span>
+              <% end %>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="text-right">
+            <p class="font-mono font-medium text-primary">
+              <%= format_money(payment.expected_amount_money) %>
+            </p>
+            <% if payment.paid? && payment.actual_amount %>
+              <p class="text-sm text-secondary font-mono">
+                <%= t("recurring_bills.list.paid_amount") %>: <%= format_money(payment.actual_amount_money) %>
+              </p>
+            <% end %>
+          </div>
+
+          <%= render DS::Menu.new do |menu| %>
+            <% menu.with_item(
+              variant: "link",
+              text: t("recurring_bills.list.view_details"),
+              icon: "eye",
+              href: bill_payment_path(payment),
+              frame: :modal
+            ) %>
+            <% unless payment.paid? %>
+              <% menu.with_item(
+                variant: "button",
+                text: t("recurring_bills.list.skip_month"),
+                icon: "skip-forward",
+                href: skip_bill_payment_path(payment),
+                method: :post
+              ) %>
+            <% end %>
+            <% if payment.paid? %>
+              <% menu.with_item(
+                variant: "button",
+                text: t("recurring_bills.list.unmatch"),
+                icon: "x",
+                href: unmatch_bill_payment_path(payment),
+                method: :post
+              ) %>
+            <% end %>
+            <% menu.with_item(
+              variant: "link",
+              text: t("recurring_bills.list.edit_bill"),
+              icon: "pencil",
+              href: edit_recurring_bill_path(payment.recurring_bill),
+              frame: :modal
+            ) %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

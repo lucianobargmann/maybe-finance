@@ -28,3 +28,12 @@ pt-BR:
     family_merchant:
       edit: Editar
       delete: Excluir
+    show:
+      edit: Editar
+      transactions: Transações
+      transactions_description:
+        zero: Nenhuma transação com este comerciante
+        one: "%{count} transação com este comerciante"
+        other: "%{count} transações com este comerciante"
+      view_all: Ver todas as transações
+      no_transactions: Nenhuma transação encontrada para este comerciante

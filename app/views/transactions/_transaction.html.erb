@@ -59,6 +59,15 @@
                   </div>
 
                   <div class="flex items-center gap-1 flex-shrink-0">
+                    <%= button_to transaction_path(entry),
+                          method: :patch,
+                          params: { entry: { reviewed: !entry.reviewed } },
+                          class: "p-0.5 rounded hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors",
+                          title: entry.reviewed ? t("transactions.show.mark_unreviewed") : t("transactions.show.mark_reviewed"),
+                          data: { turbo_frame: dom_id(entry) } do %>
+                      <%= icon "circle-check", size: "sm", color: entry.reviewed ? "success" : "default", class: entry.reviewed ? "" : "opacity-30" %>
+                    <% end %>
+
                     <% if transaction.one_time? %>
                       <span class="text-orange-500" title="One-time <%= entry.amount.negative? ? "income" : "expense" %> (excluded from averages)">
                         <%= icon "asterisk", size: "sm", color: "current" %>
@@ -71,7 +80,7 @@
                   </div>
                 </div>
 
-                <div class="text-secondary text-xs font-normal hidden lg:block">
+                <div class="text-secondary text-xs font-normal hidden lg:flex items-center gap-1 min-w-0">
                   <% if transaction.transfer? %>
                     <span class="text-secondary">
                       <%= transaction.loan_payment? ? "Loan Payment" : "Transfer" %> • <%= entry.account.name %>
@@ -80,7 +89,14 @@
                     <%= link_to entry.account.name,
                         account_path(entry.account, tab: "transactions"),
                         data: { turbo_frame: "_top" },
-                        class: "hover:underline" %>
+                        class: "hover:underline shrink-0" %>
+                    <% if transaction.merchant %>
+                      <span class="text-tertiary">•</span>
+                      <%= link_to transaction.merchant.name,
+                          family_merchant_path(transaction.merchant),
+                          class: "hover:underline truncate max-w-24",
+                          title: transaction.merchant.name %>
+                    <% end %>
                   <% end %>
                 </div>
               </div>

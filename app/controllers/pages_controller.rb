@@ -67,11 +67,24 @@ class PagesController < ApplicationController
       node_indices = {} # Memoize node indices by a unique key: "type_categoryid"
 
       # Helper to add/find node and return its index
-      add_node = ->(unique_key, display_name, value, percentage, color) {
+      add_node = ->(unique_key, display_name, value, percentage, color, url: nil) {
         node_indices[unique_key] ||= begin
-          nodes << { name: display_name, value: value.to_f.round(2), percentage: percentage.to_f.round(1), color: color }
+          node = { name: display_name, value: value.to_f.round(2), percentage: percentage.to_f.round(1), color: color }
+          node[:url] = url if url.present?
+          nodes << node
           nodes.size - 1
         end
+      }
+
+      # Helper to build transaction filter URL with date range and category
+      build_category_url = ->(category_name) {
+        transactions_path(
+          q: {
+            categories: [ category_name ],
+            start_date: @cashflow_period.start_date,
+            end_date: @cashflow_period.end_date
+          }
+        )
       }
 
       total_income_val = income_totals.total.to_f.round(2)
@@ -92,13 +105,15 @@ class PagesController < ApplicationController
 
         node_display_name = ct.category.name
         node_color = ct.category.color.presence || Category::COLORS.sample
+        category_url = build_category_url.call(ct.category.name)
 
         current_cat_idx = add_node.call(
           "income_#{ct.category.id}",
           node_display_name,
           val,
           percentage_of_total_income,
-          node_color
+          node_color,
+          url: category_url
         )
 
         links << {
@@ -122,13 +137,15 @@ class PagesController < ApplicationController
 
         node_display_name = ct.category.name
         node_color = ct.category.color.presence || Category::UNCATEGORIZED_COLOR
+        category_url = build_category_url.call(ct.category.name)
 
         current_cat_idx = add_node.call(
           "expense_#{ct.category.id}",
           node_display_name,
           val,
           percentage_of_total_expense,
-          node_color
+          node_color,
+          url: category_url
         )
 
         links << {

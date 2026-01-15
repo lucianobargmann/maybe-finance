@@ -6,6 +6,13 @@ pt-BR:
         delete: Excluir categoria
         edit: Editar categoria
       show:
+        bootstrap: Criar categorias padrão
         clear: Limpar categoria
+        empty: Nenhuma categoria ainda
+        match_transfer: Vincular transferência/pagamento
+        new_category: Nova categoria
         no_categories: Nenhuma categoria encontrada
+        no_results_create: Criar "%{query}"
+        one_time_expense: Despesa única
+        one_time_income: Receita única
         search_placeholder: Buscar

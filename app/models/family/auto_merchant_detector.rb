@@ -60,9 +60,9 @@ class Family::AutoMerchantDetector
   private
     attr_reader :family, :transaction_ids
 
-    # For now, OpenAI only, but this should work with any LLM concept provider
     def llm_provider
-      Provider::Registry.get_provider(:openai)
+      provider_name = Setting.llm_provider&.to_sym || :anthropic
+      Provider::Registry.get_provider(provider_name)
     end
 
     def default_logo_provider_url

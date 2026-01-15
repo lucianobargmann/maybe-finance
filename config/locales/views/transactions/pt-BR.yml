@@ -7,6 +7,8 @@ pt-BR:
       amount: Valor
       category: Categoria
       category_prompt: Selecione uma Categoria
+      merchant: Comerciante
+      merchant_prompt: Selecione um Comerciante
       date: Data
       description: Descrição
       description_placeholder: Descreva a transação
@@ -44,11 +46,18 @@ pt-BR:
       uncategorized: "(sem categoria)"
       exclude_title: Excluir do Cálculo
       exclude_description: Transações excluídas serão removidas dos cálculos de orçamento e relatórios.
+      reviewed_title: Revisado
+      reviewed_description: Marque esta transação como revisada para acompanhar seu progresso de reconciliação.
+      mark_reviewed: Marcar como revisado
+      mark_unreviewed: Marcar como não revisado
       one_time_income: Receita Única
       one_time_expense: Despesa Única
       one_time_description: Transações únicas serão excluídas de certos cálculos de orçamento e relatórios para ajudar você a ver o que realmente importa.
       transfer_title: Transferência ou Pagamento de Dívida?
       transfer_description: Transferências e pagamentos são tipos especiais de transações que indicam movimentação de dinheiro entre 2 contas.
+      recurring_bill_title: Conta Recorrente
+      recurring_bill_description: Crie uma conta mensal recorrente a partir desta transação para rastrear e prever suas despesas.
+      create_recurring_bill: Criar conta
     bulk_updates:
       new:
         edit_transactions: Editar transações

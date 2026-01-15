@@ -1,0 +1,42 @@
+<div class="space-y-4">
+  <div>
+    <h2 class="font-medium mb-1 flex items-center gap-2">
+      <%= t(".title") %>
+      <% if @finnhub_connected %>
+        <span class="w-2 h-2 rounded-full bg-green-500" title="Connected"></span>
+      <% end %>
+    </h2>
+    <% if ENV["FINNHUB_API_KEY"].present? %>
+      <p class="text-sm text-secondary">You have configured your Finnhub API key through the FINNHUB_API_KEY environment variable.</p>
+    <% else %>
+      <p class="text-secondary text-sm mb-4"><%= t(".description") %></p>
+    <% end %>
+  </div>
+
+  <%= styled_form_with model: Setting.new,
+                       url: settings_hosting_path,
+                       method: :patch,
+                       data: {
+                         controller: "auto-submit-form",
+                         "auto-submit-form-trigger-event-value": "blur"
+                       } do |form| %>
+    <%= form.text_field :finnhub_api_key,
+                        label: t(".label"),
+                        type: "password",
+                        placeholder: t(".placeholder"),
+                        value: ENV["FINNHUB_API_KEY"].presence || Setting.finnhub_api_key,
+                        disabled: ENV["FINNHUB_API_KEY"].present?,
+                        data: { "auto-submit-form-target": "auto" } %>
+    <p class="text-xs text-tertiary italic mt-2"><%= t("settings.hostings.auto_save_hint") %></p>
+  <% end %>
+
+  <% if @finnhub_usage.present? && @finnhub_usage.success? %>
+    <div class="space-y-4">
+      <div class="bg-gray-100 rounded-md px-1.5 py-0.5 w-fit">
+        <p class="text-xs font-medium text-secondary uppercase">
+          <%= t(".plan", plan: @finnhub_usage.data.plan) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</div>

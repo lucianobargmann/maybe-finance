@@ -1,6 +1,18 @@
 <div class="space-y-4">
   <div>
-    <h2 class="font-medium mb-1"><%= t(".title") %></h2>
+    <h2 class="font-medium mb-1 flex items-center gap-2">
+      <%= t(".title") %>
+      <% exchange_rate_connected = case Setting.exchange_rate_provider
+        when "synth" then @synth_connected
+        when "exchangerate_api" then @exchangerate_api_connected
+        when "alpha_vantage" then @alpha_vantage_connected
+        when "crypto_compare" then @crypto_compare_connected
+        else false
+      end %>
+      <% if exchange_rate_connected %>
+        <span class="w-2 h-2 rounded-full bg-green-500" title="Connected"></span>
+      <% end %>
+    </h2>
     <p class="text-secondary text-sm mb-4"><%= t(".description") %></p>
   </div>
 
@@ -15,24 +27,48 @@
       <%= form.select :exchange_rate_provider,
                       options_for_select([
                         ["Synth", "synth"],
-                        ["ExchangeRate-API", "exchangerate_api"]
+                        ["ExchangeRate-API", "exchangerate_api"],
+                        ["Alpha Vantage", "alpha_vantage"],
+                        ["CryptoCompare (Crypto)", "crypto_compare"]
                       ], Setting.exchange_rate_provider),
                       { label: t(".provider_label"), prompt: t(".provider_prompt") },
-                      { data: { "auto-submit-form-target": "auto" } %>
+                      { data: { "auto-submit-form-target": "auto" } } %>
 
       <% if Setting.exchange_rate_provider == "exchangerate_api" %>
         <%= form.text_field :exchangerate_api_key,
                             label: t(".exchangerate_api_label"),
                             type: "password",
                             placeholder: t(".exchangerate_api_placeholder"),
-                            value: ENV.fetch("EXCHANGERATE_API_KEY", Setting.exchangerate_api_key),
+                            value: ENV["EXCHANGERATE_API_KEY"].presence || Setting.exchangerate_api_key,
                             disabled: ENV["EXCHANGERATE_API_KEY"].present?,
                             data: { "auto-submit-form-target": "auto" } %>
       <% end %>
+
+      <% if Setting.exchange_rate_provider == "alpha_vantage" %>
+        <%= form.text_field :alpha_vantage_api_key,
+                            label: t(".alpha_vantage_api_label"),
+                            type: "password",
+                            placeholder: t(".alpha_vantage_api_placeholder"),
+                            value: ENV["ALPHA_VANTAGE_API_KEY"].presence || Setting.alpha_vantage_api_key,
+                            disabled: ENV["ALPHA_VANTAGE_API_KEY"].present?,
+                            data: { "auto-submit-form-target": "auto" } %>
+      <% end %>
+
+      <% if Setting.exchange_rate_provider == "crypto_compare" %>
+        <%= form.text_field :crypto_compare_api_key,
+                            label: t(".crypto_compare_api_label"),
+                            type: "password",
+                            placeholder: t(".crypto_compare_api_placeholder"),
+                            value: ENV["CRYPTO_COMPARE_API_KEY"].presence || Setting.crypto_compare_api_key,
+                            disabled: ENV["CRYPTO_COMPARE_API_KEY"].present?,
+                            data: { "auto-submit-form-target": "auto" } %>
+      <% end %>
+
+      <p class="text-xs text-tertiary italic"><%= t("settings.hostings.auto_save_hint") %></p>
     </div>
   <% end %>
 
-  <% if @exchangerate_api_usage.present? && @exchangerate_api_usage.success? %>
+  <% if @exchangerate_api_usage.present? && @exchangerate_api_usage.success? && Setting.exchange_rate_provider == "exchangerate_api" %>
     <div class="space-y-4">
       <div class="space-y-2">
         <p class="text-sm text-secondary">
@@ -49,6 +85,28 @@
       <div class="bg-gray-100 rounded-md px-1.5 py-0.5 w-fit">
         <p class="text-xs font-medium text-secondary uppercase">
           <%= t(".plan", plan: @exchangerate_api_usage.data.plan) %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @crypto_compare_usage.present? && @crypto_compare_usage.success? && Setting.exchange_rate_provider == "crypto_compare" %>
+    <div class="space-y-4">
+      <div class="space-y-2">
+        <p class="text-sm text-secondary">
+          <%= t(".api_calls_used",
+                used: number_with_delimiter(@crypto_compare_usage.data.used),
+                limit: number_with_delimiter(@crypto_compare_usage.data.limit),
+                percentage: number_to_percentage(@crypto_compare_usage.data.utilization, precision: 1)) %>
+        </p>
+        <div class="w-52 h-1.5 bg-gray-100 rounded-2xl">
+          <div class="h-full bg-green-500 rounded-2xl"
+               style="width: <%= [@crypto_compare_usage.data.utilization, 2].max %>%;"></div>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded-md px-1.5 py-0.5 w-fit">
+        <p class="text-xs font-medium text-secondary uppercase">
+          <%= t(".plan", plan: @crypto_compare_usage.data.plan) %>
         </p>
       </div>
     </div>

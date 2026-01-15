@@ -35,7 +35,7 @@ module Accountable
       return nil if subtype.nil?
 
       label_type = format == :long ? :long : :short
-      self::SUBTYPES[subtype]&.fetch(label_type, nil)
+      subtypes[subtype]&.fetch(label_type, nil)
     end
 
     # Convenience method for getting the short label
