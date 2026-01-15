@@ -21,6 +21,7 @@ pt-BR:
       matched_transactions: Transações Vinculadas
       unmatch: Desvincular Pagamento
       add_transactions: Adicionar Transações
+      suggested_matches: Sugestões de Correspondência
       add: Adicionar
       remove: Remover
       match: Vincular
@@ -30,5 +31,11 @@ pt-BR:
         amount: "Valor dentro de 20%% do esperado (%{min} - %{max})"
         date: Data dentro de 7 dias do vencimento
         merchant: "Comerciante: %{name}"
+      search_transactions: Buscar Transações
+      search_placeholder: Buscar por nome...
+      start_date: Data Inicial
+      end_date: Data Final
+      search_button: Buscar
+      no_results: Nenhuma transação encontrada
       skip_month: Pular Este Mês
       close: Fechar

@@ -78,6 +78,15 @@ class RecurringBillsController < ApplicationController
     }
   end
 
+  def list
+    @month = params[:month] ? Date.parse(params[:month]) : Date.current
+    @recurring_bills = Current.family.recurring_bills.active.for_month(@month)
+
+    @recurring_bills.each { |bill| bill.ensure_payment_for_month(@month) }
+
+    @bill_payments = Current.family.bill_payments.for_month(@month).includes(:recurring_bill)
+  end
+
   private
 
     def set_recurring_bill

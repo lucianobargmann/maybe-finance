@@ -21,6 +21,7 @@ en:
       matched_transactions: Matched Transactions
       unmatch: Unmatch Payment
       add_transactions: Add Transactions
+      suggested_matches: Suggested Matches
       add: Add
       remove: Remove
       match: Match
@@ -30,5 +31,11 @@ en:
         amount: "Amount within 20%% of expected (%{min} - %{max})"
         date: Date within 7 days of due date
         merchant: "Merchant: %{name}"
+      search_transactions: Search Transactions
+      search_placeholder: Search by name...
+      start_date: Start Date
+      end_date: End Date
+      search_button: Search
+      no_results: No transactions found
       skip_month: Skip This Month
       close: Close

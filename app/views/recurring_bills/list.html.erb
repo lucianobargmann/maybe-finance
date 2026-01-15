@@ -1,0 +1,47 @@
+<div class="pb-12">
+  <div class="flex items-center justify-between mb-6">
+    <div class="flex items-center gap-4">
+      <%= link_to recurring_bills_path, class: "text-secondary hover:text-primary" do %>
+        <%= icon "arrow-left", size: "md" %>
+      <% end %>
+      <h1 class="text-xl font-medium"><%= t("recurring_bills.list_page.title") %></h1>
+    </div>
+
+    <%= render DS::Link.new(
+      text: t("recurring_bills.index.add_bill"),
+      variant: "primary",
+      icon: "plus",
+      href: new_recurring_bill_path,
+      frame: :modal
+    ) %>
+  </div>
+
+  <div class="bg-container rounded-xl shadow-border-xs p-4" data-controller="bill-status-filter">
+    <div class="flex gap-1 mb-4 p-1 bg-container-inset rounded-lg">
+      <button type="button" data-bill-status-filter-target="tab" data-status="all" data-action="click->bill-status-filter#select"
+        class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors bg-container text-primary shadow-xs">
+        <%= t("recurring_bills.index.filters.all") %>
+      </button>
+      <button type="button" data-bill-status-filter-target="tab" data-status="overdue_today" data-action="click->bill-status-filter#select"
+        class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+        <%= t("recurring_bills.index.filters.overdue_today") %>
+      </button>
+      <button type="button" data-bill-status-filter-target="tab" data-status="upcoming" data-action="click->bill-status-filter#select"
+        class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+        <%= t("recurring_bills.index.filters.upcoming") %>
+      </button>
+      <button type="button" data-bill-status-filter-target="tab" data-status="paid" data-action="click->bill-status-filter#select"
+        class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+        <%= t("recurring_bills.index.filters.paid") %>
+      </button>
+      <button type="button" data-bill-status-filter-target="tab" data-status="pending" data-action="click->bill-status-filter#select"
+        class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors text-secondary">
+        <%= t("recurring_bills.index.filters.pending") %>
+      </button>
+    </div>
+
+    <div class="bg-container-inset rounded-xl p-1">
+      <%= render "recurring_bills/list", bill_payments: @bill_payments %>
+    </div>
+  </div>
+</div>

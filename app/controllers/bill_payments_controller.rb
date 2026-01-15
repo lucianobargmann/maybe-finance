@@ -3,6 +3,12 @@ class BillPaymentsController < ApplicationController
 
   def show
     @match_candidates = Current.family.bill_match_candidates(@bill_payment)
+
+    # Handle transaction search
+    if params[:search].present? || params[:start_date].present? || params[:end_date].present?
+      @search_results = search_transactions
+      @searching = true
+    end
   end
 
   def update
@@ -52,5 +58,27 @@ class BillPaymentsController < ApplicationController
 
     def bill_payment_params
       params.require(:bill_payment).permit(:status, :expected_amount)
+    end
+
+    def search_transactions
+      scope = Current.family.transactions
+        .visible
+        .joins(:entry)
+        .where("entries.amount > 0") # Expenses only
+        .where.not(id: BillPaymentTransaction.select(:transaction_id))
+
+      if params[:search].present?
+        scope = scope.where("entries.name ILIKE ?", "%#{params[:search]}%")
+      end
+
+      if params[:start_date].present?
+        scope = scope.where("entries.date >= ?", params[:start_date])
+      end
+
+      if params[:end_date].present?
+        scope = scope.where("entries.date <= ?", params[:end_date])
+      end
+
+      scope.order("entries.date DESC").limit(20)
     end
 end

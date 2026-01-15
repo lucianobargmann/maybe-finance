@@ -77,6 +77,8 @@ en:
         one: "%{count} bill"
         other: "%{count} bills"
       income_note: "* Income estimate based on median monthly income from your transaction history."
+    list_page:
+      title: All Bills
     list:
       no_bills: No bills set up yet
       no_bills_filtered: No bills match the selected filter

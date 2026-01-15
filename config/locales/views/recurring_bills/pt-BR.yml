@@ -77,6 +77,8 @@ pt-BR:
         one: "%{count} conta"
         other: "%{count} contas"
       income_note: "* Estimativa de receita baseada na mediana da renda mensal do seu histórico de transações."
+    list_page:
+      title: Todas as Contas
     list:
       no_bills: Nenhuma conta cadastrada ainda
       no_bills_filtered: Nenhuma conta corresponde ao filtro selecionado

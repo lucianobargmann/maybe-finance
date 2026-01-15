@@ -33,7 +33,12 @@
 
     <div class="w-full grow bg-container rounded-xl shadow-border-xs p-4" data-controller="bill-status-filter">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-medium"><%= t(".monthly_bills") %></h2>
+        <div class="flex items-center gap-2">
+          <h2 class="text-lg font-medium"><%= t(".monthly_bills") %></h2>
+          <%= link_to list_recurring_bills_path(month: @month), target: "_blank", class: "text-secondary hover:text-primary", title: t("recurring_bills.list_page.title") do %>
+            <%= icon "external-link", size: "sm" %>
+          <% end %>
+        </div>
         <%= render DS::Link.new(
           text: t(".add_bill"),
           variant: "primary",

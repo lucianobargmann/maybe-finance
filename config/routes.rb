@@ -102,6 +102,7 @@ Rails.application.routes.draw do
 
   resources :recurring_bills, except: :show do
     get :picker, on: :collection
+    get :list, on: :collection
   end
 
   resources :bill_payments, only: %i[show update] do

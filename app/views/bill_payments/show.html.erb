@@ -72,9 +72,9 @@
         <% end %>
 
         <%# Show candidates to add more transactions %>
-        <div class="border-t border-secondary pt-4">
-          <h3 class="font-medium text-primary mb-2"><%= t(".add_transactions") %></h3>
-          <% if @match_candidates.any? %>
+        <% if @match_candidates.any? %>
+          <div class="border-t border-secondary pt-4">
+            <h3 class="font-medium text-primary mb-2"><%= t(".suggested_matches") %></h3>
             <div class="space-y-2">
               <% @match_candidates.each do |transaction| %>
                 <div class="flex items-center justify-between bg-surface-inset rounded-lg p-3">
@@ -97,27 +97,71 @@
                       method: :post,
                       frame: "modal"
                     ) %>
-                    <%= render DS::Button.new(
-                      text: t(".reject"),
-                      variant: "outline",
-                      size: "sm",
-                      href: reject_match_bill_payments_path(bill_payment_id: @bill_payment.id, transaction_id: transaction.id),
-                      method: :post,
-                      frame: "modal"
-                    ) %>
                   </div>
                 </div>
               <% end %>
             </div>
-          <% else %>
-            <p class="text-secondary text-sm"><%= t(".no_candidates") %></p>
-            <ul class="text-secondary text-sm mt-2 list-disc list-inside">
-              <li><%= t(".match_criteria.amount", min: format_money(@bill_payment.expected_amount_money * 0.8), max: format_money(@bill_payment.expected_amount_money * 1.2)) %></li>
-              <li><%= t(".match_criteria.date") %></li>
-              <% if @bill_payment.recurring_bill.merchant_id.present? %>
-                <li><%= t(".match_criteria.merchant", name: @bill_payment.recurring_bill.merchant.name) %></li>
+          </div>
+        <% end %>
+
+        <%# Search for transactions %>
+        <div class="border-t border-secondary pt-4">
+          <h3 class="font-medium text-primary mb-3"><%= t(".search_transactions") %></h3>
+          <%= form_with url: bill_payment_path(@bill_payment), method: :get, data: { turbo_frame: "modal" }, class: "space-y-3" do |f| %>
+            <div>
+              <%= f.text_field :search,
+                  value: params[:search],
+                  placeholder: t(".search_placeholder"),
+                  class: "w-full px-3 py-2 bg-surface-inset border border-primary rounded-lg text-primary placeholder-secondary text-sm" %>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs text-secondary mb-1"><%= t(".start_date") %></label>
+                <%= f.date_field :start_date,
+                    value: params[:start_date] || (@bill_payment.due_date - 30.days).to_s,
+                    class: "w-full px-3 py-2 bg-surface-inset border border-primary rounded-lg text-primary text-sm" %>
+              </div>
+              <div>
+                <label class="block text-xs text-secondary mb-1"><%= t(".end_date") %></label>
+                <%= f.date_field :end_date,
+                    value: params[:end_date] || (@bill_payment.due_date + 7.days).to_s,
+                    class: "w-full px-3 py-2 bg-surface-inset border border-primary rounded-lg text-primary text-sm" %>
+              </div>
+            </div>
+            <%= f.submit t(".search_button"), class: "w-full px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium cursor-pointer hover:bg-primary/90" %>
+          <% end %>
+
+          <% if @searching && @search_results %>
+            <div class="mt-4 space-y-2">
+              <% if @search_results.any? %>
+                <% @search_results.each do |transaction| %>
+                  <div class="flex items-center justify-between bg-surface-inset rounded-lg p-3">
+                    <div>
+                      <p class="font-medium text-primary"><%= transaction.entry.name %></p>
+                      <p class="text-sm text-secondary">
+                        <%= l(transaction.entry.date, format: :short) %>
+                        <% if transaction.merchant %>
+                          - <%= transaction.merchant.name %>
+                        <% end %>
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <span class="font-mono text-primary"><%= format_money(transaction.entry.amount) %></span>
+                      <%= render DS::Button.new(
+                        text: t(".add"),
+                        variant: "primary",
+                        size: "sm",
+                        href: match_bill_payment_path(@bill_payment, transaction_id: transaction.id),
+                        method: :post,
+                        frame: "modal"
+                      ) %>
+                    </div>
+                  </div>
+                <% end %>
+              <% else %>
+                <p class="text-secondary text-sm text-center py-2"><%= t(".no_results") %></p>
               <% end %>
-            </ul>
+            </div>
           <% end %>
         </div>
 
