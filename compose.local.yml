@@ -18,7 +18,7 @@ x-rails-env: &rails_env
 
 services:
   web:
-    image: lucianobargmann/maybe:0.7.15
+    image: lucianobargmann/maybe:0.7.16
     volumes:
       - app-storage:/rails/storage
     ports:
@@ -35,7 +35,7 @@ services:
       - maybe_net
 
   worker:
-    image: lucianobargmann/maybe:0.7.15
+    image: lucianobargmann/maybe:0.7.16
     command: bundle exec sidekiq
     restart: unless-stopped
     depends_on:

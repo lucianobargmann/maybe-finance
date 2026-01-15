@@ -21,7 +21,7 @@ module Family::AutoBillMatchable
       .where(entries: { date: date_start..date_end })
       .where("entries.amount > 0") # Expenses are positive amounts
       .where("entries.amount BETWEEN ? AND ?", min_amount, max_amount)
-      .where.not(id: BillPayment.where.not(transaction_id: nil).select(:transaction_id))
+      .where.not(id: BillPaymentTransaction.select(:transaction_id))
       .where.not(id: RejectedBillMatch.where(bill_payment_id: bill_payment.id).select(:transaction_id))
 
     if recurring_bill.merchant_id.present?
