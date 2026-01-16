@@ -1,7 +1,9 @@
 <div class="pb-12">
   <%= render "recurring_bills/header", month: @month %>
 
-  <%= render "recurring_bills/summary", summary: @summary, month: @month %>
+  <%= turbo_frame_tag "bill_summary" do %>
+    <%= render "recurring_bills/summary", summary: @summary, month: @month %>
+  <% end %>
 
   <% if @alerts[:overdue].any? || @alerts[:due_today].any? || @alerts[:due_soon].any? %>
     <div class="mb-6 space-y-2">
@@ -71,9 +73,11 @@
         </button>
       </div>
 
-      <div class="bg-container-inset rounded-xl p-1 max-h-[400px] overflow-y-auto">
-        <%= render "recurring_bills/list", bill_payments: @bill_payments %>
-      </div>
+      <%= turbo_frame_tag "bill_payments_list" do %>
+        <div class="bg-container-inset rounded-xl p-1 max-h-[400px] overflow-y-auto">
+          <%= render "recurring_bills/list", bill_payments: @bill_payments %>
+        </div>
+      <% end %>
     </div>
   </div>
 

@@ -22,25 +22,47 @@ class BillPaymentsController < ApplicationController
   def match
     transaction = Current.family.transactions.find(params[:transaction_id])
     @bill_payment.add_transaction!(transaction)
-    redirect_to bill_payment_path(@bill_payment), notice: t("bill_payments.notices.transaction_added")
+
+    respond_to do |format|
+      format.html { redirect_to recurring_bills_path, notice: t("bill_payments.notices.transaction_added") }
+      format.turbo_stream do
+        flash.now[:notice] = t("bill_payments.notices.transaction_added")
+        render turbo_stream: bill_payment_turbo_streams
+      end
+    end
   end
 
   def unmatch
     if params[:transaction_id].present?
       transaction = Current.family.transactions.find(params[:transaction_id])
       @bill_payment.remove_transaction!(transaction)
-      redirect_to bill_payment_path(@bill_payment), notice: t("bill_payments.notices.transaction_removed")
+      notice = t("bill_payments.notices.transaction_removed")
     else
       # Remove all transactions
       @bill_payment.bill_payment_transactions.destroy_all
       @bill_payment.recalculate_totals!
-      redirect_to recurring_bills_path, notice: t("bill_payments.notices.unmatched")
+      notice = t("bill_payments.notices.unmatched")
+    end
+
+    respond_to do |format|
+      format.html { redirect_to recurring_bills_path, notice: notice }
+      format.turbo_stream do
+        flash.now[:notice] = notice
+        render turbo_stream: bill_payment_turbo_streams
+      end
     end
   end
 
   def skip
     @bill_payment.update!(status: :skipped)
-    redirect_to recurring_bills_path, notice: t("bill_payments.notices.skipped")
+
+    respond_to do |format|
+      format.html { redirect_to recurring_bills_path, notice: t("bill_payments.notices.skipped") }
+      format.turbo_stream do
+        flash.now[:notice] = t("bill_payments.notices.skipped")
+        render turbo_stream: bill_payment_turbo_streams
+      end
+    end
   end
 
   def reject_match
@@ -54,6 +76,28 @@ class BillPaymentsController < ApplicationController
 
     def set_bill_payment
       @bill_payment = Current.family.bill_payments.find(params[:id])
+    end
+
+    def bill_payment_turbo_streams
+      month = @bill_payment.due_date.beginning_of_month
+      bill_payments = Current.family.bill_payments.for_month(month).includes(:recurring_bill)
+
+      # Calculate summary
+      pending_payments = bill_payments.select { |p| p.pending? || p.overdue? }
+      paid_payments = bill_payments.select(&:paid?)
+      summary = {
+        to_pay: pending_payments.sum { |p| p.expected_amount_money },
+        paid: paid_payments.sum { |p| p.actual_amount_money || p.expected_amount_money },
+        pending_count: pending_payments.count,
+        paid_count: paid_payments.count
+      }
+
+      [
+        turbo_stream.update("bill_payments_list", partial: "recurring_bills/list", locals: { bill_payments: bill_payments }),
+        turbo_stream.update("bill_summary", partial: "recurring_bills/summary", locals: { summary: summary, month: month }),
+        turbo_stream.update("modal", ""),
+        *flash_notification_stream_items
+      ]
     end
 
     def bill_payment_params
