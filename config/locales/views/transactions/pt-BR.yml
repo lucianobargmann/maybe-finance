@@ -18,8 +18,10 @@ pt-BR:
       note_label: Notas
       note_placeholder: Digite uma nota
       submit: Adicionar transação
+      submit_and_new: Adicionar e Nova
       tags_label: Tags
       transfer: Transferência
+      details: Detalhes
     new:
       new_transaction: Nova transação
     show:

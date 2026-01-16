@@ -14,7 +14,7 @@ module Maybe
 
     private
       def semver
-        "0.7.19"
+        "0.7.35"
       end
   end
 end

@@ -18,8 +18,10 @@ en:
       note_label: Notes
       note_placeholder: Enter a note
       submit: Add transaction
+      submit_and_new: Add & New
       tags_label: Tags
       transfer: Transfer
+      details: Details
     new:
       new_transaction: New transaction
     show:

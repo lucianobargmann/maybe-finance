@@ -1,6 +1,12 @@
 <%# locals: (entry:, income_categories:, expense_categories:) %>
 
-<%= styled_form_with model: entry, url: transactions_path, class: "space-y-4" do |f| %>
+<%= styled_form_with model: entry, url: transactions_path, class: "space-y-4",
+    data: {
+      controller: "transaction-type-tabs",
+      transaction_type_tabs_expense_categories_value: expense_categories.pluck(:name, :id).to_json,
+      transaction_type_tabs_income_categories_value: income_categories.pluck(:name, :id).to_json,
+      transaction_type_tabs_category_prompt_value: t(".category_prompt")
+    } do |f| %>
   <% if entry.errors.any? %>
     <%= render "shared/form_errors", model: entry %>
   <% end %>
@@ -8,7 +14,7 @@
   <section>
     <%= render "shared/transaction_type_tabs", active_tab: params[:nature] == "inflow" ? "income" : "expense", account_id: params[:account_id] %>
 
-    <%= f.hidden_field :nature, value: params[:nature] || "outflow" %>
+    <%= f.hidden_field :nature, value: params[:nature] || "outflow", data: { transaction_type_tabs_target: "natureField" } %>
     <%= f.hidden_field :entryable_type, value: "Transaction" %>
   </section>
 
@@ -24,10 +30,10 @@
     <%= f.money_field :amount, label: t(".amount"), required: true %>
     <%= f.fields_for :entryable do |ef| %>
       <% categories = params[:nature] == "inflow" ? income_categories : expense_categories %>
-      <%= ef.collection_select :category_id, categories, :id, :name, { prompt: t(".category_prompt"), label: t(".category") } %>
+      <%= ef.collection_select :category_id, categories, :id, :name, { prompt: t(".category_prompt"), label: t(".category") }, { data: { transaction_type_tabs_target: "categorySelect" } } %>
       <%= ef.collection_select :merchant_id, Current.family.merchants.alphabetically, :id, :name, { prompt: t(".merchant_prompt"), label: t(".merchant") } %>
     <% end %>
-    <%= f.date_field :date, label: t(".date"), required: true, min: Entry.min_supported_date, max: Date.current, value: Date.current %>
+    <%= f.date_field :date, label: t(".date"), required: true, min: Entry.min_supported_date, max: Date.current, value: params[:date] || Date.current %>
   </section>
 
   <%= render DS::Disclosure.new(title: t(".details")) do %>
@@ -48,7 +54,8 @@
                     "data-auto-submit-form-target": "auto" %>
   <% end %>
 
-  <section>
-    <%= f.submit t(".submit") %>
+  <section class="flex gap-2">
+    <%= f.submit t(".submit"), class: "grow" %>
+    <%= f.submit t(".submit_and_new"), name: "commit_action", value: "save_and_new", class: "btn btn--secondary" %>
   </section>
 <% end %>

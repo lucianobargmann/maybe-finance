@@ -64,11 +64,21 @@ class TransactionsController < ApplicationController
 
       flash[:notice] = "Transaction created"
 
-      respond_to do |format|
-        format.html { redirect_back_or_to account_path(@entry.account) }
-        format.turbo_stream { stream_redirect_back_or_to(account_path(@entry.account)) }
+      if params[:commit_action] == "save_and_new"
+        redirect_to new_transaction_path(
+          nature: params.dig(:entry, :nature),
+          date: params.dig(:entry, :date),
+          account_id: account.id
+        )
+      else
+        respond_to do |format|
+          format.html { redirect_back_or_to account_path(@entry.account) }
+          format.turbo_stream { stream_redirect_back_or_to(account_path(@entry.account)) }
+        end
       end
     else
+      @income_categories = Current.family.categories.incomes.alphabetically
+      @expense_categories = Current.family.categories.expenses.alphabetically
       render :new, status: :unprocessable_entity
     end
   end
